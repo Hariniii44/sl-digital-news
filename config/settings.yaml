@@ -1,0 +1,136 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# PIPELINE SETTINGS
+# ─────────────────────────────────────────────────────────────────────────────
+
+site_title: "Sri Lanka Digital Industry News"
+timezone: "Asia/Colombo"
+
+# Link to the Google Form where the team submits social media posts / other links.
+# Shown as a "Submit a link" button on the site. Leave empty to hide the button.
+# (Can also be set as the SUBMIT_FORM_URL repository variable in GitHub.)
+submit_form_url: ""
+
+# How far back to look on each run. Normally the window starts at the previous
+# successful run (so nothing is missed or repeated); if there is no previous run,
+# or it was longer ago than max_window_hours, the last window_hours are used.
+window_hours: 24
+max_window_hours: 36
+
+# ── Gemini ──────────────────────────────────────────────────────────────────
+# The model can be overridden without editing this file by setting the
+# GEMINI_MODEL repository variable in GitHub.
+gemini_model: "gemini-3.5-flash-lite"
+# Seconds to wait between Gemini calls (keeps us under free-tier per-minute limits).
+gemini_min_interval_seconds: 6
+# Items per Gemini call. Bigger batches = fewer requests per day.
+triage_batch_size: 40
+summary_batch_size: 10
+# Characters of article text sent to Gemini per article for the summary.
+article_chars_for_summary: 1800
+# Minimum relevance score (0–10) to appear on the site. Low on purpose:
+# the team wants anything even remotely relevant.
+min_relevance: 3
+# Safety cap on stories per day (highest relevance kept) to protect the free quota.
+max_items_per_day: 300
+
+# ── Article fetching ────────────────────────────────────────────────────────
+fetch_timeout_seconds: 15
+fetch_workers: 8
+
+# ── Categories (shown as filters on the site, in this order) ───────────────
+# 'description' guides the AI. 'keywords' are only used as a fallback when
+# Gemini is unavailable (e.g. quota exhausted).
+categories:
+  - name: "Startups & Ecosystem"
+    description: "Startups, founders, accelerators, incubators, startup competitions, hackathons, pitch events, angel/VC investment and funding rounds."
+    keywords: [startup, start-up, founder, accelerator, incubator, xcellerator, hackathon, pitch, venture, angel, seed, funding round, raises]
+  - name: "Tech & IT/BPM"
+    description: "Tech companies, IT/BPM and software exports, telecoms, AI, cybersecurity, tech talent and skills."
+    keywords: [software, it/bpm, bpm, tech, technology, slasscom, telecom, ai, artificial intelligence, cyber, developer, data centre, data center, cloud]
+  - name: "Digital Economy & Policy"
+    description: "Government digital economy policy and strategy, ICTA, the Ministry of Digital Economy, regulation (data protection, online safety, telecom), digital public infrastructure."
+    keywords: [digital economy, icta, ministry of digital, policy, regulation, data protection, digital id, digital public infrastructure, act, bill]
+  - name: "Digitalization"
+    description: "Digital transformation of businesses and government services, fintech, digital payments, e-commerce, online services."
+    keywords: [digital, digitali, fintech, payment, e-commerce, ecommerce, online, app, platform, qr, lankapay]
+  - name: "SMEs & Entrepreneurship"
+    description: "Small and medium enterprises, entrepreneurs, MSME support schemes, SME financing, exporters."
+    keywords: [sme, smes, msme, small and medium, entrepreneur, small business]
+  - name: "Economy & Business"
+    description: "Macroeconomy, Central Bank, IMF, budget, trade, exports, investment, corporate results and other business news."
+    keywords: [economy, economic, cbsl, central bank, imf, gdp, inflation, budget, export, trade, investment, rupee, tax, tariff, plc, profit, revenue]
+  - name: "Events & Opportunities"
+    description: "Upcoming or just-held conferences, summits, workshops, calls for applications, grants, programmes and deadlines relevant to the digital industry."
+    keywords: [summit, conference, forum, workshop, expo, applications open, call for, deadline, launch event, webinar, awards]
+
+# ── Pre-filter for 'general: true' outlets ──────────────────────────────────
+# An item from a general news outlet is only sent to the AI if its title or
+# description contains at least one of these words. Keep this list broad.
+general_prefilter_keywords:
+  - econom
+  - business
+  - startup
+  - start-up
+  - tech
+  - digital
+  - software
+  - " it "
+  - ict
+  - " ai "
+  - artificial intelligence
+  - fintech
+  - bank
+  - invest
+  - export
+  - import
+  - trade
+  - sme
+  - entrepreneur
+  - industr
+  - company
+  - plc
+  - cbsl
+  - central bank
+  - imf
+  - budget
+  - tax
+  - tariff
+  - innovation
+  - telecom
+  - internet
+  - cyber
+  - data
+  - e-commerce
+  - online
+  - app
+  - platform
+  - accelerator
+  - incubator
+  - competition
+  - hackathon
+  - university
+  - skills
+  - boi
+  - edb
+  - slasscom
+  - icta
+  - ministry
+  - development
+  - growth
+  - gdp
+  - inflation
+  - rupee
+  - market
+  - stock
+  - cse
+  - tourism
+  - job
+  - employment
+  - finance
+  - financial
+  - payment
+  - fund
+  - grant
+  - summit
+  - conference
+  - forum

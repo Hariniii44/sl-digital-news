@@ -1,0 +1,76 @@
+name: Daily news update
+
+on:
+  schedule:
+    # 01:30 UTC = 7:00 AM Sri Lanka time. GitHub can start scheduled jobs a little late
+    # and the run takes ~10–20 minutes, so the site is ready by 8:00 AM.
+    - cron: "30 1 * * *"
+  workflow_dispatch:        # "Run workflow" button in the Actions tab
+    inputs:
+      hours:
+        description: "Look back this many hours (leave empty for normal daily run)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write           # commit the new data files
+  pages: write              # publish to GitHub Pages
+  id-token: write
+
+concurrency:
+  group: daily-news
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect, screen and summarise news
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          SUBMISSIONS_CSV_URL: ${{ vars.SUBMISSIONS_CSV_URL }}
+          SUBMIT_FORM_URL: ${{ vars.SUBMIT_FORM_URL }}
+          HOURS: ${{ github.event.inputs.hours }}
+        run: |
+          if [[ "$HOURS" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+            python -m pipeline.run --hours "$HOURS"
+          else
+            python -m pipeline.run
+          fi
+
+      - name: Save today's data to the repository
+        run: |
+          git config user.name  "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          git add site/data state
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "News update $(TZ=Asia/Colombo date +'%Y-%m-%d %H:%M')"
+            git pull --rebase --autostash   # in case someone edited the config during the run
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

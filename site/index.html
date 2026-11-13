@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Lanka Digital Industry News</title>
+<meta name="description" content="Daily briefing of Sri Lankan news relevant to the digital industry: startups, SMEs, tech, digital economy and the economy.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23123b4a'/><path d='M9 11h14M9 16h14M9 21h9' stroke='%23f4c86a' stroke-width='2.6' stroke-linecap='round'/></svg>">
+<style>
+  :root {
+    --bg: #f6f4ef;
+    --paper: #ffffff;
+    --ink: #17222b;
+    --ink-2: #4a5761;
+    --ink-3: #7b8790;
+    --line: #e4e0d7;
+    --brand: #123b4a;
+    --brand-2: #1d5c70;
+    --accent: #e0a43b;
+    --focus: #2f7fa0;
+    --radius: 12px;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    /* category colours: [text, background] */
+    --c0: #7a3e00; --c0b: #fdf0dc;
+    --c1: #1f4f8a; --c1b: #e5eefa;
+    --c2: #5b3a8c; --c2b: #efe8fa;
+    --c3: #0f6a5a; --c3b: #e0f3ee;
+    --c4: #8a3b54; --c4b: #fae6ec;
+    --c5: #3d4f5c; --c5b: #e9eef1;
+    --c6: #8a5a00; --c6b: #fbf1cf;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.55 var(--sans); -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+
+  /* ── Masthead ── */
+  .masthead { background: var(--brand); color: #fff; }
+  .masthead .wrap { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 14px 24px; padding-top: 26px; padding-bottom: 22px; }
+  .wrap { max-width: 920px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+  .kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 6px; }
+  h1 { font: 700 30px/1.15 var(--serif); margin: 0; letter-spacing: -.01em; }
+  .edition { margin: 8px 0 0; color: #c9d7dc; font-size: 14px; }
+  .edition strong { color: #fff; font-weight: 600; }
+  .mast-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .mast-actions label { font-size: 12px; color: #c9d7dc; display: block; margin-bottom: 4px; }
+  select, input[type="search"] {
+    font: inherit; color: var(--ink); background: #fff; border: 1px solid var(--line);
+    border-radius: 8px; padding: 8px 10px; min-height: 38px;
+  }
+  .masthead select { border-color: transparent; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px; font: 500 14px var(--sans);
+    color: var(--brand); background: var(--accent); border-radius: 8px; padding: 9px 14px;
+    text-decoration: none; white-space: nowrap; min-height: 38px;
+  }
+  .btn:hover { background: #ecb552; }
+
+  /* ── Filter bar ── */
+  .filters { position: sticky; top: 0; z-index: 5; background: rgba(246,244,239,.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  .filters .wrap { padding-top: 12px; padding-bottom: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    flex: none; font: 500 13px var(--sans); color: var(--ink-2); background: var(--paper);
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer;
+  }
+  .chip .n { color: var(--ink-3); font-weight: 400; margin-left: 4px; }
+  .chip[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
+  .chip[aria-pressed="true"] .n { color: #c9d7dc; }
+  .chip:disabled { opacity: .45; cursor: default; }
+  .tools { display: flex; gap: 10px; margin-top: 10px; }
+  .tools input { flex: 1; min-width: 0; }
+
+  /* ── Feed ── */
+  main .wrap { padding-top: 18px; padding-bottom: 40px; }
+  .resultline { color: var(--ink-3); font-size: 13px; margin: 0 0 12px; }
+  .card {
+    position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 16px 18px 15px; margin-bottom: 12px; transition: border-color .15s, box-shadow .15s;
+  }
+  .card:hover { border-color: #cfc8b9; box-shadow: 0 2px 10px rgba(23,34,43,.06); }
+  .card.top { border-left: 4px solid var(--accent); padding-left: 15px; }
+  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 12.5px; color: var(--ink-3); margin-bottom: 6px; }
+  .tag { font-weight: 600; font-size: 11.5px; letter-spacing: .02em; padding: 2px 8px; border-radius: 999px; }
+  .outlet { color: var(--ink-2); font-weight: 600; }
+  .dot::before { content: "·"; margin-right: 10px; color: #b9b2a4; }
+  .badge { font-size: 11px; font-weight: 600; color: #8a5a00; background: #fbf1cf; padding: 2px 7px; border-radius: 4px; }
+  .card h2 { font: 600 19px/1.3 var(--serif); margin: 0 0 6px; letter-spacing: -.005em; }
+  .card h2 a { text-decoration: none; }
+  .card h2 a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); } /* whole card clickable */
+  .card:hover h2 a { color: var(--brand-2); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .summary { margin: 0; color: var(--ink-2); }
+  .also { position: relative; z-index: 1; margin: 9px 0 0; font-size: 12.5px; color: var(--ink-3); }
+  .also a { color: var(--brand-2); text-decoration: none; }
+  .also a:hover { text-decoration: underline; }
+  .ext { display: inline-block; width: 12px; height: 12px; margin-left: 4px; vertical-align: -1px; opacity: .55; }
+
+  .empty { text-align: center; padding: 60px 20px; color: var(--ink-2); background: var(--paper); border: 1px dashed var(--line); border-radius: var(--radius); }
+  .empty h2 { font: 600 20px var(--serif); margin: 0 0 6px; color: var(--ink); }
+
+  /* ── Footer ── */
+  footer { border-top: 1px solid var(--line); color: var(--ink-3); font-size: 13px; }
+  footer .wrap { padding-top: 18px; padding-bottom: 40px; }
+  details summary { cursor: pointer; color: var(--ink-2); font-weight: 500; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12.5px; }
+  th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--ink-2); font-weight: 600; }
+  .ok { color: #0f6a5a; font-weight: 600; } .fail { color: #a8323a; font-weight: 600; }
+  .muted { color: var(--ink-3); }
+
+  .nowrap { white-space: nowrap; }
+  @media (max-width: 640px) {
+    h1 { font-size: 24px; }
+    .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; }
+    .dot::before { display: none; }
+    .meta { gap: 3px 9px; }
+    .masthead .wrap { padding-top: 20px; padding-bottom: 16px; }
+    .card { padding: 14px 14px 13px; }
+    .card.top { padding-left: 11px; }
+    .card h2 { font-size: 17.5px; }
+    .tools select { max-width: 42%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Daily briefing · Digital Industry Development</p>
+      <h1 id="site-title">Sri Lanka Digital Industry News</h1>
+      <p class="edition" id="edition">Loading today's update…</p>
+    </div>
+    <div class="mast-actions">
+      <div>
+        <label for="edition-select">Edition</label>
+        <select id="edition-select" aria-label="Choose edition date"></select>
+      </div>
+      <a class="btn" id="submit-link" href="#" target="_blank" rel="noopener" hidden>+ Submit a link</a>
+    </div>
+  </div>
+</header>
+
+<nav class="filters" aria-label="Filter news">
+  <div class="wrap">
+    <div class="chips" id="chips" role="toolbar" aria-label="Categories"></div>
+    <div class="tools">
+      <input type="search" id="search" placeholder="Search headlines, summaries, outlets…" aria-label="Search">
+      <select id="sort" aria-label="Sort order">
+        <option value="newest">Newest first</option>
+        <option value="relevant">Most relevant first</option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+    <p class="resultline" id="resultline" aria-live="polite"></p>
+    <div id="feed"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p id="about">Stories are collected automatically every morning from Sri Lankan news outlets and Google News, screened for relevance and summarised by AI. Summaries can contain mistakes — always check the original article.</p>
+    <details id="status-box">
+      <summary>Source status for this edition</summary>
+      <p class="muted" id="status-stats"></p>
+      <table>
+        <thead><tr><th>Source</th><th>Type</th><th>Status</th><th>Items</th></tr></thead>
+        <tbody id="status-rows"></tbody>
+      </table>
+    </details>
+  </div>
+</footer>
+
+<script>
+(() => {
+  "use strict";
+  const TZ = "Asia/Colombo";
+  const state = { data: null, cat: "All", q: "", sort: "newest", dates: [] };
+  const $ = (id) => document.getElementById(id);
+
+  // Small DOM helper — data is always inserted as text, never as HTML.
+  function el(tag, attrs = {}, ...children) {
+    const node = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v === null || v === undefined || v === false) continue;
+      if (k === "class") node.className = v;
+      else if (k === "style") node.setAttribute("style", v);
+      else node.setAttribute(k, v === true ? "" : v);
+    }
+    for (const c of children.flat()) {
+      if (c === null || c === undefined || c === false) continue;
+      node.append(c instanceof Node ? c : document.createTextNode(String(c)));
+    }
+    return node;
+  }
+
+  const fmtDay = new Intl.DateTimeFormat("en-GB", { timeZone: TZ, weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  const fmtShort = new Intl.DateTimeFormat("en-GB", { timeZone: TZ, weekday: "short", day: "numeric", month: "short" });
+  const fmtTime = new Intl.DateTimeFormat("en-US", { timeZone: TZ, hour: "numeric", minute: "2-digit" });
+  const fmtDateOnly = new Intl.DateTimeFormat("en-GB", { timeZone: TZ, day: "numeric", month: "short", year: "numeric" });
+
+  function when(iso, estimated) {
+    if (!iso) return "";
+    const d = new Date(iso);
+    if (isNaN(d)) return "";
+    return estimated ? fmtShort.format(d) : `${fmtShort.format(d)}, ${fmtTime.format(d)}`;
+  }
+
+  function ago(iso) {
+    const mins = Math.round((Date.now() - new Date(iso)) / 60000);
+    if (!isFinite(mins) || mins < 0) return "";
+    if (mins < 60) return `${mins} min ago`;
+    const h = Math.round(mins / 60);
+    if (h < 48) return `${h} hr${h === 1 ? "" : "s"} ago`;
+    return "";
+  }
+
+  function safeUrl(u) {
+    try { const url = new URL(u); return /^https?:$/.test(url.protocol) ? url.href : "#"; }
+    catch { return "#"; }
+  }
+
+  const extIcon = () => {
+    const s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    s.setAttribute("viewBox", "0 0 16 16"); s.setAttribute("class", "ext"); s.setAttribute("aria-hidden", "true");
+    const p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    p.setAttribute("d", "M6 3H3v10h10v-3M9 3h4v4M13 3L7 9");
+    p.setAttribute("fill", "none"); p.setAttribute("stroke", "currentColor"); p.setAttribute("stroke-width", "1.6");
+    s.append(p); return s;
+  };
+
+  function catColor(name) {
+    const i = Math.max(0, (state.data?.categories || []).indexOf(name)) % 7;
+    return `color: var(--c${i}); background: var(--c${i}b)`;
+  }
+
+  // ── URL hash keeps filters shareable: #cat=…&q=…&sort=…&date=… ──
+  function readHash() {
+    const p = new URLSearchParams(location.hash.slice(1));
+    state.cat = p.get("cat") || "All";
+    state.q = p.get("q") || "";
+    state.sort = p.get("sort") === "relevant" ? "relevant" : "newest";
+    return p.get("date") || "";
+  }
+  function writeHash() {
+    const p = new URLSearchParams();
+    if (state.cat !== "All") p.set("cat", state.cat);
+    if (state.q) p.set("q", state.q);
+    if (state.sort !== "newest") p.set("sort", state.sort);
+    const sel = $("edition-select").value;
+    if (sel && sel !== "latest") p.set("date", sel);
+    const h = p.toString();
+    history.replaceState(null, "", h ? `#${h}` : location.pathname + location.search);
+  }
+
+  async function getJSON(path) {
+    const r = await fetch(path, { cache: "no-cache" });
+    if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`);
+    return r.json();
+  }
+
+  async function loadEdition(which) {
+    const path = which && which !== "latest" ? `data/archive/${which}.json` : "data/latest.json";
+    try {
+      state.data = await getJSON(path);
+    } catch (e) {
+      state.data = null;
+      console.error(e);
+    }
+    renderAll();
+  }
+
+  function renderHeader() {
+    const d = state.data;
+    if (d?.site_title) { $("site-title").textContent = d.site_title; document.title = d.site_title; }
+    const ed = $("edition");
+    ed.replaceChildren();
+    if (!d || !d.generated_at) {
+      ed.append("Waiting for the first daily update.");
+      return;
+    }
+    const gen = new Date(d.generated_at);
+    const start = d.window_start ? new Date(d.window_start) : null;
+    const hrs = start ? Math.round((gen - start) / 3600000) : 24;
+    ed.append(
+      el("strong", {}, fmtDay.format(gen)), " · ",
+      `${d.items.length} ${d.items.length === 1 ? "story" : "stories"} from the last ${hrs} hours · updated ${fmtTime.format(gen)}`
+    );
+    const submit = $("submit-link");
+    if (d.submit_form_url) { submit.href = safeUrl(d.submit_form_url); submit.hidden = false; }
+    else submit.hidden = true;
+  }
+
+  function filtered() {
+    const d = state.data;
+    if (!d) return [];
+    const q = state.q.trim().toLowerCase();
+    let items = d.items.filter((it) =>
+      (state.cat === "All" || it.category === state.cat) &&
+      (!q || `${it.title} ${it.summary} ${it.outlet} ${it.author} ${it.category}`.toLowerCase().includes(q))
+    );
+    if (state.sort === "relevant") {
+      items = [...items].sort((a, b) => (b.score - a.score) || (b.published || "").localeCompare(a.published || ""));
+    }
+    return items;
+  }
+
+  function renderChips() {
+    const d = state.data;
+    const box = $("chips");
+    box.replaceChildren();
+    if (!d) return;
+    const counts = {};
+    for (const it of d.items) counts[it.category] = (counts[it.category] || 0) + 1;
+    const cats = ["All", ...d.categories];
+    if (state.cat !== "All" && !d.categories.includes(state.cat)) state.cat = "All";
+    for (const c of cats) {
+      const n = c === "All" ? d.items.length : (counts[c] || 0);
+      const b = el("button", { class: "chip", type: "button", "aria-pressed": String(state.cat === c), disabled: n === 0 && c !== state.cat && c !== "All" },
+        c, el("span", { class: "n" }, n));
+      b.addEventListener("click", () => { state.cat = c; writeHash(); renderChips(); renderFeed(); });
+      box.append(b);
+    }
+  }
+
+  function card(it) {
+    const top = it.score >= 9;
+    const meta = el("div", { class: "meta" },
+      el("span", { class: "tag", style: catColor(it.category) }, it.category),
+      el("span", { class: "outlet" }, it.outlet),
+      it.author ? el("span", { class: "dot" }, `By ${it.author}`) : null,
+      el("time", { class: "dot", datetime: it.published, title: it.time_estimated ? "Exact publish time not available" : (ago(it.published) || null) },
+        when(it.published, it.time_estimated)),
+      top ? el("span", { class: "badge" }, "Key story") : null,
+    );
+    // keep the last word and the "opens in new tab" icon together
+    const words = String(it.title).trim().split(/\s+/);
+    const last = words.pop() || "";
+    const title = el("h2", {}, el("a", { href: safeUrl(it.url), target: "_blank", rel: "noopener" },
+      words.length ? words.join(" ") + " " : "", el("span", { class: "nowrap" }, last, extIcon())));
+    const summary = it.summary ? el("p", { class: "summary" }, it.summary) : null;
+    let also = null;
+    if (it.also_in?.length) {
+      also = el("p", { class: "also" }, "Also reported by: ");
+      it.also_in.forEach((x, i) => {
+        if (i) also.append(", ");
+        also.append(el("a", { href: safeUrl(x.url), target: "_blank", rel: "noopener" }, x.outlet));
+      });
+    }
+    return el("article", { class: `card${top ? " top" : ""}` }, meta, title, summary, also);
+  }
+
+  function renderFeed() {
+    const feed = $("feed");
+    feed.replaceChildren();
+    const d = state.data;
+    if (!d) {
+      feed.append(el("div", { class: "empty" }, el("h2", {}, "Couldn't load the news"), el("p", {}, "Please refresh the page in a moment.")));
+      $("resultline").textContent = "";
+      return;
+    }
+    if (!d.generated_at) {
+      feed.append(el("div", { class: "empty" }, el("h2", {}, "No update yet"),
+        el("p", {}, "The first briefing will appear here after the first daily run.")));
+      $("resultline").textContent = "";
+      return;
+    }
+    const items = filtered();
+    const total = d.items.length;
+    $("resultline").textContent = items.length === total
+      ? `Showing all ${total} stories`
+      : `Showing ${items.length} of ${total} stories`;
+    if (!items.length) {
+      feed.append(el("div", { class: "empty" }, el("h2", {}, "Nothing matches"),
+        el("p", {}, total ? "Try another category or search term." : "No relevant stories were found in this edition.")));
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    items.forEach((it) => frag.append(card(it)));
+    feed.append(frag);
+  }
+
+  function renderStatus() {
+    const d = state.data;
+    const rows = $("status-rows");
+    rows.replaceChildren();
+    if (!d?.sources) { $("status-box").hidden = true; return; }
+    $("status-box").hidden = false;
+    const s = d.stats || {};
+    $("status-stats").textContent =
+      `Collected ${s.collected ?? "?"} items → ${s.in_window ?? "?"} new → ${s.after_dedupe ?? "?"} after removing duplicates → ${s.published ?? d.items.length} published. ` +
+      `AI: ${s.gemini_model || "–"} (${s.gemini_calls ?? 0} calls, ${s.gemini_status || "–"}).`;
+    for (const src of d.sources) {
+      rows.append(el("tr", {},
+        el("td", {}, src.name),
+        el("td", { class: "muted" }, src.type === "google_news" ? "Google News" : src.type === "form" ? "Form" : "RSS"),
+        el("td", { class: src.ok ? "ok" : "fail", title: src.error || null }, src.ok ? "OK" : "Failed"),
+        el("td", {}, src.count)));
+    }
+  }
+
+  function renderAll() {
+    renderHeader(); renderChips(); renderFeed(); renderStatus();
+    $("search").value = state.q;
+    $("sort").value = state.sort;
+  }
+
+  async function init() {
+    const wantedDate = readHash();
+    const sel = $("edition-select");
+    sel.append(el("option", { value: "latest" }, "Today (latest)"));
+    try {
+      const idx = await getJSON("data/archive/index.json");
+      state.dates = idx.dates || [];
+      for (const dt of state.dates.slice(1)) {
+        const d = new Date(`${dt}T12:00:00+05:30`);
+        sel.append(el("option", { value: dt }, fmtDateOnly.format(d)));
+      }
+    } catch { /* no archive yet */ }
+    if (wantedDate && state.dates.includes(wantedDate) && wantedDate !== state.dates[0]) sel.value = wantedDate;
+    sel.addEventListener("change", () => { writeHash(); loadEdition(sel.value); });
+
+    let t;
+    $("search").addEventListener("input", (e) => {
+      clearTimeout(t);
+      t = setTimeout(() => { state.q = e.target.value; writeHash(); renderFeed(); }, 150);
+    });
+    $("sort").addEventListener("change", (e) => { state.sort = e.target.value; writeHash(); renderFeed(); });
+
+    await loadEdition(sel.value);
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

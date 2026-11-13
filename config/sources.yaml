@@ -1,0 +1,124 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# NEWS SOURCES
+#
+# Add, remove or switch off a source here — no code changes needed.
+#
+#   type: rss           A normal RSS/Atom feed.
+#   type: sundaytimes   Sunday Times weekly feed (URL changes every Sunday; built automatically).
+#   type: google_news   A Google News search (Sri Lanka edition, last 24 hours).
+#                       Use this for outlets without a working feed, or for topics.
+#
+#   general: true       The outlet publishes ALL kinds of news (politics, crime, sport…).
+#                       Its items go through a quick keyword pre-filter before the AI,
+#                       to save Gemini quota. Business/tech sources skip the pre-filter.
+#   fallback_query      If the feed fails or returns nothing, this Google News query
+#                       is used instead, so the outlet is still covered.
+#   enabled: false      Temporarily switch a source off.
+#
+# After every run, the website footer ("Source status") shows which sources worked.
+# ─────────────────────────────────────────────────────────────────────────────
+
+outlets:
+  # ── Business & economy ────────────────────────────────────────────────────
+  - name: Daily FT
+    type: rss
+    url: https://www.ft.lk/rss/sectors/20
+    fallback_query: "site:ft.lk"
+
+  - name: EconomyNext
+    type: rss
+    url: https://economynext.com/feed/
+    fallback_query: "site:economynext.com"
+
+  - name: Lanka Business Online
+    type: rss
+    url: https://www.lankabusinessonline.com/feed/
+    fallback_query: "site:lankabusinessonline.com"
+
+  - name: Ada Derana Biz
+    type: rss
+    url: https://bizenglish.adaderana.lk/feed/
+    fallback_query: "site:bizenglish.adaderana.lk"
+
+  - name: Sunday Times – Business Times
+    type: sundaytimes
+    fallback_query: "site:sundaytimes.lk business"
+
+  - name: LMD
+    type: rss
+    url: https://lmd.lk/feed/
+    fallback_query: "site:lmd.lk"
+
+  - name: Echelon
+    type: rss
+    url: https://echelon.lk/feed/
+    fallback_query: "site:echelon.lk"
+
+  # ── Outlets without a known working feed: covered via Google News ─────────
+  - name: Daily Mirror
+    type: google_news
+    query: "site:dailymirror.lk (business OR economy OR digital OR startup OR tech OR SME)"
+
+  - name: The Morning
+    type: google_news
+    query: "site:themorning.lk (business OR economy OR digital OR startup OR tech OR SME)"
+
+  - name: Newsfirst
+    type: google_news
+    query: "site:newsfirst.lk (business OR economy OR digital OR startup OR tech)"
+
+  - name: Ceylon Today
+    type: google_news
+    query: "site:ceylontoday.lk (business OR economy OR digital OR startup OR tech)"
+
+  # ── General news outlets (keyword pre-filter applies) ─────────────────────
+  - name: Ada Derana
+    type: rss
+    url: https://www.adaderana.lk/rss.php
+    general: true
+
+  - name: Daily News
+    type: rss
+    url: https://www.dailynews.lk/feed/
+    general: true
+    fallback_query: "site:dailynews.lk (business OR economy OR digital OR startup OR tech)"
+
+  - name: Sunday Observer
+    type: rss
+    url: https://www.sundayobserver.lk/feed/
+    general: true
+
+  - name: The Island
+    type: rss
+    url: https://island.lk/feed/
+    general: true
+
+  - name: Newswire
+    type: rss
+    url: https://www.newswire.lk/feed/
+    general: true
+
+  # ── Tech outlets ──────────────────────────────────────────────────────────
+  - name: ReadMe
+    type: rss
+    url: https://readme.lk/feed/
+    fallback_query: "site:readme.lk"
+
+# Topic searches across ALL outlets (Google News, Sri Lanka edition, last 24h).
+# These catch stories from outlets not listed above, and official announcements.
+topics:
+  - '"Sri Lanka" startup OR startups'
+  - '"Sri Lanka" (accelerator OR incubator OR "startup competition" OR hackathon OR "pitch competition")'
+  - '"Startup Nation" OR Xcellerator OR "First Capital" startup'
+  - 'SLASSCOM'
+  - '"digital economy" "Sri Lanka"'
+  - '"Sri Lanka" (digitalisation OR digitalization OR "digital transformation" OR GovTech OR "digital ID")'
+  - '"Sri Lanka" (fintech OR "digital payments" OR "e-commerce")'
+  - '"Sri Lanka" ("IT/BPM" OR "IT industry" OR "software exports" OR "tech company" OR "IT sector")'
+  - '"Sri Lanka" ("artificial intelligence" OR AI) (company OR government OR policy OR startup)'
+  - '"Sri Lanka" (SME OR SMEs OR "small and medium")'
+  - '"Sri Lanka" ("venture capital" OR "angel investor" OR "seed funding" OR "raises")'
+  - 'ICTA OR "Ministry of Digital Economy" Sri Lanka'
+  - '"Central Bank of Sri Lanka" OR CBSL'
+  - '"Sri Lanka" economy (IMF OR GDP OR exports OR investment OR budget)'
+  - '"Sri Lanka" (BOI OR EDB OR "Export Development Board" OR "Board of Investment")'

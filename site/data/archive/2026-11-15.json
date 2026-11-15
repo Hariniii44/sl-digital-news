@@ -1,0 +1,930 @@
+{
+ "site_title": "Sri Lanka Digital Industry News",
+ "generated_at": "2026-11-15T08:20:01.727522Z",
+ "window_start": "2026-11-14T07:55:58.024192Z",
+ "window_end": "2026-11-15T08:20:01.727522Z",
+ "timezone": "Asia/Colombo",
+ "submit_form_url": "",
+ "categories": [
+  "Startups & Ecosystem",
+  "Tech & IT/BPM",
+  "Digital Economy & Policy",
+  "Digitalization",
+  "SMEs & Entrepreneurship",
+  "Economy & Business",
+  "Events & Opportunities"
+ ],
+ "stats": {
+  "collected": 347,
+  "in_window": 225,
+  "after_dedupe": 193,
+  "published": 42,
+  "gemini_model": "gemini-3.5-flash-lite",
+  "gemini_calls": 18,
+  "gemini_status": "ok"
+ },
+ "sources": [
+  {
+   "name": "Daily FT",
+   "type": "rss",
+   "ok": true,
+   "count": 10,
+   "seconds": 1.6
+  },
+  {
+   "name": "EconomyNext",
+   "type": "rss",
+   "ok": true,
+   "count": 20,
+   "seconds": 1.3
+  },
+  {
+   "name": "Lanka Business Online",
+   "type": "rss",
+   "ok": true,
+   "count": 10,
+   "seconds": 1.2
+  },
+  {
+   "name": "Ada Derana Biz",
+   "type": "rss",
+   "ok": false,
+   "count": 0,
+   "error": "403 Client Error: Forbidden for url: https://bizenglish.adaderana.lk/feed/"
+  },
+  {
+   "name": "Ada Derana Biz (Google News fallback)",
+   "type": "google_news",
+   "ok": true,
+   "count": 0,
+   "seconds": 0.2
+  },
+  {
+   "name": "Sunday Times – Business Times",
+   "type": "rss",
+   "ok": true,
+   "count": 38,
+   "seconds": 1.4
+  },
+  {
+   "name": "LMD",
+   "type": "rss",
+   "ok": true,
+   "count": 10,
+   "seconds": 2.4
+  },
+  {
+   "name": "Echelon",
+   "type": "rss",
+   "ok": false,
+   "count": 0,
+   "error": "404 Client Error: Not Found for url: https://echelon.lk/feed/"
+  },
+  {
+   "name": "Echelon (Google News fallback)",
+   "type": "google_news",
+   "ok": true,
+   "count": 1,
+   "seconds": 0.3
+  },
+  {
+   "name": "Daily Mirror",
+   "type": "google_news",
+   "ok": true,
+   "count": 72,
+   "seconds": 0.4
+  },
+  {
+   "name": "The Morning",
+   "type": "google_news",
+   "ok": true,
+   "count": 41,
+   "seconds": 0.3
+  },
+  {
+   "name": "Newsfirst",
+   "type": "google_news",
+   "ok": true,
+   "count": 9,
+   "seconds": 0.3
+  },
+  {
+   "name": "Ceylon Today",
+   "type": "google_news",
+   "ok": true,
+   "count": 0,
+   "seconds": 0.3
+  },
+  {
+   "name": "Ada Derana",
+   "type": "rss",
+   "ok": false,
+   "count": 0,
+   "error": "403 Client Error: Forbidden for url: https://www.adaderana.lk/rss.php"
+  },
+  {
+   "name": "Daily News",
+   "type": "rss",
+   "ok": false,
+   "count": 0,
+   "error": "403 Client Error: Forbidden for url: https://www.dailynews.lk/feed/"
+  },
+  {
+   "name": "Daily News (Google News fallback)",
+   "type": "google_news",
+   "ok": true,
+   "count": 14,
+   "seconds": 0.3
+  },
+  {
+   "name": "Sunday Observer",
+   "type": "rss",
+   "ok": false,
+   "count": 0,
+   "error": "403 Client Error: Forbidden for url: https://www.sundayobserver.lk/feed/"
+  },
+  {
+   "name": "The Island",
+   "type": "rss",
+   "ok": true,
+   "count": 10,
+   "seconds": 1.2
+  },
+  {
+   "name": "Newswire",
+   "type": "rss",
+   "ok": true,
+   "count": 20,
+   "seconds": 1.2
+  },
+  {
+   "name": "ReadMe",
+   "type": "rss",
+   "ok": true,
+   "count": 10,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: \"Sri Lanka\" startup OR startups",
+   "type": "google_news",
+   "ok": true,
+   "count": 9,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: \"Sri Lanka\" (accelerator OR incubator OR \"startup competition\" OR hackathon OR \"pitch competition\")",
+   "type": "google_news",
+   "ok": true,
+   "count": 0,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: \"Startup Nation\" OR Xcellerator OR \"First Capital\" startup",
+   "type": "google_news",
+   "ok": true,
+   "count": 1,
+   "seconds": 0.2
+  },
+  {
+   "name": "Topic: SLASSCOM",
+   "type": "google_news",
+   "ok": true,
+   "count": 2,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: \"digital economy\" \"Sri Lanka\"",
+   "type": "google_news",
+   "ok": true,
+   "count": 7,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: \"Sri Lanka\" (digitalisation OR digitalization OR \"digital transformation\" OR GovTech OR \"digital ID\")",
+   "type": "google_news",
+   "ok": true,
+   "count": 2,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: \"Sri Lanka\" (fintech OR \"digital payments\" OR \"e-commerce\")",
+   "type": "google_news",
+   "ok": true,
+   "count": 0,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: \"Sri Lanka\" (\"IT/BPM\" OR \"IT industry\" OR \"software exports\" OR \"tech company\" OR \"IT sector\")",
+   "type": "google_news",
+   "ok": true,
+   "count": 0,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: \"Sri Lanka\" (\"artificial intelligence\" OR AI) (company OR government OR policy OR startup)",
+   "type": "google_news",
+   "ok": true,
+   "count": 25,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: \"Sri Lanka\" (SME OR SMEs OR \"small and medium\")",
+   "type": "google_news",
+   "ok": true,
+   "count": 5,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: \"Sri Lanka\" (\"venture capital\" OR \"angel investor\" OR \"seed funding\" OR \"raises\")",
+   "type": "google_news",
+   "ok": true,
+   "count": 10,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: ICTA OR \"Ministry of Digital Economy\" Sri Lanka",
+   "type": "google_news",
+   "ok": true,
+   "count": 1,
+   "seconds": 0.3
+  },
+  {
+   "name": "Topic: \"Central Bank of Sri Lanka\" OR CBSL",
+   "type": "google_news",
+   "ok": true,
+   "count": 0,
+   "seconds": 0.2
+  },
+  {
+   "name": "Topic: \"Sri Lanka\" economy (IMF OR GDP OR exports OR investment OR budget)",
+   "type": "google_news",
+   "ok": true,
+   "count": 18,
+   "seconds": 0.4
+  },
+  {
+   "name": "Topic: \"Sri Lanka\" (BOI OR EDB OR \"Export Development Board\" OR \"Board of Investment\")",
+   "type": "google_news",
+   "ok": true,
+   "count": 2,
+   "seconds": 0.3
+  }
+ ],
+ "items": [
+  {
+   "id": "114b2cace90d",
+   "title": "Colombo restaurant fined Rs. 100,000 over expired cooking oil bottle",
+   "url": "https://www.newswire.lk/2026/11/15/colombo-restaurant-fined-rs-100000-over-expired-cooking-oil-bottle/",
+   "outlet": "Newswire",
+   "author": "Editor Z",
+   "published": "2026-11-15T08:13:09Z",
+   "time_estimated": false,
+   "category": "SMEs & Entrepreneurship",
+   "summary": "A Colombo restaurant operating company was fined Rs. 100,000 by the Colombo Chief Magistrate’s Court for violating Consumer Affairs Authority regulations regarding the storage of expired products. The enforcement highlights regulatory compliance requirements for food businesses.",
+   "score": 3,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "2327b58605bf",
+   "title": "The Rupee-Dollar Trap: Why Strict PFMA Compliance Won’t Automatically Free Sri Lanka from the IMF in 2027",
+   "url": "https://www.lankabusinessonline.com/2026/11/15/the-rupee-dollar-trap-why-strict-pfma-compliance-wont-automatically-free-sri-lanka-from-the-imf-in-2027/",
+   "outlet": "Lanka Business Online",
+   "author": "LBO",
+   "published": "2026-11-15T07:29:39Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Analysts discuss Sri Lanka's economic strategy and options as the IMF Extended Fund Facility approaches its conclusion in March 2027. While the Public Financial Management Act establishes strict fiscal guardrails for the national budget, experts warn that addressing external debt service and reserve adequacy remains critical. The debate focuses on long-term macroeconomic independence and sustainability.",
+   "score": 5,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "a9805d2e0b84",
+   "title": "Sri Lanka’s Lakdhanavi secures USD 75 million contract for 57 MW power plant in India",
+   "url": "https://www.newswire.lk/2026/11/15/sri-lankas-lakdhanavi-secures-usd-75-million-contract-for-57-mw-power-plant-in-india/",
+   "outlet": "Newswire",
+   "author": "Editor A",
+   "published": "2026-11-15T07:27:52Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Sri Lankan engineering firm Lakdhanavi has secured a USD 75 million turnkey contract to construct a natural gas-fired power plant in India's Andaman and Nicobar Islands. This marks the company's entry into India's EPC power plant market following an international competitive bidding process. The milestone demonstrates the growing regional footprint of Sri Lankan engineering expertise.",
+   "score": 6,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "e18251a8a975",
+   "title": "India-Sri Lanka Innovation Forum launched to boost tech, startup cooperation",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPb3NOVW1TaWlJcFE5cHVlNXZiSDY3T3RCc0h1VVJGQk5GQTNnQ0hJdWxMX1NBdlJ6c29RMlZFaTNhX3BPb19KYXFUei16RW14bnVrLXh3eWpiNmt5VEpmME9qYmtQQzVpemFQcjYtQk9MNmFGSHd0bUlHUXBVMlJ6dHM5UllfLU9xTHZuakxJM3Zwb2Q4NEZRN2Jn?oc=5",
+   "outlet": "Island.lk",
+   "author": "",
+   "published": "2026-11-15T06:00:00Z",
+   "time_estimated": false,
+   "category": "Startups & Ecosystem",
+   "summary": "India-Sri Lanka Innovation Forum launched to boost tech, startup cooperation.",
+   "score": 9,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "c547d381b9ac",
+   "title": "Aswesuma Payments for New Beneficiaries to Begin on November 27",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPTGFaM2NqdjR6UTlHQkFpNG5UY1hUS3VQaEFDQkdQTGo3U1Bfc1ZOZmJfdDFWWjRTZHhyMFFFNTEycmFoVUJ0LWFObGNBNy1FWXVOamF6S0RYQkpSUlNUSGtZU0c4S0JaV0tHT05MeUVmZVJ4UVFib1lkeWlSVDVDaDhnZnVkUURiQ293N0dRUkZ1eUJXMzRjSU5Za2tWMUhp?oc=5",
+   "outlet": "Newsfirst",
+   "author": "",
+   "published": "2026-11-15T05:45:00Z",
+   "time_estimated": false,
+   "category": "Digitalization",
+   "summary": "Aswesuma welfare payments for new beneficiaries are scheduled to begin on November 27.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "f3fc40d03840",
+   "title": "Tesla opens Cybercab sales to private buyers: No steering wheel or pedals",
+   "url": "https://www.newswire.lk/2026/11/15/tesla-opens-cybercab-sales-to-private-buyers-no-steering-wheel-or-pedals/",
+   "outlet": "Newswire",
+   "author": "Editor A",
+   "published": "2026-11-15T05:18:02Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "Tesla has begun offering selected United States customers the option to purchase its fully autonomous Cybercab for personal use, priced at US$29,990 with a mandatory monthly subscription. The vehicle operates entirely through autonomous driving technology without a steering wheel or pedals.",
+   "score": 5,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "f2e453c9fddb",
+   "title": "Artificial intelligence and future battlefield: Lessons for Sri Lanka",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOODljOUdxYkdFN01vNlRjLV8xR0M0ZlFfMzVici1rYWdlN0wyenFvMUl0T2ptRm9xSHBSMWdPUjFjUjhQaUxNMzk5STMzbTczSjQ2X0h5SlQtei03QzFCSUxoa3V4REhPbEVEU2dRZ0xnSUIxc1l6cHJhd2h0bGJCLV83TlJRSExsUHdFTEFkM2E?oc=5",
+   "outlet": "Island.lk",
+   "author": "",
+   "published": "2026-11-15T05:11:52Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "Artificial intelligence and future battlefield: Lessons for Sri Lanka.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "d312728b2d33",
+   "title": "It is the government’s aim to make the entrepreneurship one of the driving forces in the national economy – Prime Minister",
+   "url": "http://island.lk/it-is-the-governments-aim-to-make-the-entrepreneurship-one-of-the-driving-forces-in-the-national-economy-prime-minister/",
+   "outlet": "The Island",
+   "author": "Priyan",
+   "published": "2026-11-15T04:58:27Z",
+   "time_estimated": false,
+   "category": "SMEs & Entrepreneurship",
+   "summary": "Prime Minister Dr. Harini Amarasuriya stated that the government aims to make entrepreneurship a primary driver of national economic growth and development. Speaking at an awards ceremony, she highlighted budget measures designed to support domestic industries, job creation, and export-oriented businesses. Strengthening the SME sector is viewed as essential for building a resilient economy.",
+   "score": 8,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "b86637ca25a3",
+   "title": "Bing Chun responds to Rs. 84,000 fine over ice cream standards violations",
+   "url": "https://www.newswire.lk/2026/11/15/bing-chun-responds-to-rs-84000-fine-over-ice-cream-standards-violations/",
+   "outlet": "Newswire",
+   "author": "Editor A",
+   "published": "2026-11-15T04:15:01Z",
+   "time_estimated": false,
+   "category": "SMEs & Entrepreneurship",
+   "summary": "Bing Chun Sri Lanka was fined Rs. 84,000 by the Maligakanda Magistrate’s Court after ice cream samples failed to meet compositional standards. The company clarified that the products were not deemed unsafe for consumption while reviewing its quality processes.",
+   "score": 3,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "e51d2de1bd89",
+   "title": "Sri Lanka Realises Just 41% of $12.54bn Investment Commitments Over a Decade, Audit Finds",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQYzZTclIzOFBqbVQ2WkV2ZUtxM1ZDaUl1SmRaV01TaUF6d0ZWT2R5UlRhTC1xR0c4a2wxNWlnTTZnLTV5bHlSV2ppTkFlUWowTW56YlVtMl84N191SWVtRE4xWTFZaUE1ZW5FWlhuNWJJS0tkV1ljdjJVRUY2NFRqWk9NWWNtUXUtZlA4V1NVSlFjeGJqZFFfVktPLU9uUWZRbWcwS25hQlh0U0J5Mnlr?oc=5",
+   "outlet": "Sri Lanka Guardian",
+   "author": "",
+   "published": "2026-11-15T04:10:50Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Sri Lanka Realises Just 41% of $12.54bn Investment Commitments Over a Decade, Audit Finds.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "a365c3836455",
+   "title": "Sri Lanka reality contrasts with new World Bank upper-middle-income status",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQzE2bUJEVl9hZi00UTlkc05mZF92cHZvZ3ZqRXAxOEVWMXZ3NERETndFSDJCa0xUZ3JNbFFOMDg3bDdEWGZ6c3VsSjBkZEg0Zk54dXFUa0dhT2Fzbk93Wm9aZkpoaGhvdXBKcmJVUHFQRjgwX1hyRUN0aF9SdkpsU01ickU3cm1SVWNlRE9aWmtRaE05RGUySVpzc0xBQkpWSEkycFhNNmk3dw?oc=5",
+   "outlet": "Nikkei Asia",
+   "author": "",
+   "published": "2026-11-15T03:44:00Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Sri Lanka reality contrasts with new World Bank upper-middle-income status.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "59529604817b",
+   "title": "Sri Lanka’s monthly tourism revenue up 3.5-pct in October 2026",
+   "url": "https://economynext.com/sri-lankas-monthly-tourism-revenue-up-3-5-pct-in-october-2026-290181/",
+   "outlet": "EconomyNext",
+   "author": "Shihar Aneez",
+   "published": "2026-11-15T03:00:36Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Sri Lanka’s monthly foreign exchange revenue from tourism rose 3.5 percent year-on-year in October 2026 to US$192.7 million, marking the third consecutive month of growth. However, total tourism revenue for the first ten months remained 8.3 percent lower compared to the same period last year.",
+   "score": 5,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "6ff78c01a153",
+   "title": "Riding safer: Sensor-equipped helmet at National Science Week",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQelJnQk1yeEx0RUZyOXU0YTg3eE1XU0d2aXdPczJ5OEFCZ3FOam1WdzM5eDNibjRfUGR3RnBMYTB3c09HeDZFNk9PbkktaXVzWlF6VkVGcnI1dGF3NDd5cElJdDJWMUpGYXVXVXJGbDBwWlQ5X2x1TGlTNHlRay1kaWw4ZEdnVjZlMGdXV0NPU2std2k4MXM4cXpGRzRpYWFnQUlHUjktUVppNGpNVFdTWFo5VWp5N0k?oc=5",
+   "outlet": "The Sunday Times, Sri Lanka",
+   "author": "",
+   "published": "2026-11-15T01:56:04Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "Riding safer: Sensor-equipped helmet at National Science Week.",
+   "score": 7,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "3bb398b57136",
+   "title": "Day after presenting budget, President outlines new accountability-based social contract",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPN2NXTTJELVF6S2hDeHhySWlFUHFHNWFjOFBlRm1jaDl6Z1JHZDc5V3ZXQkpVN3pZUzVZUzhkcmRpeGVDMU95UEp1MlB6eGZMd09DVmJmWFFnbTdfX0RDUGNZVFhyZml0VEFiQmF1TTBuT0hlRzJhaUYzZ28xSjZMRGV1Q1FmZ0J4SHJFN0JPTXpSdnlqZlNGRVB5UXMwbVBfbjVpNE8tT2R6WE1XbTB4eWNYdzJlcURHWmZDdEc5X2N5VlRLTTVvTy1EY0IyWlBhRzRnTERMd0o?oc=5",
+   "outlet": "The Sunday Times, Sri Lanka",
+   "author": "",
+   "published": "2026-11-15T01:56:04Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Day after presenting budget, President outlines new accountability-based social contract.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "32e174eac360",
+   "title": "Budget 2027: From financial stabilisation to economic growth and poverty reduction",
+   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPZFRSOEVPX3JBZUFtYktYZFp1dkllbmxaNEZvTkotVXJOeWNWYmRlMnNEZTk5Vk1zOE5sN3o4dGtPTEU2aHo2ZFd6OVJCVENFZzRfYVBnU1hMOXNqODR2bzdJYWZJaXJGYTZEdTFlbmpGU0F4Ym5Qck04YjVXdTJJSUFkWER5enBmSGJlTXVUMmZxb1BnWk1EME9hNFRodWFkZk5USG5EVkVpVE56eTF1c0o2eEhwMGJ3UmVkcTVpNU4xYUkwWDV6UFpvT21aa3k5?oc=5",
+   "outlet": "The Sunday Times, Sri Lanka",
+   "author": "",
+   "published": "2026-11-15T01:56:04Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Budget 2027: From financial stabilisation to economic growth and poverty reduction.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "bda8792a2515",
+   "title": "Brain farms before data centres",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE8waUxvSFNKQU4xa0RFYWtOT05HMzExUktqUUNtdWFHXzNQNmFzSGpyci1zbDg3ZDBiNTJGS1VWa3FuWWVnbk1pWm9TUmxrN2ltX0ZTLXVhQ185b2drcm5oa1VPc0VLZw?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-15T01:22:08Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "Brain farms before data centres.",
+   "score": 7,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "8532758db14a",
+   "title": "Budget could trigger SME closures: CUBA",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFB6c3JhdzNyX01BSElDMldDT09YZUdxelM0OHp5T1hBQTVTWWUtOHMySGEzLXk4QVd6YzhQOWpwOE5Dd0ljRmxXVEplMmczbW1Gb1VpXzkwNzJYR1A1UjRiR1BLdWFWQQ?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-15T01:19:38Z",
+   "time_estimated": false,
+   "category": "SMEs & Entrepreneurship",
+   "summary": "CUBA warns that the budget could trigger SME closures.",
+   "score": 5,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "04665ee3b4db",
+   "title": "Lanka plans more subsidized credit amid high inflation target",
+   "url": "http://island.lk/lanka-plans-more-subsidized-credit-amid-high-inflation-target/",
+   "outlet": "The Island",
+   "author": "Thilina Walpola",
+   "published": "2026-11-15T00:06:10Z",
+   "time_estimated": false,
+   "category": "SMEs & Entrepreneurship",
+   "summary": "The government has allocated substantial funds in the upcoming budget for interest subsidies and refinancing schemes to provide concessionary loans to entrepreneurs. Additional subsidized credit programs are targeted at specific demographics, including migrant workers. These financial support measures aim to boost domestic enterprise development amidst high inflation.",
+   "score": 8,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": [
+    {
+     "outlet": "Island.lk",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPRXg1UnM0NHdRUFdsd192MTZpSWFiQVNtMU80d3c4enlGTFlXTlkyNUdSY3pkeXpldERmTTgySDNHMGNsNkhNbW9MWC1mOExQOVpaNVI3UzY0V2Q2cTI4M2ZXbDNBRGozb2VkTlM5ZWh4R0dRQ0V4RmtsMzVCQ2hGZFRLWEk1bG8?oc=5"
+    }
+   ]
+  },
+  {
+   "id": "b83d47850df1",
+   "title": "Sajith accuses Government of betraying election promises with Budget 2027",
+   "url": "http://island.lk/sajith-accuses-government-of-betraying-election-promises-with-budget-2027/",
+   "outlet": "The Island",
+   "author": "Thilina Walpola",
+   "published": "2026-11-15T00:05:07Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Opposition Leader Sajith Premadasa criticized the 2027 national budget during parliamentary debates, claiming it places excessive burdens on the poor and abandons previous welfare promises. He pointed to widening income inequality and rising living costs as key economic challenges. The critique underscores ongoing political discourse surrounding Sri Lanka's fiscal policies.",
+   "score": 4,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": [
+    {
+     "outlet": "Island.lk",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOZmZpekhjc3R3SWR6Y2VsY0VOUk50b3o4UU9vbnNlWkhxZzhOVW9ZNzBjT0N2eE9sNXJSUlM0MWRobFoxSEo0QzYzMUxlSnpVNHlTbU9vN3ZWOW1LOElkMUVMWWlKRWt6endHb1R6Z1Iya1htdUthbEQ1Z0pWNHl4ZUdMVGwzSjhNck1NT1RWSXUyaWVyQjNr?oc=5"
+    }
+   ]
+  },
+  {
+   "id": "640a5952dbe1",
+   "title": "Mayor Balthazaar warns of legal action over AI-generated Colombo flood videos",
+   "url": "http://island.lk/mayor-balthazaar-warns-of-legal-action-over-ai-generated-colombo-flood-videos/",
+   "outlet": "The Island",
+   "author": "Thilina Walpola",
+   "published": "2026-11-15T00:04:00Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "Colombo Mayor Vraie Cally Balthazaar has warned of legal action against individuals circulating AI-generated videos falsely showing flooding inside a Colombo shopping mall. Fact-checking groups confirmed the viral footage was manipulated using artificial intelligence tools. This highlights growing concerns surrounding misinformation and the misuse of generative AI technologies in Sri Lanka.",
+   "score": 6,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": [
+    {
+     "outlet": "Island.lk",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOeVhFV0ttaWxVMkRSWkxCU0J4WWQ3a0gtTDF6VHRJc2VMeUNyNXhXb0VpVE53NGZXU3Nka1JpQnI3aW1lNVExTzdMTG9VaW0zU3liNUh0eUJ1NnhlSnFUbkFxX2ZpLVlqcS15bzJGREVNZEo5bVpNR3JZU21IN2xpd1dXdV84OTFxQURsS3N1UzFGdmdoQ2JwOE5qWnU?oc=5"
+    }
+   ]
+  },
+  {
+   "id": "401c56dea4f3",
+   "title": "Lanka moves to expand India FTA",
+   "url": "http://island.lk/lanka-moves-to-expand-india-fta/",
+   "outlet": "The Island",
+   "author": "Thilina Walpola",
+   "published": "2026-11-15T00:01:57Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Sri Lanka has appointed an official committee to explore expanding its existing Free Trade Agreement with India and is pursuing new trade pacts with other regional partners. The government aims to enhance export competitiveness and diversify its trade base through updated international agreements and EU grant assistance. These steps are part of a broader strategy to boost national exports.",
+   "score": 7,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": [
+    {
+     "outlet": "Island.lk",
+     "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1Gd0VmZW9ELWxQTlR2OVl5RzNWckp2OHNpZjAwd0JqajZHVmpqV1JiV3hrS2JLeFlGYXpaM29TTHZUSDdqMjVUSEZyWlZPSnJCT1h0b1pTTHJTZElLaUhJ?oc=5"
+    }
+   ]
+  },
+  {
+   "id": "a3aa39bacbf5",
+   "title": "Budget: Gap between fiscal discipline and social justice",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5MNlBtZlBkeXdvMjNTblVQdE5XanNCcFBhOWRIVmhJUUo1NVRkMFhYd25RWVFHUVBfaC1hNENkeDlnc1F4RDFWWnhuZFZuSHVNNHF6V1BJdzhBUnIyb3NWTG9HRG1maGNERk5hT2Jwb1FjX1htSGhwTnE0S1lSZU0?oc=5",
+   "outlet": "Island.lk",
+   "author": "",
+   "published": "2026-11-15T00:01:54Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Budget: Gap between fiscal discipline and social justice.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "4d269f15fd2d",
+   "title": "ComBank posts strong 9-month growth",
+   "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CaTRQVEliNGsyUjZid0s3RDRlT3VwMlFVQU5WZWZYT2tZVGVCWTFySl9MczZydGtrSC0wTHFQcXRwTXAtSzhGQjBNU2VnUHhyS0l6TDgzT1BwT2RTN1ZHdXQ3SQ?oc=5",
+   "outlet": "Island.lk",
+   "author": "",
+   "published": "2026-11-15T00:00:20Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "ComBank posts strong 9-month growth.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "50edcdcf53d0",
+   "title": "Top banks earn over Rs. 150 b as lending surges",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5VOWtpSmJnbEtHM3VXUDN6cTM3aldwVzgtUkJJQ2NiVzBxdWFuVnROTy00RlZpZFNDWVZkaVRfZll2dUprZU5EZUxNQ2tmWk1Cd2VzOEJfZUtOWm5NQlVHTnZtRUttdw?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-14T19:24:24Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Top banks earned over Rs. 150 billion as lending surged.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "d73bea425e0d",
+   "title": "AI slop or guilty pleasure?",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5fWkFOdThGa1l2Y1Z2dDI1ZnlXdi1fVG00TUt3cDFGR24wTzJBYmZfRVF6alEyT3NId1AtNExkOXIwbHVhZGVXSHlEZmZldlJxdGNvWUNqZzc5RkRGbmF4VlJrRWVMQQ?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-14T19:24:24Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "An opinion piece discusses the rise of artificial intelligence content and public perception.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "948b126344d5",
+   "title": "Power, performance and the absurdity of The Feed",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1VcC1TX20wb21iaHdSNWxnVWJjRUJpT00xRTNaWmpiV1VSUE5pVk1nWTRCTW5aNlJHNkRja0htVDJyVmE2ZDhXY252S3Y2LWN0OEVlNl9jVEstM29aay1aRXJfamxuZw?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-14T19:24:24Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "An opinion piece discusses power, performance, and digital media consumption trends.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "7fbe8f42a411",
+   "title": "Ekho Belihuloya: Bringing a classic rest house into a new era",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1oY0laZ0t3NmhWX1EtaVVZdHlsQm1vVTVPbjVrazNfdm04bkh3R3l1ajVkU2FLSGxFTWppbzFrNlpMRHFVZTFZaHIyaVkwRjZFdDRwMG9yM3ZDQXdsempCYmxRTFpEUQ?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-14T19:24:24Z",
+   "time_estimated": false,
+   "category": "SMEs & Entrepreneurship",
+   "summary": "Ekho Belihuloya: Bringing a classic rest house into a new era",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "eb0283b469f5",
+   "title": "EHang completes Sri Lanka's first human-carrying eVTOL flights",
+   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOMEJFT19BQllCQ0Jyc19ybDFPOWMzSHVfRjkwTjNqaVhjdkZZcS16RktKY1NRcGd0ZlRRVXJpMVl6emdDTm5BXzRLV3J1N2I5cm5peXFqNzN0Y1A1cVRGMGROLS1sNGVKY1BzSExYWkZPTTBqc2dZSzcyV3kyTUtIVTFCMzJ3MEU?oc=5",
+   "outlet": "TNGlobal",
+   "author": "",
+   "published": "2026-11-14T18:18:24Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "EHang completes Sri Lanka's first human-carrying eVTOL flights.",
+   "score": 8,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "edc98be1ada3",
+   "title": "Rs. 85 of every Rs. 100 spent on development comes from borrowing",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQNDlzNWM1ejhwSDRxSUV3UHVRb21rNzlCbXhLbFB6SFVaT0NkNUh6Y04zU1RoMl9XcTFJRk5lU1RsdmU5WVd3dmR4bVFIRk5SeUFVYVMzRkJWVzhhQ3JLelNPdGxmc2xvendTN0x1U250bUpoWnhkd1NQZVpUbmtnVldUUURkWHdzQ0l2VjVxN2kzbjkwTkMwMEdKb25YajA?oc=5",
+   "outlet": "Hiru News",
+   "author": "",
+   "published": "2026-11-14T15:45:00Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Rs. 85 of every Rs. 100 spent on development comes from borrowing.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "0510ff9fcefd",
+   "title": "Sri Lanka Latest Breaking News and Headlines - Print Edition Draconian Bills meet the test of democracy",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNVHB2VmpxdEdPSlFuSzFzQTV6SWp3VjZoc1JCQ2VyMTh0S0JURXhFdzZHQ2EwVFA2ZGxiVy1VbnlOaFo4RGRkVzFOV0xoUFNIYjBjX200bk1WdjlQRGxGbk9NRUVDaTlQNDkzWUFkTVpab3J4eHR6eDN4U2FmaXNnUGNLUE1yejlIS2pmVm9iWG1RbzJjSmw5aExB?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-14T14:46:17Z",
+   "time_estimated": false,
+   "category": "Digital Economy & Policy",
+   "summary": "Print edition headlines discuss controversial legislative bills undergoing democratic scrutiny.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "d8f73f1a0cc9",
+   "title": "Sri Lanka explores AI-powered early warning system to reduce human-elephant conflict",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBKT01WNGxvQ3F6VHdPZm5ib2RBRFZkbEdIMXpXOVBzZERTSm9VMndGWm1rSzhmaXRVMnZ4al9SMGV5ZU9oMzBCSFJCRmVfOWRaOTZvbGxlTG1relpHbER0TVowLWRaQQ?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-14T10:48:59Z",
+   "time_estimated": false,
+   "category": "Digitalization",
+   "summary": "Sri Lanka explores AI-powered early warning system to reduce human-elephant conflict.",
+   "score": 8,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "d1523464bf0d",
+   "title": "ADB Completes $30 Billion ASEAN Pledge with $13 Billion for Resilient Rivers and Digital Economy",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQLVkwSVdtWEhWTW5ITWpMdzZwM1NYc3NBQllkNDhVUDVjTllXOHFDbmYyOUhyMXVUUkZRTE9fQjRueGh2a01kZ2ZSU0Z3R0E3RjZoSHFqbm91UkxoeEJZZ2pDLTVmMU4tc05MZm1pTlNTZVFCSy1DSmF1RGY2UkoybllIdHdYeDhxYnJETGFBbFdIejVTZmlicXk1clZKZjFvSGQ3bGVsVmRIQTZhcXVR?oc=5",
+   "outlet": "Asian Development Bank",
+   "author": "",
+   "published": "2026-11-14T09:19:17Z",
+   "time_estimated": false,
+   "category": "Digital Economy & Policy",
+   "summary": "The Asian Development Bank completed its ASEAN pledge by allocating 13 billion dollars for resilient rivers and the digital economy.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "d20a7da6fedf",
+   "title": "Foreign investors dump Sri Lanka rupee bonds for fourth straight week",
+   "url": "https://economynext.com/foreign-investors-dump-sri-lanka-rupee-bonds-for-fourth-straight-week-290179/",
+   "outlet": "EconomyNext",
+   "author": "Shihar Aneez",
+   "published": "2026-11-14T09:00:51Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Foreign investors sold Sri Lankan rupee bonds for the fourth consecutive week, resulting in net outflows amid currency depreciation and global economic caution. Central Bank data indicates sustained offshore selling of local risk-free assets. This reflects ongoing macroeconomic adjustments in Sri Lanka's financial markets.",
+   "score": 5,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "cec2e3f3c542",
+   "title": "SLASSCOM TechKids holds online safety awareness session",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOOTVaRXpsdGx1RlNmLU1rR2ZfZzZDWTdGLWJEWFpNbTQwSXBpT0h4SnJGS1BBSTQ1dUNlVVJGZV9xT2tlcVNVZE14cmFLR05GUFlPQXFaUU8zdlVSYTZoS0Z5bUNnLVNEV2MwZDRUVTFzdm1RSEkxNkttMlFjVzVob3N1QWxpSEw0dnA2TzNjZDF5aElLNU5OeVZCNTFXRjlvZXo3QXBvcEpka2pm?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-14T08:27:18Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "SLASSCOM TechKids holds online safety awareness session.",
+   "score": 8,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "17e35778fc39",
+   "title": "Sri Lanka Latest Breaking News and Headlines - Print Edition Budget 2027 backs stock market listings for SMEs",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOQllNaVdDU0UwV3JIVDJXQkhxSWo4dXN4eEUwLTVUU1pYSm5hOFpQS3dxRzRRQjk2dGZTUlRreHlLR3NoREhGWHljRW1JWlBCUldXd0FWWVlKWERZclZfVzJBQ1JwRmlPMEJrQktzNGVYcGY5dk9KT1dTNG9vN256al9QcmZBOGxfRWR1XzMzWGh0U1MzbW13eFF5eW9UZ2EyTmo4?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-14T08:27:18Z",
+   "time_estimated": false,
+   "category": "SMEs & Entrepreneurship",
+   "summary": "Sri Lanka Latest Breaking News and Headlines - Print Edition Budget 2027 backs stock market listings for SMEs.",
+   "score": 8,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "59d530b1a16a",
+   "title": "Women entrepreneurs get fresh impetus through WCIC-PIM tie-up",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMUJfN0x3czdWOUQ3Tmp3elVJRjJUcDJkQkp1RUNaRnN1ZDJsdUJuVFhsMEp0TUJGSkQxRUk5Z2JJOFdHZDlVWXVRYVRseVpQZ2Q4Yzdnb0VhOUJnX0NWVXNORUpVdGxXLWJZX1VxQ25TVWQ0VEwxRGE3RUM5M0JzMWJ4amtQLVphb2xnWmxyTklLM1ZSNFROMHdtQWNGNmRyS1M4amFhVTR3ZFd4M3gwOS1CaFg?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-14T08:27:18Z",
+   "time_estimated": false,
+   "category": "SMEs & Entrepreneurship",
+   "summary": "Women entrepreneurs receive a fresh impetus through a new tie-up between WCIC and PIM.",
+   "score": 4,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "6fb370074519",
+   "title": "Sri Lanka Latest Breaking News and Headlines - Print Edition NEO Technologies hosts ‘NEO Hard Talk 2026’",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOQkxmTVY1UjNPZGFvUElXc2RlYjFmVzhZaHdsa1JRaU5VbTdqWjlKbUlUSHh3WDRoRGFWRUlwZ1o3SjJlbVh0Y0tUdmh0YXA0OTFUczZzNGNrblk3WUU0UlBfVHZIdHBwanZWMDlpRDcwTVl6bWM3U21qRnR6ZFVHdXVucHZJSDUxUFBTSXhPaHBDYUV6UDBmSjdR?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-14T08:27:17Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "Sri Lanka Latest Breaking News and Headlines - Print Edition NEO Technologies hosts 'NEO Hard Talk 2026'.",
+   "score": 7,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "9659c3a4f9a1",
+   "title": "Sri Lanka Latest Breaking News and Headlines - Print Edition SLT-Mobitel empowers over 1,000 students",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOb0dtTFo5YXVzMkEzM3A3WHRvMGxGTl9jSXJoOVZQcTBfTVEzUUkzWnR0My15c0tzV0NtbUlsQjJHczFhNmZ1NU1IdTFpVjF1bGxqTkJSV0ZRcC0yelZ1dHJLZWZaakllNkJ3MF9fRTNPT1lvWDRSUnd2bFVSX0R6MzBrMThIY2lJWGFIWXdCdlg2bnJtVDhHbw?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-14T08:27:17Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "SLT-Mobitel empowers over 1,000 students.",
+   "score": 3,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "75f8310aea34",
+   "title": "Sri Lanka Latest Breaking News and Headlines - Print Edition Seven SLIIT academics among world’s top 2% scientists",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQTl3NWhCR2R0a2xyNFlMQU9FZDVEbWNKYzFVRHg0ejNjY1MtNDI5VC1wdWo0dTdOaldZVGJWYklIX1VzY2x2QVNDQTZXNnhxU2dHYk5WNXBKdkdtQkllN0QweXNianhCRnRiSnhwY2V4dDFOVkNiRzJqUGRWbU0xNjQ2b1gyOWR1c1RVQTVyRG1oX19Vc1NGRE5tT2lLNDM2djFFTXNhMA?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-14T08:27:17Z",
+   "time_estimated": false,
+   "category": "Tech & IT/BPM",
+   "summary": "Seven SLIIT academics are recognized among the world's top 2% scientists.",
+   "score": 4,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "35b953c153fc",
+   "title": "Connect to Care strengthens platform for regional philanthropic partnerships",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOOHhzYmg4SlZTU3ByaWtaR29pRXhhWWNOclFZemwwNXo0NGlRSUxKSGlFdzBURnhRbVcxdXh4QlM2ejVjT3VhWERyNXpNY2hGTnczSHVCQ2VQWlNHbE1rR2l4RnlrMW9QeGtCaWw1Y1VBZ3VicTJpZ1B0UW5EMk5QUjhpanhtYkdvSkYtS3dCOHJkLWJFbFplZUcxUUFhZ2hkVmtYUi1pZjhIVWFqTEdOdTdGNGptR2l2Q0JMelo4TkRzTTBxYXJyNQ?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-14T08:27:17Z",
+   "time_estimated": false,
+   "category": "Digitalization",
+   "summary": "Connect to Care has strengthened its digital platform to facilitate regional philanthropic partnerships.",
+   "score": 4,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "401154528f56",
+   "title": "GovTech to setup Digital Transformation Academy – MTI strategizes",
+   "url": "https://www.lankabusinessonline.com/2026/11/14/govtech-to-setup-digital-transformation-academy-mti-strategizes/",
+   "outlet": "Lanka Business Online",
+   "author": "LBO",
+   "published": "2026-11-14T08:17:30Z",
+   "time_estimated": false,
+   "category": "Digital Economy & Policy",
+   "summary": "The Asian Development Bank has retained MTI Consulting to design the strategy and curriculum for Sri Lanka's new Academy for Digital Transformation under GovTech. The academy will build digital capabilities within the public sector workforce to accelerate digital government initiatives and Digital Public Infrastructure. This is relevant to Sri Lanka's digital policy and public sector modernization efforts.",
+   "score": 10,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "9ccff00c7800",
+   "title": "Sri Lanka picked for first time in Four Seasons 2028 private jet tour",
+   "url": "https://economynext.com/sri-lanka-picked-for-first-time-in-four-seasons-2028-private-jet-tour-290168/",
+   "outlet": "EconomyNext",
+   "author": "Ranul Seneviratne",
+   "published": "2026-11-14T08:06:52Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "Sri Lanka has been selected for the first time as a stop on the Four Seasons Private Jet Experience for its 2028 around-the-world itinerary. Luxury travellers will spend three nights in the country, contributing to high-end tourism exposure.",
+   "score": 4,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": [
+    {
+     "outlet": "Avi-Go",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5PUV9lMW9sNDZqYkx4c2pKWVdWZVI3cGsyeWtXVUpkZ3VZeGJ5TU4tLTI4ckJFRm8yT1NEemg3bHNkQUZyZVpaX1hWVnFNb083SGNxb1FWeFh2UjN5STBGdjd0M1NQQm4tZU5hM0ZGWllqMU0?oc=5"
+    }
+   ]
+  }
+ ]
+}

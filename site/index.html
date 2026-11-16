@@ -59,12 +59,6 @@
     border-radius: 8px; padding: 8px 10px; min-height: 38px;
   }
   .masthead select { border-color: transparent; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 6px; font: 500 14px var(--sans);
-    color: var(--brand); background: var(--accent); border-radius: 8px; padding: 9px 14px;
-    text-decoration: none; white-space: nowrap; min-height: 38px;
-  }
-  .btn:hover { background: #ecb552; }
 
   /* ── Filter bar ── */
   .filters { position: sticky; top: 0; z-index: 5; background: rgba(246,244,239,.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
@@ -160,7 +154,6 @@
         <label for="edition-select">Edition</label>
         <select id="edition-select" aria-label="Choose edition date"></select>
       </div>
-      <a class="btn" id="submit-link" href="#" target="_blank" rel="noopener" hidden>+ Submit a link</a>
     </div>
   </div>
 </header>
@@ -324,9 +317,6 @@
       el("strong", {}, fmtDay.format(gen)), " · ",
       `${nIn} ${nIn === 1 ? "story" : "stories"} from the last ${hrs} hours · updated ${fmtTime.format(gen)}`
     );
-    const submit = $("submit-link");
-    if (d.submit_form_url) { submit.href = safeUrl(d.submit_form_url); submit.hidden = false; }
-    else submit.hidden = true;
   }
 
   function filtered() {

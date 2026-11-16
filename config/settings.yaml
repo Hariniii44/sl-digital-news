@@ -5,11 +5,6 @@
 site_title: "Sri Lanka Digital Industry News"
 timezone: "Asia/Colombo"
 
-# Link to the Google Form where the team submits social media posts / other links.
-# Shown as a "Submit a link" button on the site. Leave empty to hide the button.
-# (Can also be set as the SUBMIT_FORM_URL repository variable in GitHub.)
-submit_form_url: ""
-
 # How far back to look on each run. Normally the window starts at the previous
 # successful run (so nothing is missed or repeated); if there is no previous run,
 # or it was longer ago than max_window_hours, the last window_hours are used.

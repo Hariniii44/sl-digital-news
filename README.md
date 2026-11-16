@@ -77,7 +77,7 @@ posts are summarized and appear in the next morning's edition.
    and **Comma-separated values (.csv)**, then **Publish**. Copy the URL.
 4. In GitHub, go to **Settings → Secrets and variables → Actions → Variables tab → New repository variable**:
    - `SUBMISSIONS_CSV_URL` = the published CSV URL
-   - `SUBMIT_FORM_URL` = the form's share link. This adds a **"+ Submit a link"** button to the site.
+   - The site has no "Submit a link" button. Share the form's link with the team directly.
 
 ---
 

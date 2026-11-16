@@ -44,7 +44,6 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           SUBMISSIONS_CSV_URL: ${{ vars.SUBMISSIONS_CSV_URL }}
-          SUBMIT_FORM_URL: ${{ vars.SUBMIT_FORM_URL }}
           HOURS: ${{ github.event.inputs.hours }}
         run: |
           if [[ "$HOURS" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then

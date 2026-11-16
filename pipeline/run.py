@@ -195,7 +195,6 @@ def main(argv: list[str] | None = None) -> int:
         "window_start": iso(since),
         "window_end": iso(now),
         "timezone": str(tz),
-        "submit_form_url": os.environ.get("SUBMIT_FORM_URL", "").strip() or settings.get("submit_form_url", ""),
         "categories": [c["name"] for c in settings["categories"]],
         "out_of_scope_categories": ai.oos_names(settings),
         "stats": {

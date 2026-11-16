@@ -1,8 +1,8 @@
 {
  "site_title": "Sri Lanka Digital Industry News",
- "generated_at": "2026-11-16T08:29:44.928943Z",
+ "generated_at": "2026-11-16T08:46:08.571943Z",
  "window_start": "2026-11-15T08:20:01.727522Z",
- "window_end": "2026-11-16T08:29:44.928943Z",
+ "window_end": "2026-11-16T08:46:08.571943Z",
  "timezone": "Asia/Colombo",
  "submit_form_url": "",
  "categories": [
@@ -15,12 +15,12 @@
   "Events & Opportunities"
  ],
  "stats": {
-  "collected": 474,
-  "in_window": 144,
-  "after_dedupe": 126,
-  "published": 94,
+  "collected": 478,
+  "in_window": 10,
+  "after_dedupe": 7,
+  "published": 95,
   "gemini_model": "gemini-3.5-flash-lite",
-  "gemini_calls": 11,
+  "gemini_calls": 2,
   "gemini_status": "ok"
  },
  "sources": [
@@ -29,21 +29,21 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.8
+   "seconds": 0.7
   },
   {
    "name": "EconomyNext",
    "type": "rss",
    "ok": true,
    "count": 20,
-   "seconds": 0.7
+   "seconds": 1.3
   },
   {
    "name": "Lanka Business Online",
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 1.1
+   "seconds": 1.4
   },
   {
    "name": "Ada Derana Biz",
@@ -57,21 +57,21 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.4
+   "seconds": 0.2
   },
   {
    "name": "Sunday Times – Business Times",
    "type": "rss",
    "ok": true,
    "count": 38,
-   "seconds": 0.7
+   "seconds": 1.5
   },
   {
    "name": "LMD",
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 3.2
+   "seconds": 2.6
   },
   {
    "name": "Echelon",
@@ -85,21 +85,21 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "Daily Mirror",
    "type": "google_news",
    "ok": true,
-   "count": 84,
+   "count": 87,
    "seconds": 0.4
   },
   {
    "name": "The Morning",
    "type": "google_news",
    "ok": true,
-   "count": 73,
-   "seconds": 0.4
+   "count": 72,
+   "seconds": 0.3
   },
   {
    "name": "Newsfirst",
@@ -113,7 +113,7 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "Ada Derana",
@@ -133,7 +133,7 @@
    "name": "Daily News (Google News fallback)",
    "type": "google_news",
    "ok": true,
-   "count": 70,
+   "count": 71,
    "seconds": 0.4
   },
   {
@@ -155,7 +155,7 @@
    "type": "rss",
    "ok": true,
    "count": 20,
-   "seconds": 0.8
+   "seconds": 0.5
   },
   {
    "name": "ReadMe",
@@ -176,13 +176,13 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.2
+   "seconds": 0.3
   },
   {
    "name": "Topic: \"Startup Nation\" OR Xcellerator OR \"First Capital\" startup",
    "type": "google_news",
    "ok": true,
-   "count": 2,
+   "count": 1,
    "seconds": 0.3
   },
   {
@@ -190,7 +190,7 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "Topic: \"digital economy\" \"Sri Lanka\"",
@@ -224,7 +224,7 @@
    "name": "Topic: \"Sri Lanka\" (\"artificial intelligence\" OR AI) (company OR government OR policy OR startup)",
    "type": "google_news",
    "ok": true,
-   "count": 27,
+   "count": 28,
    "seconds": 0.3
   },
   {
@@ -232,45 +232,60 @@
    "type": "google_news",
    "ok": true,
    "count": 6,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" (\"venture capital\" OR \"angel investor\" OR \"seed funding\" OR \"raises\")",
    "type": "google_news",
    "ok": true,
-   "count": 9,
-   "seconds": 0.4
+   "count": 11,
+   "seconds": 0.3
   },
   {
    "name": "Topic: ICTA OR \"Ministry of Digital Economy\" Sri Lanka",
    "type": "google_news",
    "ok": true,
    "count": 4,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "Topic: \"Central Bank of Sri Lanka\" OR CBSL",
    "type": "google_news",
    "ok": true,
    "count": 2,
-   "seconds": 0.5
+   "seconds": 0.2
   },
   {
    "name": "Topic: \"Sri Lanka\" economy (IMF OR GDP OR exports OR investment OR budget)",
    "type": "google_news",
    "ok": true,
-   "count": 22,
-   "seconds": 0.5
+   "count": 21,
+   "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" (BOI OR EDB OR \"Export Development Board\" OR \"Board of Investment\")",
    "type": "google_news",
    "ok": true,
    "count": 6,
-   "seconds": 0.5
+   "seconds": 0.3
   }
  ],
  "items": [
+  {
+   "id": "172bf9d5f2f5",
+   "title": "CBSL rates: Rupee edges down against US Dollar today",
+   "url": "https://www.newswire.lk/2026/11/16/cbsl-rates-rupee-edges-down-against-us-dollar-today/",
+   "outlet": "Newswire",
+   "author": "Editor K",
+   "published": "2026-11-16T08:44:17Z",
+   "time_estimated": false,
+   "category": "Economy & Business",
+   "summary": "The Sri Lankan Rupee slightly depreciated against the US Dollar, with the buying rate rising marginally while the selling rate remained stable. This daily currency fluctuation impacts the broader business environment and import-export costs.",
+   "score": 3,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": []
+  },
   {
    "id": "32dba31a944d",
    "title": "UNION ASSURANCE SECURES SEVEN ACCOLADES AT SLIM NATIONAL SALES AWARDS 2026",

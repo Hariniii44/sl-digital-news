@@ -27,7 +27,8 @@ a long one. When in doubt, keep it as out of scope.
 THE DIGITAL-ANGLE TEST
 A story is relevant only if it directly affects Sri Lanka's digital industry or its digital
 ecosystem. Ask: "Would someone building or supporting Sri Lanka's tech/digital sector need to
-know this?" The story must have BOTH a Sri Lanka connection AND a digital/tech angle.
+know this?" A Sri Lankan story must have a digital/tech angle. The one exception is GLOBAL
+TECH (below), which needs no Sri Lanka connection but must be about the technology sector.
 
 IN SCOPE
 - IT/BPM, software and ICT services and exports (including export targets and policy).
@@ -43,6 +44,14 @@ IN SCOPE
 - Fintech, digital payments and e-commerce as industries (new platforms, regulation, adoption).
 - AI, cybersecurity and emerging tech when it concerns Sri Lankan organisations, policy or talent.
 - Digital-industry events, grants, calls for applications and deadlines.
+- GLOBAL TECH: significant international technology-sector news, with no Sri Lanka connection
+  needed. This means AI (models, products, regulation, major deals), software and cloud,
+  cybersecurity incidents and policy, semiconductors and chips, big-tech company news
+  (Nvidia, Microsoft, Google, Apple, Meta, OpenAI, Anthropic and similar), telecoms and
+  networks, tech startups, funding and IPOs, and tech regulation or digital policy of major
+  countries. Typically from international outlets such as BBC and CNN, but a global tech story
+  from a Sri Lankan outlet counts too. Score it 5-8 depending on how significant it is for
+  the tech industry. These are relevant stories, not out-of-scope ones.
 - Macro or policy news (budget, CBSL, IMF, trade) ONLY IF it explicitly affects the IT sector,
   digital economy, startups or digital SMEs.
 
@@ -56,8 +65,9 @@ OUT OF SCOPE (not relevant even though they may sound economic, "tech" or Sri La
   exporter does not make a story digital.
 - Macro and market news with no digital angle: budget summaries, inflation, interest rates,
   exchange rates, stock market, credit card or loan statistics.
-- International tech and AI news with no Sri Lanka connection (SpaceX, Nvidia, big-tech
-  executives, foreign IPOs, global AI company news, geopolitics of chips).
+- International news that is NOT about the technology sector: space missions and rockets,
+  science, consumer gadget reviews and deals, video games, celebrity or executive gossip,
+  social media drama, and general world news (those go to "Unrelated").
 - Opinion or commentary that only touches technology in passing; fact-checks and
   misinformation debunks; e-waste, environment or safety incidents.
 - Politics, crime, accidents, weather, sport, entertainment, obituaries, horoscopes, and any
@@ -89,10 +99,16 @@ WORKED EXAMPLES
 - "HighVoltagePR leads influencer rollout for Daraz 11.11 sale" -> 3, group "Corporate News"
   (a marketing campaign, not about the e-commerce industry itself.)
 - "Uber Eats joins Eat Street Colombo as title sponsor" -> 1, group "Corporate News" (sponsorship; no digital angle.)
-- "SpaceX completes first-ever spaceship capture" -> 0, group "Global Tech" (no Sri Lanka connection.)
-- "Musk says Nvidia will lose critical deals without Jensen Huang" -> 0, group "Global Tech" (global tech gossip.)
-- "Anthropic's $90 Billion IPO tests investor confidence in the global AI boom" -> 1, group "Global Tech"
-  (global AI news; no Sri Lanka connection.)
+- "SpaceX completes first-ever spaceship capture" -> 1, group "Unrelated"
+  (space and rockets, not the IT/digital sector.)
+- "Musk says Nvidia will lose critical deals without Jensen Huang" -> 5, category Global Tech
+  (big-tech and chips industry, but mostly an executive's opinion: marginal.)
+- "Anthropic's $90 Billion IPO tests investor confidence in the global AI boom" -> 7, category Global Tech
+  (major AI-industry funding news: relevant as global tech.)
+- "BBC: EU opens investigation into big-tech AI chatbots over data protection" -> 7, category Global Tech
+  (global tech regulation.)
+- "CNN: The best noise-cancelling headphones to buy this Black Friday" -> 1, group "Unrelated"
+  (consumer shopping, not the tech industry.)
 - "Fire destroys e-waste warehouse in Divulapitiya" -> 0, group "Fact-checks, Incidents & Opinion" (an incident, not digital industry.)
 - "Anuradhapura Satyagraha photo of smashed Buddha statues is AI-generated" -> 0, group "Fact-checks, Incidents & Opinion"
   (a fact-check; not about the digital industry.)
@@ -285,8 +301,9 @@ Score each one 0-10 for relevance to the team, applying the digital-angle test:
   mentioned in an awards story). Use this sparingly.
 - 3-4: NOT relevant. General business or economy news with no digital angle, or a loosely
   tech-flavoured story that does not affect Sri Lanka's digital industry.
-- 0-2: NOT relevant. Out-of-scope sectors, global tech news with no Sri Lanka connection,
-  incidents, crime, politics, sport, entertainment, fact-checks, or no Sri Lanka connection.
+- 0-2: NOT relevant. Out-of-scope sectors, non-tech international news, consumer gadgets,
+  space, incidents, crime, politics, sport, entertainment, fact-checks, or Sri Lankan news
+  with no digital angle.
 Only {min_rel} and above are shown to the team as relevant. Judge on whether the story passes the
 digital-angle test, not on whether it merely sounds like business or technology. A headline
 that does not show a clear digital angle should score {min_rel - 1} or lower.
@@ -379,8 +396,8 @@ You will receive news articles as JSON objects (id, title, outlet, text). For ea
    and nothing more.
 3. score — relevance to the team, 0-10, using the digital-angle test. You now have the full
    article text, so check carefully: 9-10 core digital-industry news, 7-8 clearly relevant,
-   5-6 marginal but genuinely digital, 0-4 NOT relevant (no real digital angle or no Sri Lanka
-   connection). Lower the score if the article turns out to be only loosely digital.
+   5-6 marginal but genuinely digital or tech, 0-4 NOT relevant (no real digital/tech angle).
+   Global tech-sector stories need no Sri Lanka link; Sri Lankan stories need a digital angle. Lower the score if the article turns out to be only loosely digital.
 {group_rule}Return a JSON array with one object per article: {ret}."""
 
 

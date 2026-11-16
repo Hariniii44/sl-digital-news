@@ -167,8 +167,8 @@
     <div class="tools">
       <input type="search" id="search" placeholder="Search headlines, summaries, outlets…" aria-label="Search">
       <select id="sort" aria-label="Sort order">
-        <option value="newest">Newest first</option>
         <option value="relevant">Most relevant first</option>
+        <option value="newest">Newest first</option>
       </select>
     </div>
   </div>
@@ -200,7 +200,7 @@
 (() => {
   "use strict";
   const TZ = "Asia/Colombo";
-  const state = { data: null, cat: "All", q: "", sort: "newest", scope: "in", dates: [] };
+  const state = { data: null, cat: "All", q: "", sort: "relevant", scope: "in", dates: [] };
   const isIn = (it) => it.in_scope !== false;           // older editions have no flag: all in scope
   const scopeItems = () => (state.data?.items || []).filter((it) => (state.scope === "out") !== isIn(it));
   const $ = (id) => document.getElementById(id);
@@ -267,7 +267,7 @@
     const p = new URLSearchParams(location.hash.slice(1));
     state.cat = p.get("cat") || "All";
     state.q = p.get("q") || "";
-    state.sort = p.get("sort") === "relevant" ? "relevant" : "newest";
+    state.sort = p.get("sort") === "newest" ? "newest" : "relevant";   // default: most relevant first
     state.scope = p.get("scope") === "out" ? "out" : "in";
     return p.get("date") || "";
   }
@@ -275,7 +275,7 @@
     const p = new URLSearchParams();
     if (state.cat !== "All") p.set("cat", state.cat);
     if (state.q) p.set("q", state.q);
-    if (state.sort !== "newest") p.set("sort", state.sort);
+    if (state.sort !== "relevant") p.set("sort", state.sort);
     if (state.scope === "out") p.set("scope", "out");
     const sel = $("edition-select").value;
     if (sel && sel !== "latest") p.set("date", sel);

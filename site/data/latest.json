@@ -1,10 +1,9 @@
 {
  "site_title": "Sri Lanka Digital Industry News",
- "generated_at": "2026-11-16T10:35:35.409624Z",
+ "generated_at": "2026-11-16T10:45:59.056022Z",
  "window_start": "2026-11-15T08:20:01.727522Z",
- "window_end": "2026-11-16T10:35:35.409624Z",
+ "window_end": "2026-11-16T10:45:59.056022Z",
  "timezone": "Asia/Colombo",
- "submit_form_url": "",
  "categories": [
   "Startups & Ecosystem",
   "Tech & IT/BPM",
@@ -23,11 +22,11 @@
   "Unrelated"
  ],
  "stats": {
-  "collected": 563,
-  "in_window": 15,
-  "after_dedupe": 14,
-  "published": 104,
-  "out_of_scope": 44,
+  "collected": 565,
+  "in_window": 7,
+  "after_dedupe": 7,
+  "published": 105,
+  "out_of_scope": 50,
   "gemini_model": "gemini-3.5-flash-lite",
   "gemini_calls": 2,
   "gemini_status": "ok"
@@ -38,21 +37,21 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.6
+   "seconds": 0.8
   },
   {
    "name": "EconomyNext",
    "type": "rss",
    "ok": true,
    "count": 20,
-   "seconds": 0.8
+   "seconds": 1.3
   },
   {
    "name": "Lanka Business Online",
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.9
+   "seconds": 3.5
   },
   {
    "name": "Ada Derana Biz",
@@ -66,21 +65,21 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.2
+   "seconds": 0.3
   },
   {
    "name": "Sunday Times – Business Times",
    "type": "rss",
    "ok": true,
    "count": 38,
-   "seconds": 1.8
+   "seconds": 1.5
   },
   {
    "name": "LMD",
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 2.3
+   "seconds": 3.2
   },
   {
    "name": "Echelon",
@@ -94,20 +93,20 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.2
+   "seconds": 0.3
   },
   {
    "name": "Daily Mirror",
    "type": "google_news",
    "ok": true,
-   "count": 63,
-   "seconds": 0.3
+   "count": 61,
+   "seconds": 0.4
   },
   {
    "name": "The Morning",
    "type": "google_news",
    "ok": true,
-   "count": 85,
+   "count": 84,
    "seconds": 0.4
   },
   {
@@ -115,14 +114,14 @@
    "type": "google_news",
    "ok": true,
    "count": 19,
-   "seconds": 0.3
+   "seconds": 0.4
   },
   {
    "name": "Ceylon Today",
    "type": "google_news",
    "ok": true,
-   "count": 0,
-   "seconds": 0.2
+   "count": 3,
+   "seconds": 0.3
   },
   {
    "name": "Ada Derana",
@@ -157,14 +156,14 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.1
+   "seconds": 3.0
   },
   {
    "name": "Newswire",
    "type": "rss",
    "ok": true,
    "count": 20,
-   "seconds": 1.5
+   "seconds": 0.6
   },
   {
    "name": "The Examiner",
@@ -178,7 +177,7 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.7
+   "seconds": 0.9
   },
   {
    "name": "BBC Technology",
@@ -191,7 +190,7 @@
    "name": "CNN Tech",
    "type": "google_news",
    "ok": true,
-   "count": 52,
+   "count": 54,
    "seconds": 0.4
   },
   {
@@ -220,13 +219,13 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.2
+   "seconds": 0.3
   },
   {
    "name": "Topic: \"digital economy\" \"Sri Lanka\"",
    "type": "google_news",
    "ok": true,
-   "count": 10,
+   "count": 9,
    "seconds": 0.3
   },
   {
@@ -255,20 +254,20 @@
    "type": "google_news",
    "ok": true,
    "count": 28,
-   "seconds": 0.3
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"Sri Lanka\" (SME OR SMEs OR \"small and medium\")",
    "type": "google_news",
    "ok": true,
    "count": 6,
-   "seconds": 0.3
+   "seconds": 0.5
   },
   {
    "name": "Topic: \"Sri Lanka\" (\"venture capital\" OR \"angel investor\" OR \"seed funding\" OR \"raises\")",
    "type": "google_news",
    "ok": true,
-   "count": 11,
+   "count": 12,
    "seconds": 0.4
   },
   {
@@ -282,15 +281,15 @@
    "name": "Topic: \"Central Bank of Sri Lanka\" OR CBSL",
    "type": "google_news",
    "ok": true,
-   "count": 5,
+   "count": 4,
    "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" economy (IMF OR GDP OR exports OR investment OR budget)",
    "type": "google_news",
    "ok": true,
-   "count": 21,
-   "seconds": 0.3
+   "count": 22,
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"Sri Lanka\" (BOI OR EDB OR \"Export Development Board\" OR \"Board of Investment\")",
@@ -301,6 +300,54 @@
   }
  ],
  "items": [
+  {
+   "id": "678a683764cb",
+   "title": "Opposition leader and Chinese ambassador to Sri Lanka discuss blue-green economy and bilateral cooperation",
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNM3BkNlJseVpWejR4YmxneGRGSlU3MDZkWEY1TDdPQkN1YWtPaDh1RUJ6b3hRQkgtaGRLV3ZvN2dhWnM1RXMzb0ZpaWZOZHRFRGZHUGFreHZUU1JyX0JaRHZORm45eGF6SzV0VzFJWkVqVm9sLXMxcTFOa2h3aVo2VUtKVEZnZlpnSHpZWU5ZRHdvZ0t1WlJQSlEwNXUxcURZOEdVZXRuemRtUy0wQlBaRWxuV2dqcTlEcExFMTZ1dlNzOE40X2ExWHFRc2pMZS11MFJ4TGpsdkVWaXVW?oc=5",
+   "outlet": "Hiru News",
+   "author": "",
+   "published": "2026-11-16T10:45:26Z",
+   "time_estimated": false,
+   "category": "Other Sectors",
+   "summary": "",
+   "score": 1,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "0c2b59367c03",
+   "title": "Court reissues notice to Wimal Weerawansa over contempt of court complaint",
+   "url": "https://www.newswire.lk/2026/11/16/court-reissues-notice-to-wimal-weerawansa-over-contempt-of-court-complaint/",
+   "outlet": "Newswire",
+   "author": "Editor K",
+   "published": "2026-11-16T10:43:01Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "By Newswire Editorial The Court of Appeal has reissued notice directing former Minister Wimal Weerawansa to appear before court on Continue Reading The post Court reissues notice to Wimal Weerawansa over contempt of court complaint appeared first on Newswire .",
+   "score": 0,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "f9408eaf39cf",
+   "title": "Election Commission recognizes 3 new political parties in Sri Lanka",
+   "url": "https://www.newswire.lk/2026/11/16/election-commission-recognizes-3-new-political-parties-in-sri-lanka/",
+   "outlet": "Newswire",
+   "author": "Editor K",
+   "published": "2026-11-16T10:39:51Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "By Newswire Editorial The Election Commission of Sri Lanka has issued a media release announcing that three political parties have Continue Reading The post Election Commission recognizes 3 new political parties in Sri Lanka appeared first on Newswire .",
+   "score": 0,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
   {
    "id": "9d1f765ee9b5",
    "title": "Flood warnings lifted for four river basins",
@@ -451,6 +498,22 @@
    "also_in": []
   },
   {
+   "id": "7bd24fc52ebb",
+   "title": "Sri Lanka Latest Breaking News and Headlines - Print Edition Jay Shah reappointed as ICC chairman for second term",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQMzJpam5oNjFJRVc1S3RfeU1nd09jMzM1RXZLQkl6dmJidWdHQ2ZVbExKenBiU1RGVS1hUmhLRU9CcE5lSnJPLWRub3R6Tmh3LTFKd29yX3ZiS2FzZkI5cUFMM0d5dkk2NVVqMDBUZ0draVNGUHJjSGJ6Rm8wTWwyZzRMcjJYQ2lMVVd0R2JTVnZ2VENvTUczSndmTkdRYlZ1Y3g1enRUTjdDaUk5bEZN?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-16T10:01:24Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
    "id": "864dd02a2b4d",
    "title": "Trump aggressively pushed his party to redraw electoral maps. How much did that backfire?",
    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNa2tIRWFmTTVrUFFUX09TYnE4NFhQNDF1YktueHpibTk4dlJVUWNxd2NCVGxVV2hINXdicW5kZE5ZcmFwVGxKRU5FN3RXaGpGVDRVM3FWSUtsWDdNSjVaSk5RTi1BZmVWQlJ6UnhmU3Eza09EVUNoT3loOWV3eHBwYXVPd1pYWE1mNlVv?oc=5",
@@ -464,6 +527,22 @@
    "in_scope": false,
    "via": "google_news",
    "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "12625883b704",
+   "title": "AI bubble will likely burst and cause a recession by 2028 election, Wall Street’s former top cop says",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1ISTFFbzctbFN5S3RraVZnbzBORlh6VHFWYS1rOTQxU2tiVDhkNDlGVS15R1UzMnVXUXQ1T1FKeWNYNmktNXozd3RnUXNGUjdNcDdqUUFxaTR0QU1PMGVCVHZkZWYyYlIwWjZUeXNUekNwVEE0cV9wcjVqWTE?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-16T10:00:15Z",
+   "time_estimated": false,
+   "category": "Global Tech",
+   "summary": "Wall Street's former top cop warns that an artificial intelligence market bubble will likely burst and trigger a recession by the 2028 election.",
+   "score": 5,
+   "in_scope": true,
+   "via": "google_news",
+   "ai_summary": true,
    "also_in": []
   },
   {
@@ -739,6 +818,22 @@
    "also_in": []
   },
   {
+   "id": "5307f413b271",
+   "title": "Sri Lanka’s October Tourism Earnings Surpass $192 Million: Central Bank",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPemQ3Rm42NUJRMEJRdDNQVm10RTRHaFM2YXFvRzhmMS04NTZzTWlTYjNGaTJ3Q1hhSE9zaFNlLTQ4R3pxLVlMelpFTGxzYTB6TmhUUC12VzRrOC1WZ1dONnZ3cTllU21ueWQ5OWlSdklPUjJDUFlIQ1ZEQWNqcFg2WDl1NDN0Y2xUcDFlQk1jZ2p0bnkxSnBkN0Q2eW5ETXBUZU1WcG53?oc=5",
+   "outlet": "Ceylon Today",
+   "author": "",
+   "published": "2026-11-16T09:28:12Z",
+   "time_estimated": false,
+   "category": "Other Sectors",
+   "summary": "",
+   "score": 1,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
    "id": "5ebba2423766",
    "title": "Ex-Bangladesh PM Hasina to return home despite 'threat of death'",
    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBJMldLcEVwUEh3S2lzc1VZR2w0ZXlDVnd0dU9IU29KaWlYeEh1d2tocGVlMGk0NUQzZ3VHQUM3Um0tVWtxNUROQWgzdV8tMThwZ1VvU2FackJlVXlKd2lVTkVfMEhCQQ?oc=5",
@@ -909,6 +1004,22 @@
    "category": "Unrelated",
    "summary": "",
    "score": 1,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "2d404a3a418d",
+   "title": "Jay Shah Unanimously Re-Elected as ICC Chairman for Second Term",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONzNVRUVDakJ3cmdyNmJNRmVpNWpEbzZJb09meGMyc0tYRWJPZFlYMWVBYjJNMWVpVnlUMmFqUFBqR0loeVFRQ3N2U0gwS0EyajF2WWZYUVhvVVhseXhLUkJCZmV3cHpiZkRuM2NUTDRIUUN1a29BZHZ0MFh1TmJQMExjXy1CRUE5ZzNHcnFvSG9JcEs1QkpzRUZwVFNLRDA?oc=5",
+   "outlet": "Ceylon Today",
+   "author": "",
+   "published": "2026-11-16T09:12:30Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
    "in_scope": false,
    "via": "google_news",
    "ai_summary": false,

@@ -62,6 +62,9 @@ categories:
   - name: "Economy & Business"
     description: "Macroeconomy, Central Bank, IMF, budget, trade, exports, investment, corporate results and other business news."
     keywords: [economy, economic, cbsl, central bank, imf, gdp, inflation, budget, export, trade, investment, rupee, tax, tariff, plc, profit, revenue]
+  - name: "Global Tech"
+    description: "International technology-sector news that has no Sri Lanka link: AI, software and cloud, cybersecurity, semiconductors, big-tech companies, telecoms, tech startups, funding and IPOs, and tech regulation in other countries. Mostly from outlets such as BBC and CNN."
+    keywords: [nvidia, openai, anthropic, microsoft, google, apple, meta, amazon, semiconductor, chip, chatbot, cybersecurity, ransomware, data breach, silicon valley]
   - name: "Events & Opportunities"
     description: "Upcoming or just-held conferences, summits, workshops, calls for applications, grants, programmes and deadlines relevant to the digital industry."
     keywords: [summit, conference, forum, workshop, expo, applications open, call for, deadline, launch event, webinar, awards]
@@ -73,8 +76,6 @@ categories:
 out_of_scope_categories:
   - name: "Macro & Economy"
     description: "Budget, CBSL, IMF, inflation, interest rates, exchange rates, stock market, trade and tax news with NO digital/IT angle."
-  - name: "Global Tech"
-    description: "International technology and AI news with no Sri Lanka connection (big tech, chips, space, foreign IPOs, global AI companies)."
   - name: "Corporate News"
     description: "Company or bank MoUs, sponsorships, awards, CSR, product launches, appointments, marketing campaigns and results with no digital angle."
   - name: "Other Sectors"
@@ -82,7 +83,7 @@ out_of_scope_categories:
   - name: "Fact-checks, Incidents & Opinion"
     description: "Fact-checks, accidents, fires, environmental or safety incidents, and opinion or commentary pieces."
   - name: "Unrelated"
-    description: "Everything else: politics, crime, sport, entertainment, weather, obituaries, or anything with no Sri Lanka connection."
+    description: "Everything else: politics, crime, sport, entertainment, weather, obituaries, space and science, consumer gadgets, general world news, or anything with no tech or Sri Lanka connection."
 
 # ── Pre-filter for 'general: true' outlets ──────────────────────────────────
 # An item from a general news outlet is only sent to the AI if its title or

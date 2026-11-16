@@ -104,6 +104,19 @@ outlets:
     url: https://readme.lk/feed/
     fallback_query: "site:readme.lk"
 
+  # ── Global tech news (shown under the "Global Tech" filter) ──────────────────
+  # International outlets; no Sri Lanka connection needed, but only technology-sector stories.
+  # BBC publishes a dedicated technology feed. CNN's own tech RSS feed stopped updating in 2016,
+  # so CNN is read through Google News instead.
+  - name: BBC Technology
+    type: rss
+    url: https://feeds.bbci.co.uk/news/technology/rss.xml
+    fallback_query: "site:bbc.com technology"
+
+  - name: CNN Tech
+    type: google_news
+    query: "site:cnn.com (technology OR AI OR cybersecurity OR semiconductor OR \"tech industry\")"
+
 # Topic searches across ALL outlets (Google News, Sri Lanka edition, last 24h).
 # These catch stories from outlets not listed above, and official announcements.
 topics:

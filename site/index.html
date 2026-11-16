@@ -125,18 +125,50 @@
   .muted { color: var(--ink-3); }
 
   .nowrap { white-space: nowrap; }
+  /* long words and URLs never push the page sideways */
+  body { overflow-wrap: break-word; }
+  .chip { text-align: left; line-height: 1.25; }
+
+  /* ── Tablet and below ── */
+  @media (max-width: 820px) {
+    .masthead .wrap { align-items: flex-start; }
+  }
+
+  /* ── Phones ── */
   @media (max-width: 640px) {
+    .wrap { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
     h1 { font-size: 24px; }
-    .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; }
+    .kicker { font-size: 11px; }
+    .masthead .wrap { padding-top: 20px; padding-bottom: 16px; }
+    .mast-actions { width: 100%; }
+    .mast-actions > div { width: 100%; }
+    .mast-actions select { width: 100%; }
+
+    /* Filters: every chip stays visible (they wrap instead of scrolling sideways), and the bar
+       scrolls away with the page so a few rows of chips never cover the stories. */
+    .filters { position: static; }
+    .filters .wrap { padding-top: 10px; padding-bottom: 10px; }
     .chiprow { flex-direction: column; align-items: stretch; gap: 8px; }
-    .scope-btn { align-self: flex-start; }
+    .chips { flex-wrap: wrap; gap: 6px; overflow: visible; }
+    .chip { font-size: 12.5px; padding: 7px 11px; min-height: 34px; }
+    .scope-btn { align-self: stretch; text-align: center; padding: 9px 12px; min-height: 40px; }
+    .tools { flex-direction: column; gap: 8px; margin-top: 8px; }
+    .tools input, .tools select { width: 100%; max-width: none; font-size: 16px; }  /* 16px stops iOS zoom-on-focus */
+
+    .scope-note { font-size: 12.5px; }
+    main .wrap { padding-top: 14px; }
     .dot::before { display: none; }
     .meta { gap: 3px 9px; }
-    .masthead .wrap { padding-top: 20px; padding-bottom: 16px; }
     .card { padding: 14px 14px 13px; }
     .card.top { padding-left: 11px; }
     .card h2 { font-size: 17.5px; }
-    .tools select { max-width: 42%; }
+    .card.out h2 { font-size: 16.5px; }
+    table { display: block; overflow-x: auto; }
+  }
+
+  @media (max-width: 380px) {
+    h1 { font-size: 22px; }
+    .chip { font-size: 12px; padding: 6px 9px; }
   }
 </style>
 </head>

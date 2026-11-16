@@ -98,6 +98,14 @@ outlets:
     url: https://www.newswire.lk/feed/
     general: true
 
+  # The Examiner: weekly Sri Lankan digital newspaper (published Fridays). It covers politics and
+  # general affairs as well as business, so the keyword pre-filter applies.
+  - name: The Examiner
+    type: rss
+    url: https://www.examiner.media/rss/
+    general: true
+    fallback_query: "site:examiner.media"
+
   # ── Tech outlets ──────────────────────────────────────────────────────────
   - name: ReadMe
     type: rss

@@ -27,9 +27,12 @@ triage_batch_size: 40
 summary_batch_size: 10
 # Characters of article text sent to Gemini per article for the summary.
 article_chars_for_summary: 1800
-# Minimum relevance score (0–10) to appear on the site. Low on purpose:
-# the team wants anything even remotely relevant.
-min_relevance: 3
+# Minimum relevance score (0-10) for a story to count as relevant to the team.
+# Stories below this are NOT deleted: they are kept under "Out of scope" (see below) so the
+# team can still look at them, but they never appear in the main category filters.
+min_relevance: 5
+# Max out-of-scope stories kept per run (newest first). Keeps the data file small.
+max_out_of_scope_per_day: 100
 # Safety cap on stories per day (highest relevance kept) to protect the free quota.
 max_items_per_day: 300
 
@@ -62,6 +65,24 @@ categories:
   - name: "Events & Opportunities"
     description: "Upcoming or just-held conferences, summits, workshops, calls for applications, grants, programmes and deadlines relevant to the digital industry."
     keywords: [summit, conference, forum, workshop, expo, applications open, call for, deadline, launch event, webinar, awards]
+
+# ── Out-of-scope groups ─────────────────────────────────────────────────────
+# Stories that fail the digital-angle test are filed into one of these groups and shown
+# only when someone clicks the "Out of scope" button on the site. 'description' guides the AI.
+# The LAST group is the catch-all, so keep it last.
+out_of_scope_categories:
+  - name: "Macro & Economy"
+    description: "Budget, CBSL, IMF, inflation, interest rates, exchange rates, stock market, trade and tax news with NO digital/IT angle."
+  - name: "Global Tech"
+    description: "International technology and AI news with no Sri Lanka connection (big tech, chips, space, foreign IPOs, global AI companies)."
+  - name: "Corporate News"
+    description: "Company or bank MoUs, sponsorships, awards, CSR, product launches, appointments, marketing campaigns and results with no digital angle."
+  - name: "Other Sectors"
+    description: "General business and non-digital sectors: agriculture, fisheries, food, manufacturing, tourism, energy, construction, real estate, transport."
+  - name: "Fact-checks, Incidents & Opinion"
+    description: "Fact-checks, accidents, fires, environmental or safety incidents, and opinion or commentary pieces."
+  - name: "Unrelated"
+    description: "Everything else: politics, crime, sport, entertainment, weather, obituaries, or anything with no Sri Lanka connection."
 
 # ── Pre-filter for 'general: true' outlets ──────────────────────────────────
 # An item from a general news outlet is only sent to the AI if its title or

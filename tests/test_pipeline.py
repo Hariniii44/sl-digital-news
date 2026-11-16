@@ -108,7 +108,8 @@ def fake_gemini_post(url, headers=None, json=None, timeout=None):  # noqa: A002
             obj = __import__("json").loads(line)
             t = obj["title"].lower()
             score = 0 if re.search(r"accident|cricket", t) else 8
-            out.append({"id": obj["id"], "score": score})
+            out.append({"id": obj["id"], "score": score,
+                        "group": "Unrelated" if score == 0 else "In scope"})
     else:
         arts = __import__("json").loads(prompt)
         out = [{"id": a["id"], "category": "Startups & Ecosystem",
@@ -151,13 +152,22 @@ def load_latest(tmp):
 def test_full_run(env):
     assert run.main([]) == 0
     data = load_latest(env)
-    titles = [i["title"] for i in data["items"]]
+    in_scope = [i for i in data["items"] if i["in_scope"]]
+    titles = [i["title"] for i in in_scope]
 
     assert any("Kapruka" in t for t in titles)
     assert any("Xcellerator" in t for t in titles)
     assert any("Central Bank" in t for t in titles)
-    assert not any("accident" in t.lower() for t in titles)        # screened out
-    assert not any("Cricket" in t for t in titles)                 # screened out
+    assert not any("accident" in t.lower() for t in titles)        # screened out of the main list
+    assert not any("Cricket" in t for t in titles)
+
+    # ...but kept, filed under an out-of-scope group, without an article fetch / AI summary
+    out = [i for i in data["items"] if not i["in_scope"]]
+    assert any("Cricket" in i["title"] for i in out)
+    assert all(i["category"] in data["out_of_scope_categories"] for i in out)
+    assert all(i["ai_summary"] is False for i in out)
+    assert data["stats"]["out_of_scope"] == len(out)
+    assert all(c not in data["out_of_scope_categories"] for c in data["categories"])
     assert not any("Old story" in t for t in titles)               # outside window
     assert sum("SLASSCOM" in t for t in titles) == 1               # deduped across routes
 
@@ -176,7 +186,7 @@ def test_full_run(env):
     assert "Broken Outlet (Google News fallback)" in names
 
     # items sorted newest first
-    pubs = [i["published"] for i in data["items"]]
+    pubs = [i["published"] for i in in_scope]
     assert pubs == sorted(pubs, reverse=True)
 
     # archive index written
@@ -203,7 +213,9 @@ def test_runs_without_gemini(env, monkeypatch):
     assert data["stats"]["gemini_status"] == "no GEMINI_API_KEY set"
     titles = [i["title"] for i in data["items"]]
     assert any("Kapruka" in t for t in titles)          # keyword fallback keeps it
-    assert all(i["category"] in data["categories"] for i in data["items"])
+    allowed = data["categories"] + data["out_of_scope_categories"]
+    assert all(i["category"] in allowed for i in data["items"])
+    assert all((i["category"] in data["categories"]) == i["in_scope"] for i in data["items"])
 
 
 def test_gemini_daily_quota_falls_back(env, monkeypatch):

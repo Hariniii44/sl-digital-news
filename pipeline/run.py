@@ -41,7 +41,7 @@ def save_state(state: dict) -> None:
 
 # ── Output ───────────────────────────────────────────────────────────────────
 
-def item_to_json(it: Item) -> dict:
+def item_to_json(it: Item, min_rel: int) -> dict:
     return {
         "id": item_key(it),
         "title": it.title,
@@ -53,6 +53,7 @@ def item_to_json(it: Item) -> dict:
         "category": it.category,
         "summary": it.summary,
         "score": it.score,
+        "in_scope": it.score >= min_rel,
         "via": it.via,
         "ai_summary": it.ai,
         "also_in": it.also_in[:6],
@@ -71,7 +72,8 @@ def write_outputs(payload: dict, local_date: str) -> None:
         payload["items"] += [i for i in old.get("items", []) if i["id"] not in new_ids]
         payload["items"].sort(key=lambda i: i.get("published") or "", reverse=True)
         payload["window_start"] = min(filter(None, [old.get("window_start"), payload["window_start"]]))
-        payload["stats"]["published"] = len(payload["items"])
+        payload["stats"]["published"] = sum(i.get("in_scope", True) for i in payload["items"])
+        payload["stats"]["out_of_scope"] = sum(not i.get("in_scope", True) for i in payload["items"])
 
     text = json.dumps(payload, ensure_ascii=False, indent=1)
     day_file.write_text(text, encoding="utf-8")
@@ -140,13 +142,19 @@ def main(argv: list[str] | None = None) -> int:
     model = os.environ.get("GEMINI_MODEL", "").strip() or settings.get("gemini_model", "gemini-3.5-flash-lite")
     gemini = ai.Gemini(api_key, model, settings.get("gemini_min_interval_seconds", 6))
     ai.triage(candidates, gemini, settings)
-    min_rel = settings.get("min_relevance", 3)
+    min_rel = settings.get("min_relevance", 5)
     relevant = sorted((c for c in candidates if c.score >= min_rel), key=lambda c: -c.score)
+    # Below-threshold stories are kept (not deleted) under "Out of scope", newest first.
+    out_of_scope = [c for c in candidates if c.score < min_rel]
     max_items = settings.get("max_items_per_day", 300)
     if len(relevant) > max_items:
         log.warning("Capping %d relevant items to the top %d", len(relevant), max_items)
         relevant = relevant[:max_items]
-    log.info("Relevant after screening: %d of %d", len(relevant), len(candidates))
+    max_oos = settings.get("max_out_of_scope_per_day", 100)
+    out_of_scope.sort(key=lambda c: (c.published or now), reverse=True)
+    out_of_scope = out_of_scope[:max_oos]
+    log.info("Relevant after screening: %d of %d (%d kept as out of scope)",
+             len(relevant), len(candidates), len(out_of_scope))
 
     # 4. Read article pages (author, time, text)
     enrich(relevant, settings.get("fetch_workers", 8), settings.get("fetch_timeout_seconds", 15))
@@ -156,16 +164,31 @@ def main(argv: list[str] | None = None) -> int:
 
     # 5. Category + summary
     ai.categorize_and_summarize(relevant, gemini, settings)
+    # The full-article pass can lower a score: those stories move to "Out of scope" too.
     final = [it for it in relevant if it.score >= min_rel]
-    for it in final:
+    demoted = [it for it in relevant if it.score < min_rel]
+    oos_names = ai.oos_names(settings)
+    out_of_scope = demoted + [it for it in out_of_scope if it.score < min_rel]
+    for it in out_of_scope:
+        if it.oos_group in oos_names:
+            it.category = it.oos_group
+        else:
+            it.category = oos_names[-1] if oos_names else "Out of scope"
+        if not it.summary:                     # no article fetch or AI summary for these
+            it.summary = ai.fallback_summary(it)
+    out_of_scope = [it for it in out_of_scope if it.published is None or it.published >= stale_before]
+    kept = final + out_of_scope
+    for it in kept:
         # Form timestamps can be ambiguous (day/month order); trust them only if recent.
         if it.via == "submission" and it.published and abs(now - it.published) > timedelta(days=3):
             it.published = None
         if it.published is None:
             it.published, it.time_estimated = now, True
     final.sort(key=lambda it: it.published, reverse=True)
+    out_of_scope.sort(key=lambda it: it.published, reverse=True)
 
     # 6. Publish
+    kept_sorted = sorted(final + out_of_scope, key=lambda it: it.published, reverse=True)
     payload = {
         "site_title": settings.get("site_title", "News"),
         "generated_at": iso(now),
@@ -174,17 +197,19 @@ def main(argv: list[str] | None = None) -> int:
         "timezone": str(tz),
         "submit_form_url": os.environ.get("SUBMIT_FORM_URL", "").strip() or settings.get("submit_form_url", ""),
         "categories": [c["name"] for c in settings["categories"]],
+        "out_of_scope_categories": ai.oos_names(settings),
         "stats": {
             "collected": len(raw),
             "in_window": len(in_window),
             "after_dedupe": len(candidates),
             "published": len(final),
+            "out_of_scope": len(out_of_scope),
             "gemini_model": model,
             "gemini_calls": gemini.calls,
             "gemini_status": "ok" if gemini.available else gemini.disabled_reason,
         },
         "sources": health,
-        "items": [item_to_json(it) for it in final],
+        "items": [item_to_json(it, min_rel) for it in kept_sorted],
     }
     write_outputs(payload, now.astimezone(tz).strftime("%Y-%m-%d"))
 
@@ -198,7 +223,7 @@ def main(argv: list[str] | None = None) -> int:
             submitted.add(item_key(it))
         else:
             seen[item_key(it)] = today
-    for it in final:  # decoded URLs too
+    for it in final + out_of_scope:  # decoded URLs too
         seen[item_key(it)] = today
     save_state({"last_run": iso(now), "seen": seen, "submitted_seen": sorted(submitted)})
 

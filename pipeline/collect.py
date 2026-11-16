@@ -33,6 +33,7 @@ class Item:
     also_in: list = field(default_factory=list)   # [{"outlet":..., "url":...}]
     score: int = 0
     category: str = ""
+    oos_group: str = ""            # out-of-scope group chosen by the AI (used if score < min_relevance)
     summary: str = ""
     ai: bool = False               # True if Gemini produced the category/summary
     time_estimated: bool = False   # True if we couldn't find a real publish time

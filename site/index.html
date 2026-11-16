@@ -77,6 +77,18 @@
   .chip[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: #fff; }
   .chip[aria-pressed="true"] .n { color: #c9d7dc; }
   .chip:disabled { opacity: .45; cursor: default; }
+  .chiprow { display: flex; align-items: center; gap: 12px; }
+  .chiprow .chips { flex: 1; min-width: 0; }
+  .scope-btn {
+    flex: none; font: 500 13px var(--sans); color: var(--ink-2); background: transparent; cursor: pointer;
+    border: 1px dashed #b9b2a4; border-radius: 999px; padding: 6px 12px; white-space: nowrap;
+  }
+  .scope-btn:hover { background: #ece9e1; }
+  .scope-btn[aria-pressed="true"] { background: #4a4f55; border: 1px solid #4a4f55; color: #fff; }
+  .scope-btn:disabled { opacity: .45; cursor: default; }
+  .scope-note { margin: 0 0 12px; padding: 9px 12px; font-size: 13px; color: var(--ink-2); background: #ece9e1; border-radius: 8px; }
+  .card.out { background: #faf9f6; }
+  .card.out h2 { font-size: 17px; color: var(--ink-2); }
   .tools { display: flex; gap: 10px; margin-top: 10px; }
   .tools input { flex: 1; min-width: 0; }
 
@@ -121,6 +133,8 @@
   @media (max-width: 640px) {
     h1 { font-size: 24px; }
     .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; }
+    .chiprow { flex-direction: column; align-items: stretch; gap: 8px; }
+    .scope-btn { align-self: flex-start; }
     .dot::before { display: none; }
     .meta { gap: 3px 9px; }
     .masthead .wrap { padding-top: 20px; padding-bottom: 16px; }
@@ -152,7 +166,10 @@
 
 <nav class="filters" aria-label="Filter news">
   <div class="wrap">
-    <div class="chips" id="chips" role="toolbar" aria-label="Categories"></div>
+    <div class="chiprow">
+      <div class="chips" id="chips" role="toolbar" aria-label="Categories"></div>
+      <button class="scope-btn" id="scope-btn" type="button" aria-pressed="false" hidden></button>
+    </div>
     <div class="tools">
       <input type="search" id="search" placeholder="Search headlines, summaries, outlets…" aria-label="Search">
       <select id="sort" aria-label="Sort order">
@@ -165,6 +182,7 @@
 
 <main>
   <div class="wrap">
+    <p class="scope-note" id="scope-note" hidden>Out of scope: these stories were screened out as not relevant to Digital Industry Development (no clear digital or tech angle). They are kept here for reference only.</p>
     <p class="resultline" id="resultline" aria-live="polite"></p>
     <div id="feed"></div>
   </div>
@@ -188,7 +206,9 @@
 (() => {
   "use strict";
   const TZ = "Asia/Colombo";
-  const state = { data: null, cat: "All", q: "", sort: "newest", dates: [] };
+  const state = { data: null, cat: "All", q: "", sort: "newest", scope: "in", dates: [] };
+  const isIn = (it) => it.in_scope !== false;           // older editions have no flag: all in scope
+  const scopeItems = () => (state.data?.items || []).filter((it) => (state.scope === "out") !== isIn(it));
   const $ = (id) => document.getElementById(id);
 
   // Small DOM helper — data is always inserted as text, never as HTML.
@@ -242,7 +262,8 @@
     s.append(p); return s;
   };
 
-  function catColor(name) {
+  function catColor(name, out) {
+    if (out) return "color: var(--ink-2); background: #e6e2d8";
     const i = Math.max(0, (state.data?.categories || []).indexOf(name)) % 7;
     return `color: var(--c${i}); background: var(--c${i}b)`;
   }
@@ -253,6 +274,7 @@
     state.cat = p.get("cat") || "All";
     state.q = p.get("q") || "";
     state.sort = p.get("sort") === "relevant" ? "relevant" : "newest";
+    state.scope = p.get("scope") === "out" ? "out" : "in";
     return p.get("date") || "";
   }
   function writeHash() {
@@ -260,6 +282,7 @@
     if (state.cat !== "All") p.set("cat", state.cat);
     if (state.q) p.set("q", state.q);
     if (state.sort !== "newest") p.set("sort", state.sort);
+    if (state.scope === "out") p.set("scope", "out");
     const sel = $("edition-select").value;
     if (sel && sel !== "latest") p.set("date", sel);
     const h = p.toString();
@@ -293,11 +316,12 @@
       return;
     }
     const gen = new Date(d.generated_at);
+    const nIn = d.items.filter(isIn).length;
     const start = d.window_start ? new Date(d.window_start) : null;
     const hrs = start ? Math.round((gen - start) / 3600000) : 24;
     ed.append(
       el("strong", {}, fmtDay.format(gen)), " · ",
-      `${d.items.length} ${d.items.length === 1 ? "story" : "stories"} from the last ${hrs} hours · updated ${fmtTime.format(gen)}`
+      `${nIn} ${nIn === 1 ? "story" : "stories"} from the last ${hrs} hours · updated ${fmtTime.format(gen)}`
     );
     const submit = $("submit-link");
     if (d.submit_form_url) { submit.href = safeUrl(d.submit_form_url); submit.hidden = false; }
@@ -308,7 +332,7 @@
     const d = state.data;
     if (!d) return [];
     const q = state.q.trim().toLowerCase();
-    let items = d.items.filter((it) =>
+    let items = scopeItems().filter((it) =>
       (state.cat === "All" || it.category === state.cat) &&
       (!q || `${it.title} ${it.summary} ${it.outlet} ${it.author} ${it.category}`.toLowerCase().includes(q))
     );
@@ -322,24 +346,35 @@
     const d = state.data;
     const box = $("chips");
     box.replaceChildren();
-    if (!d) return;
+    const sb = $("scope-btn");
+    if (!d) { sb.hidden = true; return; }
+    const out = state.scope === "out";
+    const inCount = d.items.filter(isIn).length;
+    const outCount = d.items.length - inCount;
+    const cats = out ? (d.out_of_scope_categories || []) : d.categories;
+    if (state.cat !== "All" && !cats.includes(state.cat)) state.cat = "All";
+    const mine = scopeItems();
     const counts = {};
-    for (const it of d.items) counts[it.category] = (counts[it.category] || 0) + 1;
-    const cats = ["All", ...d.categories];
-    if (state.cat !== "All" && !d.categories.includes(state.cat)) state.cat = "All";
-    for (const c of cats) {
-      const n = c === "All" ? d.items.length : (counts[c] || 0);
+    for (const it of mine) counts[it.category] = (counts[it.category] || 0) + 1;
+    for (const c of ["All", ...cats]) {
+      const n = c === "All" ? mine.length : (counts[c] || 0);
       const b = el("button", { class: "chip", type: "button", "aria-pressed": String(state.cat === c), disabled: n === 0 && c !== state.cat && c !== "All" },
         c, el("span", { class: "n" }, n));
       b.addEventListener("click", () => { state.cat = c; writeHash(); renderChips(); renderFeed(); });
       box.append(b);
     }
+    // Separate button to switch between relevant news and the out-of-scope archive.
+    sb.hidden = !(d.out_of_scope_categories || []).length && !outCount && !out;
+    sb.disabled = !out && outCount === 0;
+    sb.setAttribute("aria-pressed", String(out));
+    sb.textContent = out ? `\u2190 Back to relevant news (${inCount})` : `Out of scope (${outCount})`;
   }
 
   function card(it) {
-    const top = it.score >= 9;
+    const out = !isIn(it);
+    const top = !out && it.score >= 9;
     const meta = el("div", { class: "meta" },
-      el("span", { class: "tag", style: catColor(it.category) }, it.category),
+      el("span", { class: "tag", style: catColor(it.category, out) }, it.category),
       el("span", { class: "outlet" }, it.outlet),
       it.author ? el("span", { class: "dot" }, `By ${it.author}`) : null,
       el("time", { class: "dot", datetime: it.published, title: it.time_estimated ? "Exact publish time not available" : (ago(it.published) || null) },
@@ -360,7 +395,7 @@
         also.append(el("a", { href: safeUrl(x.url), target: "_blank", rel: "noopener" }, x.outlet));
       });
     }
-    return el("article", { class: `card${top ? " top" : ""}` }, meta, title, summary, also);
+    return el("article", { class: `card${top ? " top" : ""}${out ? " out" : ""}` }, meta, title, summary, also);
   }
 
   function renderFeed() {
@@ -379,13 +414,14 @@
       return;
     }
     const items = filtered();
-    const total = d.items.length;
+    const total = scopeItems().length;
+    $("scope-note").hidden = state.scope !== "out";
     $("resultline").textContent = items.length === total
-      ? `Showing all ${total} stories`
-      : `Showing ${items.length} of ${total} stories`;
+      ? `Showing all ${total} ${state.scope === "out" ? "out-of-scope " : ""}stories`
+      : `Showing ${items.length} of ${total} ${state.scope === "out" ? "out-of-scope " : ""}stories`;
     if (!items.length) {
       feed.append(el("div", { class: "empty" }, el("h2", {}, "Nothing matches"),
-        el("p", {}, total ? "Try another category or search term." : "No relevant stories were found in this edition.")));
+        el("p", {}, total ? "Try another category or search term." : (state.scope === "out" ? "Nothing was screened out in this edition." : "No relevant stories were found in this edition."))));
       return;
     }
     const frag = document.createDocumentFragment();
@@ -401,7 +437,7 @@
     $("status-box").hidden = false;
     const s = d.stats || {};
     $("status-stats").textContent =
-      `Collected ${s.collected ?? "?"} items → ${s.in_window ?? "?"} new → ${s.after_dedupe ?? "?"} after removing duplicates → ${s.published ?? d.items.length} published. ` +
+      `Collected ${s.collected ?? "?"} items → ${s.in_window ?? "?"} new → ${s.after_dedupe ?? "?"} after removing duplicates → ${s.published ?? d.items.filter(isIn).length} relevant, ${s.out_of_scope ?? d.items.filter((i) => !isIn(i)).length} out of scope. ` +
       `AI: ${s.gemini_model || "–"} (${s.gemini_calls ?? 0} calls, ${s.gemini_status || "–"}).`;
     for (const src of d.sources) {
       rows.append(el("tr", {},
@@ -437,6 +473,11 @@
     $("search").addEventListener("input", (e) => {
       clearTimeout(t);
       t = setTimeout(() => { state.q = e.target.value; writeHash(); renderFeed(); }, 150);
+    });
+    $("scope-btn").addEventListener("click", () => {
+      state.scope = state.scope === "out" ? "in" : "out";
+      state.cat = "All";
+      writeHash(); renderChips(); renderFeed();
     });
     $("sort").addEventListener("change", (e) => { state.sort = e.target.value; writeHash(); renderFeed(); });
 

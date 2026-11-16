@@ -9,7 +9,9 @@ web page that anyone with the link can open, with no login.
 - **Updates:** daily at about 7:00–7:30 AM Sri Lanka time, ready by 8:00 AM
 - **Shows:** stories from the last 24 hours, with title, outlet, author, date and time,
   category and summary. Clicking a story opens the original article.
-- **Filters:** by category, plus search and "most relevant first"
+- **Filters:** by category, plus search and "most relevant first". An **Out of scope** button
+  shows stories the AI screened out (macro news, global tech, corporate news and so on) so
+  nothing is hidden for good
 - **Archive:** earlier days stay available from the *Edition* menu
 - **Cost:** free (GitHub Actions, GitHub Pages and the Gemini API free tier)
 
@@ -96,8 +98,12 @@ before launch. Check this table after the first run.
 
 ### Tune what counts as relevant
 In `config/settings.yaml`:
-- `min_relevance` is the lowest score (0–10) that still appears on the site. Default `3`,
-  which keeps anything remotely relevant. Raise it to `5` for a shorter list.
+- `min_relevance` is the lowest score (0–10) counted as relevant. Default `5`. Stories below it
+  are not deleted: they go under the **Out of scope** button, filed into the groups listed in
+  `out_of_scope_categories` (up to `max_out_of_scope_per_day` per run). Raise it to `6` or `7`
+  for a shorter main list.
+- What counts as relevant is defined by the team brief and worked examples in `pipeline/ai.py`.
+  To fix a wrong call, add the headline as an example there.
 - `categories` sets the filter buttons on the site. Each `description` tells the AI what
   belongs in that category.
 

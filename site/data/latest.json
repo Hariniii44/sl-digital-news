@@ -1,15 +1,15 @@
 {
  "site_title": "Sri Lanka Digital Industry News",
- "generated_at": "2026-11-16T10:45:59.056022Z",
+ "generated_at": "2026-11-16T10:56:23.992734Z",
  "window_start": "2026-11-15T08:20:01.727522Z",
- "window_end": "2026-11-16T10:45:59.056022Z",
+ "window_end": "2026-11-16T10:56:23.992734Z",
  "timezone": "Asia/Colombo",
  "categories": [
   "Startups & Ecosystem",
-  "Tech & IT/BPM",
+  "Tech Industry & SMEs",
   "Digital Economy & Policy",
   "Digitalization",
-  "SMEs & Entrepreneurship",
+  "Entrepreneurship",
   "Economy & Business",
   "Global Tech",
   "Events & Opportunities"
@@ -23,12 +23,12 @@
  ],
  "stats": {
   "collected": 565,
-  "in_window": 7,
-  "after_dedupe": 7,
+  "in_window": 11,
+  "after_dedupe": 10,
   "published": 105,
-  "out_of_scope": 50,
+  "out_of_scope": 60,
   "gemini_model": "gemini-3.5-flash-lite",
-  "gemini_calls": 2,
+  "gemini_calls": 1,
   "gemini_status": "ok"
  },
  "sources": [
@@ -37,21 +37,28 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.8
+   "seconds": 0.3
   },
   {
    "name": "EconomyNext",
    "type": "rss",
+   "ok": false,
+   "count": 0,
+   "error": "not a valid feed (SAXParseException)"
+  },
+  {
+   "name": "EconomyNext (Google News fallback)",
+   "type": "google_news",
    "ok": true,
-   "count": 20,
-   "seconds": 1.3
+   "count": 18,
+   "seconds": 0.3
   },
   {
    "name": "Lanka Business Online",
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 3.5
+   "seconds": 1.4
   },
   {
    "name": "Ada Derana Biz",
@@ -72,14 +79,14 @@
    "type": "rss",
    "ok": true,
    "count": 38,
-   "seconds": 1.5
+   "seconds": 0.3
   },
   {
    "name": "LMD",
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 3.2
+   "seconds": 3.8
   },
   {
    "name": "Echelon",
@@ -93,13 +100,13 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "Daily Mirror",
    "type": "google_news",
    "ok": true,
-   "count": 61,
+   "count": 62,
    "seconds": 0.4
   },
   {
@@ -114,14 +121,14 @@
    "type": "google_news",
    "ok": true,
    "count": 19,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "Ceylon Today",
    "type": "google_news",
    "ok": true,
-   "count": 3,
-   "seconds": 0.3
+   "count": 2,
+   "seconds": 0.2
   },
   {
    "name": "Ada Derana",
@@ -141,8 +148,8 @@
    "name": "Daily News (Google News fallback)",
    "type": "google_news",
    "ok": true,
-   "count": 74,
-   "seconds": 0.4
+   "count": 75,
+   "seconds": 0.3
   },
   {
    "name": "Sunday Observer",
@@ -156,42 +163,42 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 3.0
+   "seconds": 0.5
   },
   {
    "name": "Newswire",
    "type": "rss",
    "ok": true,
    "count": 20,
-   "seconds": 0.6
+   "seconds": 0.2
   },
   {
    "name": "The Examiner",
    "type": "rss",
    "ok": true,
    "count": 15,
-   "seconds": 0.1
+   "seconds": 0.2
   },
   {
    "name": "ReadMe",
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.9
+   "seconds": 0.2
   },
   {
    "name": "BBC Technology",
    "type": "rss",
    "ok": true,
    "count": 21,
-   "seconds": 0.2
+   "seconds": 0.1
   },
   {
    "name": "CNN Tech",
    "type": "google_news",
    "ok": true,
-   "count": 54,
-   "seconds": 0.4
+   "count": 52,
+   "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" startup OR startups",
@@ -212,20 +219,20 @@
    "type": "google_news",
    "ok": true,
    "count": 1,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "Topic: SLASSCOM",
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "Topic: \"digital economy\" \"Sri Lanka\"",
    "type": "google_news",
    "ok": true,
-   "count": 9,
+   "count": 10,
    "seconds": 0.3
   },
   {
@@ -253,22 +260,22 @@
    "name": "Topic: \"Sri Lanka\" (\"artificial intelligence\" OR AI) (company OR government OR policy OR startup)",
    "type": "google_news",
    "ok": true,
-   "count": 28,
-   "seconds": 0.4
+   "count": 29,
+   "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" (SME OR SMEs OR \"small and medium\")",
    "type": "google_news",
    "ok": true,
    "count": 6,
-   "seconds": 0.5
+   "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" (\"venture capital\" OR \"angel investor\" OR \"seed funding\" OR \"raises\")",
    "type": "google_news",
    "ok": true,
-   "count": 12,
-   "seconds": 0.4
+   "count": 13,
+   "seconds": 0.3
   },
   {
    "name": "Topic: ICTA OR \"Ministry of Digital Economy\" Sri Lanka",
@@ -282,14 +289,14 @@
    "type": "google_news",
    "ok": true,
    "count": 4,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "Topic: \"Sri Lanka\" economy (IMF OR GDP OR exports OR investment OR budget)",
    "type": "google_news",
    "ok": true,
    "count": 22,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" (BOI OR EDB OR \"Export Development Board\" OR \"Board of Investment\")",
@@ -300,6 +307,54 @@
   }
  ],
  "items": [
+  {
+   "id": "2b10137a6a28",
+   "title": "Marriott's Road to Give raises Rs 84 lakh for community initiatives",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNdldNMVR0N1J1Z2poZl9tRllXck96eFZmdXNldzlnWG9ZMjZxUzR3dHpZdVZKaHJZcjdNQ3Y3cy1NYUNMNjNMQ3E3T0UwX1hZanNyX29RWE9MMnlmOENoVVNLOGZEejZraEFiVG9xd3RxVG5fUXB5ZnUwOExCVFVmSmw2YThKMUR2MlU5eHZmTjVrNDRHbzkzSG5xdlFzWWJ2NWN1MktrMmFmX0Z0Vnc?oc=5",
+   "outlet": "BW Hotelier",
+   "author": "",
+   "published": "2026-11-16T10:50:36Z",
+   "time_estimated": false,
+   "category": "Corporate News",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "bb0f18d49074",
+   "title": "CSE records over Rs. 9 billion turnover in first two hours",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVlk2SUF3OXA3UFlZX1JtSktRVHNZWFltMkFaN243dDFralh4MzVuWnRNeHZKVFJUOFMtQkFJN0FKcE43ZE9uNEdYeG5lX3ZKdDh0M2Jva3hEaHgxNFpUc1ZvTkFuZDZLbTFUWTB1bjBwU3pZZnY3LWpmTWtfdWF4TVA3SGJiNTRRU2tGQkt6RzFnSGxtU25EUGZEdzZVMkxXcjZwUzQtcw?oc=5",
+   "outlet": "Daily News",
+   "author": "",
+   "published": "2026-11-16T10:48:42Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "b802ba4820e7",
+   "title": "India's exports to Singapore, Malaysia, Sri Lanka surge more than 70% in Apr-Sep",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYnZmRVF6OURUNmV4bGpWbUdyc2I2WHBpLVJTNVp4U2Rwa2N0YlJLdnlpaWhQV3o3QklSYUp2LWRMV2lTbzdxVDVvdFNLWjQ2Z0NOSmlHUGszMVpGbE1WdG5ZVnEwb1FGM0dYMVJocnllV3htWEYxYmN2eWo4T01kd3hqOG9OLUZMakltX2s0cUhZRjA5NmNISWhPSGtPcE81cWhSQTJGQTlHWDRoMEtWZDBmSG01VjBTNFZTamdrdzhxaEZnREhOZnlZbVN1RWs0UEVVTjl0M1pFZ9IB3wFBVV95cUxQQkduUW02VW5oa28weWd6NHdGY3VOOVVWWFJJcWNMODJIVWZNRlFwLVBhNnRlRlFDdGJ2ZndLdFZuQmx6ZnhmS2RBS2ROTE9Nd1Y5b29fc1VxaVYwZ2YweFVkZi1QblhiNWRwTUpLanFFUkRBc1FicUdwT2JVNG9EbklVMWk0WG5maGZSVDJkRElmY09ySlNsM0JLclF6a2dmekgyUTk4T0VLckg0T2RheGdseXNvbTJrUHgwakVJMnZJd1dvMTNPakJMUmtzU1VoNDdiTDBya3R0aktsMG9F?oc=5",
+   "outlet": "Moneycontrol.com",
+   "author": "",
+   "published": "2026-11-16T10:46:56Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
   {
    "id": "678a683764cb",
    "title": "Opposition leader and Chinese ambassador to Sri Lanka discuss blue-green economy and bilateral cooperation",
@@ -450,6 +505,22 @@
    "also_in": []
   },
   {
+   "id": "18db687b33f7",
+   "title": "Sri Lanka stocks close down 1.32-pct amid profit-taking",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNlZBT3AzakZZNzdqTDZGV0paNXNXbWt2QVcyaWtlTHlzZVhxTWhSZXlXRXc1UmpFVnBvSWJyVU1nSzJDbUwxSVdfYUJlVC1UOTI1LWJfWGVjbW5HNmNkWUlWRVBkaHlkSlRockVzWnFuWmt6REZYbnZLZE9hTE9XTzQxUHZCbE9uVGhXOGZXZWE?oc=5",
+   "outlet": "EconomyNext",
+   "author": "",
+   "published": "2026-11-16T10:12:46Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
    "id": "6345114b89f4",
    "title": "Poland detains three teenagers suspected of preparing terrorist attack",
    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBJa1FxTW5iZl8xR3I3YXZoRnFvTk9Dd3RRbUlmNVhETXFwbDI2cEVOcm5WTEgtc01VUThYR1hCUlBYbGhMbmIyMnFqUXJoOHl1d1Zpa1hNQm0ycF8wWjlKVjdTY1lNdw?oc=5",
@@ -482,6 +553,22 @@
    "also_in": []
   },
   {
+   "id": "978705070799",
+   "title": "Sri Lanka rupee at 332.60/70 to US dollar spot, bond yields flat",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNWRnUU05bGVoZlNhd2pJSkdOakYyaVlxem5iQTROWmZLUzI3eks1SHdoV2xoTHdTUi1na2NlT1NHVWhjNzZFWlJHSmtyTjFfck12VUlhaFRXSDBnS2NHSGNzRlBJdGZfUG5SWnpJTUtQTUd3QmJoWjl0Tng3RlhyclVudHFBaUpJWklTd0t2WXFIUDRWUTZYWlM4cw?oc=5",
+   "outlet": "EconomyNext",
+   "author": "",
+   "published": "2026-11-16T10:07:26Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
    "id": "ae7689a4921e",
    "title": "Sri Lanka stocks close down 1.32-pct amid profit-taking",
    "url": "https://economynext.com/sri-lanka-stocks-close-down-1-32-pct-amid-profit-taking-290251/",
@@ -494,6 +581,22 @@
    "score": 2,
    "in_scope": false,
    "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "89f8e7897cc5",
+   "title": "Mexican drug lord Miguel Angel Felix Gallardo dies age 80",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPSVYzVlBCbVYyWUlLb0FuMlc3VGtib0tZdGtMT1N3VFA5RVl0Z3U3Ti1GdDVKZmhZY0tleDdYTldBbnJXSjRXQ1V5Vko1WDVBTFBEZU5nSlhSU0JPYVhzYVBkUzFJOG9MNi1lY3NZZUphNWU3QlE2WHFxbTlPZDExcDVCU09rTW9mUUs5Z1R5bmMzcFVVbnY2ck00UFNpX1FFTTdyaTUyQ0cxUksxV2duZFVCdmlJUQ?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-16T10:01:24Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
    "ai_summary": false,
    "also_in": []
   },
@@ -520,6 +623,22 @@
    "outlet": "CNN Tech",
    "author": "",
    "published": "2026-11-16T10:00:16Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "e43c853e699b",
+   "title": "How Trump will try to block Democratic congressional investigations",
+   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdm1fZWhpOF9Wa25yUllIMnJSMFU0LXU1OVdWNktNcFZHWDREaFlqc2RqTFl3c2VvRDNEdDFWX1BQQUJpem8yRDZoTnMyNXlUSjBNVVpJWUlLaGZ6NVlRTXFZZkZiWW1FbU40XzkxaVk3czZBTkdrWjQ3Z2g0Y29jeQ?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-16T10:00:15Z",
    "time_estimated": false,
    "category": "Unrelated",
    "summary": "",
@@ -602,6 +721,22 @@
    "published": "2026-11-16T09:52:46Z",
    "time_estimated": false,
    "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "4f62556bdfa5",
+   "title": "Sri Lanka shares slides 0.36-pct, Commercial Bank and JKH drag",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQQUtxRk16ZWdPSU5yam16eWlCY0dSbVdJQ1hPeV8xT0pMMG1lcVJuNlhTRFJtV1FmdkE0dmVGcG1Qd1hRdzRaa2RDMG1EV0V2LUZCZFB4djk4Yzd5RXJiSnFVQ1NvUDFLeXM2OEt6NDJRMXVFVDM1bk1VU0Z3LU8xUEtFck1KWWZrZjJGVXRBUDczU1U3b05YMA?oc=5",
+   "outlet": "EconomyNext",
+   "author": "",
+   "published": "2026-11-16T09:52:25Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
    "summary": "",
    "score": 0,
    "in_scope": false,
@@ -940,6 +1075,38 @@
    "category": "Unrelated",
    "summary": "",
    "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "da7cc08ba472",
+   "title": "Abans Sept quarter net profit falls 28-pct to Rs791mn on finance costs",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVVZRMHZYT0laU2FNVEJMUk1GLXl6R0ExaHpXeDc5UDJDSU04dUZrTW1oMVhNOTFzWWExODFOSHlDYlhOVEN6dXVXV256YW1Jb1VscHdFbTNnMWh4dFVScnFrZ3U1Y0pPMW5jcWtiYzE3YW8tTWE2aHdpeFRpazYtY0tTTnpXdjNVc1lITTVuMmNXNlB5T05zYU9ZNkxLWHRxNUQtYg?oc=5",
+   "outlet": "EconomyNext",
+   "author": "",
+   "published": "2026-11-16T09:17:25Z",
+   "time_estimated": false,
+   "category": "Corporate News",
+   "summary": "",
+   "score": 1,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "7671e283d638",
+   "title": "Softlogic Holdings Sept quarter net loss narrows 25-pct to Rs2.1bn",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZjA0OWk5SFNmcUxETGVydldud3U4Y01wR0pZZXJxZVN5R2NlRnd6NUVJdDlfRklvOEtIckFfdGhlT2M0UENOLWRWYmN2VEFUTmIzYkZlamJIOWczaV9saDZMUDAxU01VT3IzanRfd2d3S1pOREdBZDFwUGpkTjJhc2dJMGdvOVdKNUh3eEF6RmVDelpuTkZhdG5IRWg1d2M?oc=5",
+   "outlet": "EconomyNext",
+   "author": "",
+   "published": "2026-11-16T09:17:25Z",
+   "time_estimated": false,
+   "category": "Corporate News",
+   "summary": "",
+   "score": 1,
    "in_scope": false,
    "via": "google_news",
    "ai_summary": false,

@@ -11,6 +11,10 @@ on:
         description: "Look back this many hours (leave empty for normal daily run)"
         required: false
         default: ""
+      fresh:
+        description: "Rebuild today's edition from scratch (re-screen everything, replace today's stories). Use after changing the rules."
+        type: boolean
+        default: false
 
 permissions:
   contents: write           # commit the new data files
@@ -45,12 +49,12 @@ jobs:
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           SUBMISSIONS_CSV_URL: ${{ vars.SUBMISSIONS_CSV_URL }}
           HOURS: ${{ github.event.inputs.hours }}
+          FRESH: ${{ github.event.inputs.fresh }}
         run: |
-          if [[ "$HOURS" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
-            python -m pipeline.run --hours "$HOURS"
-          else
-            python -m pipeline.run
-          fi
+          ARGS=()
+          if [[ "$HOURS" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then ARGS+=(--hours "$HOURS"); fi
+          if [[ "$FRESH" == "true" ]]; then ARGS+=(--fresh); fi
+          python -m pipeline.run "${ARGS[@]}"
 
       - name: Save today's data to the repository
         run: |

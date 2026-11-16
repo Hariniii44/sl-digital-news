@@ -60,13 +60,14 @@ def item_to_json(it: Item, min_rel: int) -> dict:
     }
 
 
-def write_outputs(payload: dict, local_date: str) -> None:
+def write_outputs(payload: dict, local_date: str, merge: bool = True) -> None:
     archive_dir = DATA_DIR / "archive"
     archive_dir.mkdir(parents=True, exist_ok=True)
     day_file = archive_dir / f"{local_date}.json"
 
-    # A second run on the same day (e.g. triggered manually) adds to that day's file.
-    if day_file.exists():
+    # A second run on the same day (e.g. triggered manually) adds to that day's file,
+    # unless this is a --fresh run, which replaces the day's file.
+    if merge and day_file.exists():
         old = json.loads(day_file.read_text(encoding="utf-8"))
         new_ids = {i["id"] for i in payload["items"]}
         payload["items"] += [i for i in old.get("items", []) if i["id"] not in new_ids]
@@ -91,6 +92,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--check-sources", action="store_true", help="only test sources and print status")
     ap.add_argument("--no-ai", action="store_true", help="don't call Gemini")
     ap.add_argument("--hours", type=float, help="look back this many hours (ignores last run time)")
+    ap.add_argument("--fresh", action="store_true",
+                    help="re-screen everything in the window, ignoring what was already shown, and "
+                         "replace today's edition instead of adding to it (use after changing the rules)")
     ap.add_argument("-v", "--verbose", action="store_true")
     args = ap.parse_args(argv)
 
@@ -126,6 +130,8 @@ def main(argv: list[str] | None = None) -> int:
     # 2. Window + filters + dedupe
     if args.hours:
         since = now - timedelta(hours=args.hours)
+    elif args.fresh:
+        since = now - timedelta(hours=settings.get("window_hours", 24))
     else:
         last = parse_date(state.get("last_run"))
         max_window = timedelta(hours=settings.get("max_window_hours", 36))
@@ -133,8 +139,9 @@ def main(argv: list[str] | None = None) -> int:
     log.info("Window: %s → %s", since.astimezone(tz), now.astimezone(tz))
 
     # A 2-hour overlap catches stories that appear in feeds late; the 'seen' list prevents repeats.
-    in_window = filter_window(raw, since - timedelta(hours=2), set(state.get("seen", {})),
-                              set(state.get("submitted_seen", [])))
+    seen_filter = set() if args.fresh else set(state.get("seen", {}))
+    submitted_filter = set() if args.fresh else set(state.get("submitted_seen", []))
+    in_window = filter_window(raw, since - timedelta(hours=2), seen_filter, submitted_filter)
     candidates = dedupe(prefilter_general(in_window, settings.get("general_prefilter_keywords", [])))
 
     # 3. Screen for relevance
@@ -210,7 +217,7 @@ def main(argv: list[str] | None = None) -> int:
         "sources": health,
         "items": [item_to_json(it, min_rel) for it in kept_sorted],
     }
-    write_outputs(payload, now.astimezone(tz).strftime("%Y-%m-%d"))
+    write_outputs(payload, now.astimezone(tz).strftime("%Y-%m-%d"), merge=not args.fresh)
 
     # 7. Remember what we've processed
     today = now.astimezone(tz).strftime("%Y-%m-%d")

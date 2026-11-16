@@ -206,6 +206,29 @@ def test_second_run_does_not_repeat(env):
     assert set(ids) == first
 
 
+def test_fresh_run_rebuilds_the_day(env):
+    run.main([])
+    latest = load_latest(env)
+    first = {i["id"] for i in latest["items"]}
+    # simulate a leftover item from an earlier run under old rules
+    legacy = {"id": "legacy1", "title": "Old-rules story", "url": "https://x.lk/old", "outlet": "X",
+              "author": "", "published": latest["items"][0]["published"], "time_estimated": False,
+              "category": "SMEs & Entrepreneurship", "summary": "", "score": 3, "via": "rss",
+              "ai_summary": True, "also_in": []}
+    for f in (env / "data").rglob("*.json"):
+        if f.name == "index.json":
+            continue
+        d = json.loads(f.read_text())
+        d["items"].append(legacy)
+        f.write_text(json.dumps(d))
+    run.main([])                                  # normal run: keeps the leftover, nothing new
+    assert "legacy1" in {i["id"] for i in load_latest(env)["items"]}
+    run.main(["--fresh"])                         # fresh run: re-screens everything, drops the leftover
+    ids = [i["id"] for i in load_latest(env)["items"]]
+    assert "legacy1" not in ids
+    assert set(ids) == first and len(ids) == len(set(ids))
+
+
 def test_runs_without_gemini(env, monkeypatch):
     monkeypatch.delenv("GEMINI_API_KEY")
     assert run.main([]) == 0

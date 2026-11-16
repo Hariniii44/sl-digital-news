@@ -33,6 +33,7 @@
     --c4: #8a3b54; --c4b: #fae6ec;
     --c5: #3d4f5c; --c5b: #e9eef1;
     --c6: #8a5a00; --c6b: #fbf1cf;
+    --c7: #2a5d7a; --c7b: #dfeef6;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -264,7 +265,7 @@
 
   function catColor(name, out) {
     if (out) return "color: var(--ink-2); background: #e6e2d8";
-    const i = Math.max(0, (state.data?.categories || []).indexOf(name)) % 7;
+    const i = Math.max(0, (state.data?.categories || []).indexOf(name)) % 8;
     return `color: var(--c${i}); background: var(--c${i}b)`;
   }
 

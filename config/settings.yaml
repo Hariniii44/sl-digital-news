@@ -42,18 +42,18 @@ categories:
   - name: "Startups & Ecosystem"
     description: "Startups, founders, accelerators, incubators, startup competitions, hackathons, pitch events, angel/VC investment and funding rounds."
     keywords: [startup, start-up, founder, accelerator, incubator, xcellerator, hackathon, pitch, venture, angel, seed, funding round, raises]
-  - name: "Tech & IT/BPM"
-    description: "Tech companies, IT/BPM and software exports, telecoms, AI, cybersecurity, tech talent and skills."
-    keywords: [software, it/bpm, bpm, tech, technology, slasscom, telecom, ai, artificial intelligence, cyber, developer, data centre, data center, cloud]
+  - name: "Tech Industry & SMEs"
+    description: "Tech companies, IT/BPM and software exports, telecoms, AI, cybersecurity, tech talent and skills, plus small and medium enterprises (SMEs/MSMEs): SME digitalisation, SME support schemes, SME financing and exporters, where there is a digital or tech angle."
+    keywords: [software, it/bpm, bpm, tech, technology, slasscom, telecom, ai, artificial intelligence, cyber, developer, data centre, data center, cloud, sme, smes, msme, small and medium, small business]
   - name: "Digital Economy & Policy"
     description: "Government digital economy policy and strategy, ICTA, the Ministry of Digital Economy, regulation (data protection, online safety, telecom), digital public infrastructure."
     keywords: [digital economy, icta, ministry of digital, policy, regulation, data protection, digital id, digital public infrastructure, act, bill]
   - name: "Digitalization"
     description: "Digital transformation of businesses and government services, fintech, digital payments, e-commerce, online services."
     keywords: [digital, digitali, fintech, payment, e-commerce, ecommerce, online, app, platform, qr, lankapay]
-  - name: "SMEs & Entrepreneurship"
-    description: "Small and medium enterprises, entrepreneurs, MSME support schemes, SME financing, exporters."
-    keywords: [sme, smes, msme, small and medium, entrepreneur, small business]
+  - name: "Entrepreneurship"
+    description: "Entrepreneurs and entrepreneurship: entrepreneur networks and platforms, women and youth entrepreneurs, entrepreneurship programmes, training, mentoring and business-support schemes, where there is a digital or tech angle. (Funded tech startups, accelerators and VC deals belong in Startups & Ecosystem.)"
+    keywords: [entrepreneur, entrepreneurs, entrepreneurship, self-employed, women entrepreneurs, youth entrepreneurs, mentoring]
   - name: "Economy & Business"
     description: "Macroeconomy, Central Bank, IMF, budget, trade, exports, investment, corporate results and other business news."
     keywords: [economy, economic, cbsl, central bank, imf, gdp, inflation, budget, export, trade, investment, rupee, tax, tariff, plc, profit, revenue]

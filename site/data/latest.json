@@ -1,8 +1,8 @@
 {
  "site_title": "Sri Lanka Digital Industry News",
- "generated_at": "2026-11-16T10:56:23.992734Z",
+ "generated_at": "2026-11-16T12:01:10.715803Z",
  "window_start": "2026-11-15T08:20:01.727522Z",
- "window_end": "2026-11-16T10:56:23.992734Z",
+ "window_end": "2026-11-16T12:01:10.715803Z",
  "timezone": "Asia/Colombo",
  "categories": [
   "Startups & Ecosystem",
@@ -22,13 +22,13 @@
   "Unrelated"
  ],
  "stats": {
-  "collected": 565,
-  "in_window": 11,
-  "after_dedupe": 10,
-  "published": 105,
-  "out_of_scope": 60,
+  "collected": 576,
+  "in_window": 28,
+  "after_dedupe": 28,
+  "published": 109,
+  "out_of_scope": 84,
   "gemini_model": "gemini-3.5-flash-lite",
-  "gemini_calls": 1,
+  "gemini_calls": 3,
   "gemini_status": "ok"
  },
  "sources": [
@@ -37,28 +37,21 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.3
+   "seconds": 0.7
   },
   {
    "name": "EconomyNext",
    "type": "rss",
-   "ok": false,
-   "count": 0,
-   "error": "not a valid feed (SAXParseException)"
-  },
-  {
-   "name": "EconomyNext (Google News fallback)",
-   "type": "google_news",
    "ok": true,
-   "count": 18,
-   "seconds": 0.3
+   "count": 20,
+   "seconds": 1.4
   },
   {
    "name": "Lanka Business Online",
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 1.4
+   "seconds": 1.3
   },
   {
    "name": "Ada Derana Biz",
@@ -72,21 +65,21 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "Sunday Times – Business Times",
    "type": "rss",
    "ok": true,
    "count": 38,
-   "seconds": 0.3
+   "seconds": 0.8
   },
   {
    "name": "LMD",
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 3.8
+   "seconds": 2.9
   },
   {
    "name": "Echelon",
@@ -106,29 +99,29 @@
    "name": "Daily Mirror",
    "type": "google_news",
    "ok": true,
-   "count": 62,
-   "seconds": 0.4
+   "count": 66,
+   "seconds": 0.3
   },
   {
    "name": "The Morning",
    "type": "google_news",
    "ok": true,
-   "count": 84,
-   "seconds": 0.4
+   "count": 86,
+   "seconds": 0.3
   },
   {
    "name": "Newsfirst",
    "type": "google_news",
    "ok": true,
    "count": 19,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "Ceylon Today",
    "type": "google_news",
    "ok": true,
-   "count": 2,
-   "seconds": 0.2
+   "count": 6,
+   "seconds": 0.3
   },
   {
    "name": "Ada Derana",
@@ -148,8 +141,8 @@
    "name": "Daily News (Google News fallback)",
    "type": "google_news",
    "ok": true,
-   "count": 75,
-   "seconds": 0.3
+   "count": 73,
+   "seconds": 0.4
   },
   {
    "name": "Sunday Observer",
@@ -163,14 +156,14 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.5
+   "seconds": 0.1
   },
   {
    "name": "Newswire",
    "type": "rss",
    "ok": true,
    "count": 20,
-   "seconds": 0.2
+   "seconds": 1.0
   },
   {
    "name": "The Examiner",
@@ -184,20 +177,20 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.2
+   "seconds": 0.4
   },
   {
    "name": "BBC Technology",
    "type": "rss",
    "ok": true,
    "count": 21,
-   "seconds": 0.1
+   "seconds": 0.4
   },
   {
    "name": "CNN Tech",
    "type": "google_news",
    "ok": true,
-   "count": 52,
+   "count": 56,
    "seconds": 0.3
   },
   {
@@ -212,7 +205,7 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "Topic: \"Startup Nation\" OR Xcellerator OR \"First Capital\" startup",
@@ -254,27 +247,27 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.3
+   "seconds": 0.2
   },
   {
    "name": "Topic: \"Sri Lanka\" (\"artificial intelligence\" OR AI) (company OR government OR policy OR startup)",
    "type": "google_news",
    "ok": true,
-   "count": 29,
+   "count": 25,
    "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" (SME OR SMEs OR \"small and medium\")",
    "type": "google_news",
    "ok": true,
-   "count": 6,
+   "count": 7,
    "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" (\"venture capital\" OR \"angel investor\" OR \"seed funding\" OR \"raises\")",
    "type": "google_news",
    "ok": true,
-   "count": 13,
+   "count": 14,
    "seconds": 0.3
   },
   {
@@ -289,13 +282,13 @@
    "type": "google_news",
    "ok": true,
    "count": 4,
-   "seconds": 0.2
+   "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" economy (IMF OR GDP OR exports OR investment OR budget)",
    "type": "google_news",
    "ok": true,
-   "count": 22,
+   "count": 21,
    "seconds": 0.3
   },
   {
@@ -307,6 +300,310 @@
   }
  ],
  "items": [
+  {
+   "id": "694f0f4c98a2",
+   "title": "Rumesh Tharanga receives five new javelins imported from Sweden",
+   "url": "https://www.newswire.lk/2026/11/16/rumesh-tharanga-receives-five-new-javelins-imported-from-sweden/",
+   "outlet": "Newswire",
+   "author": "Editor K",
+   "published": "2026-11-16T11:58:49Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "By Newswire Editorial Sri Lankan javelin thrower Rumesh Tharanga has received a specially manufactured set of five javelins imported from Continue Reading The post Rumesh Tharanga receives five new javelins imported from Sweden appeared first on Newswire .",
+   "score": 0,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "a3827db40749",
+   "title": "Former regulator: We’re in an AI bubble that could burst by 2028 | CNN Business",
+   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOeHdwa3JZWXRJVzB6aHllNnlRZnk0cVFtOU9SaUR5TktaTmFwTkMyRjVqTW1DcTIwdl9OSDhYXzJtMmo1cVJwNXhmX3NVUmo5bS1oRG9BX1hVbmw3czIyZlNaM2dqTVlVemZGR283LUtsc1hFVTVJSEFHTENQTGlwRFhPS0xhYU5mRFFHdUJfYVViQjQ?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-16T11:54:00Z",
+   "time_estimated": false,
+   "category": "Global Tech",
+   "summary": "A former top Wall Street regulator warns that the current artificial intelligence boom is a bubble that could potentially burst by the 2028 election.",
+   "score": 7,
+   "in_scope": true,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "2819050ea29f",
+   "title": "FBI Steps In to Help Hunt Down Scam Centres Operating in Sri Lanka",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMlVLSi1KUEVOYk4zdUdDVm9aZm5DeFhVR3lVaUx4Wno3d3gtYWE2YzNjdzNmY2QxMFNBOEVJUzRSU0dNOS0yeUp5THJlcF9SZV95VGZHZ3hYa3FSTFpseWpEXzJUVEF2YWJaMjh5azZUMzdJZS1xWVhBbDZPMFM4dkRKNGVTYkRVX3RXUnRNVGlrT3MtQTJibFJ0UWp3Tm5PRHMyOA?oc=5",
+   "outlet": "Newsfirst",
+   "author": "",
+   "published": "2026-11-16T11:52:00Z",
+   "time_estimated": false,
+   "category": "Tech Industry & SMEs",
+   "summary": "The FBI is assisting in efforts to track down cyber scam centres operating within Sri Lanka.",
+   "score": 7,
+   "in_scope": true,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "363c247ba809",
+   "title": "DSI Tyres brings Hankook’s global tyre expertise to Sri Lankan motorists",
+   "url": "https://www.newswire.lk/business/dsi-tyres-brings-hankooks-global-tyre-expertise-to-sri-lankan-motorists/",
+   "outlet": "Newswire",
+   "author": "Senal",
+   "published": "2026-11-16T11:51:07Z",
+   "time_estimated": false,
+   "category": "Other Sectors",
+   "summary": "DSI Tyres, the authorised agent for Hankook tyres distribution in Sri Lanka, continues to deliver advanced engineering, quality and performance Continue Reading The post DSI Tyres brings Hankook’s global tyre expertise to Sri Lankan motorists appeared first on Newswire .",
+   "score": 1,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "caab7f9c2e63",
+   "title": "Ananda Palitha arrested over alleged Rs. 3.11 million CPC overtime fraud",
+   "url": "https://www.newswire.lk/2026/11/16/ananda-palitha-arrested-over-alleged-rs-3-11-million-cpc-overtime-fraud/",
+   "outlet": "Newswire",
+   "author": "Editor K",
+   "published": "2026-11-16T11:48:22Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "By Newswire Editorial D.D. Ananda Palitha, Convenor of the Samagi Joint Trade Union Alliance, has been arrested in connection with Continue Reading The post Ananda Palitha arrested over alleged Rs. 3.11 million CPC overtime fraud appeared first on Newswire .",
+   "score": 0,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "75a6be31957f",
+   "title": "Jensen Huang allies campaign to reinstate the former Nvidia boss",
+   "url": "https://www.bbc.co.uk/news/articles/cry49plv8v3go?at_medium=RSS&at_campaign=rss",
+   "outlet": "BBC Technology",
+   "author": "Michael Race",
+   "published": "2026-11-16T11:45:40Z",
+   "time_estimated": false,
+   "category": "Global Tech",
+   "summary": "Allies of former Nvidia CEO Jensen Huang are campaigning for his reinstatement following his resignation over personal scandals involving alleged relationships. Prominent industry figures, including Elon Musk and Tim Sweeney, have signed an open letter urging the board to bring him back.",
+   "score": 6,
+   "in_scope": true,
+   "via": "rss",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "2183be304f47",
+   "title": "Deep Depression likely to intensify into Severe Cyclonic Storm tomorrow",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1rcG9oQm54RHZYQnpaa0RjMWwxbXhOSFpaaF9IRHpDZkRCWXJRWkd5RWNnVC1BdjBWaHFlZHJzS0UzLUZTVUttR3F6NnB2bnBZeUo0ZlBoZE9KWGdsTG5mYklDNTJqdw?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-16T11:42:45Z",
+   "time_estimated": false,
+   "category": "Fact-checks, Incidents & Opinion",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "f5ab063490e5",
+   "title": "Ananda Palitha arrested over CPC overtime payment fraud",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOby1DU1JSWlFETWRyMHlQQlVjRVNiSW1WeEhNYnk5Q1lXN1pkcWNRVWttRjh2UFN2U0k2TWNPcngyMHFXUW9GRGVLOGVaLU05WlRJcHNpdjJXU3A3RUdmWnFJM3dVdkVyOXlQSWs1QWx1VXE3UjlpSkZmc2ExMTB5dEZydUp6UWVFZ3QtSWtuRnl0VkJQQzhFclZMV0U0enlTY1E0VUFGZGY0Mnc?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-16T11:42:00Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "69e47c4dda50",
+   "title": "PM Shehbaz approves facilitation centres for SMEs at district level",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdkh6bzdNa2poOVdGNnBQQzJpM3pRaEVBRW85b09XVjREV0w2Z2g3Tmo0V29HWk5HbzlnaVJYY2R0bVFsa2MtQnVVWlpxMVZYcm9IUkFnc2p6SzB0VFJ6ZFIxcGljdlZKTmtCZnlOazMzemp1Snl0WElVcmQtYmpSZTFvM1B6aENlT2lrU3pHSXBRbFFoaEQ0R1E1TGhQd2tyQWd3?oc=5",
+   "outlet": "Dawn",
+   "author": "",
+   "published": "2026-11-16T11:40:06Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "0b286f1c64f2",
+   "title": "Former NATO commander responds to whistleblower complaint filed by U.S. soldier over deadly Iranian drone attack",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWmhBU041U2kxcVdPNWVUT3hRSlU4NFNwbl93dlFBX0FfMWNBSXN6Zkl6NkNfQl83ZVBXcm82cURNOWZCWTZZSGdKRUV5LVgxN2RRb1pKdXlacFhYNGxyajhVcW42OU5hU0Z6TEl3ejFHSWVrNVk4ZXl4SE1MeExzTUQwTVl5R2hBYVJxMHhUbFhlZDdyV3ZwVk80TUV6aTVpVEpoUlJlOHNFTkRrZ0RZbA?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-16T11:37:09Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "67801f06627b",
+   "title": "Three new political parties recognised, bringing Sri Lanka’s total to 87",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9lanQ1S2s2NVVzMlM3bUpNOFVlQzc5MzUyQTBGeF9jVkwxQ2d2dFRWeDg3OWJsNUcwQ3BRdHZyWU9HNGRyTnE4TE9Zb2Q2VkxRdnRHUDRDc1NBdzdBRGVrdGJwYTJqdw?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-16T11:23:50Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "2324f5ed24fe",
+   "title": "President calls for review of disaster preparedness plans",
+   "url": "https://www.newswire.lk/2026/11/16/president-calls-for-review-of-disaster-preparedness-plans/",
+   "outlet": "Newswire",
+   "author": "Editor K",
+   "published": "2026-11-16T11:16:39Z",
+   "time_estimated": false,
+   "category": "Fact-checks, Incidents & Opinion",
+   "summary": "By Newswire Editorial President Anura Kumara Dissanayake has instructed officials to assess the potential social impacts of prevailing hot weather Continue Reading The post President calls for review of disaster preparedness plans appeared first on Newswire .",
+   "score": 0,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "9f3b17936534",
+   "title": "France, UK to host December conference on Russian shadow fleet",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE95aGVlMi1HWTExaEVGVnc2MDBzMWZoTlhvUFVtNFRuZG42dFJRR3BMemJtcWJDZXE3b2d3SnhIUFZlRmx5N2x3cVg0QlhLcEtDOVF1ekVaY0VZTTV3amdOQzk1bUQwUQ?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-16T11:12:38Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "789ebea09358",
+   "title": "Bangladesh loses ground in EU apparel market, exports to EU fall 11.9%",
+   "url": "https://www.newswire.lk/2026/11/16/bangladesh-loses-ground-in-eu-apparel-market-exports-to-eu-fall-11-9/",
+   "outlet": "Newswire",
+   "author": "Editor K",
+   "published": "2026-11-16T11:12:12Z",
+   "time_estimated": false,
+   "category": "Other Sectors",
+   "summary": "Bangladesh’s apparel industry is losing its competitive edge in the European Union (EU), with export earnings, shipment volumes and average Continue Reading The post Bangladesh loses ground in EU apparel market, exports to EU fall 11.9% appeared first on Newswire .",
+   "score": 1,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "700705906052",
+   "title": "Strict action against bribery and corruption, regardless of status: MP Asoka Ranwala",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaDlPRFNjcHppRTVtcnN1V3VycGd0VUJsZkxuMS1FX01QN296Z0hyeDhIV1JrR3ZiLV9qQ0dOOWNFaEZrbXVtMzRETmdRVzE4UG92ZTYwZXFta2V3Z0FEVU5fbU9LUms1cWxlN0dQaU1SX0lpdmRJVHM3c0k2UVRhMHJka2RoMlItRXR5bGsyNnFfblc0SFBJa0p4UXVrR01oLWU5QkduZTBJaXFaZ2NoYlRhLXpDMjlSTnlRTG9RYlhhRTRwd1FCeDYxbXJOa1U?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-16T11:12:00Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "bef09c8821dd",
+   "title": "Amana Bank continues to maintain impressive profit momentum",
+   "url": "https://www.newswire.lk/business/amana-bank-continues-to-maintain-impressive-profit-momentum/",
+   "outlet": "Newswire",
+   "author": "Roshen Perera",
+   "published": "2026-11-16T11:08:48Z",
+   "time_estimated": false,
+   "category": "Corporate News",
+   "summary": "Having recorded its best-ever profit in 2025, Amãna Bank sustained its momentum, posting a Profit After Tax of LKR 1.7 Continue Reading The post Amana Bank continues to maintain impressive profit momentum appeared first on Newswire .",
+   "score": 2,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "fe2a0ab977fe",
+   "title": "UN labour agency chief Houngbo wins second term",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9JX040Q0VjQl9OOFZWZDJfWXQ5UmRkT0N6blV0VDNFRlRTMUZMa0FPZEptbGstdUQyeEc0VjY4b1BVOW5vbWFHVk1FM1pyTjhvcjA5dkgtSXhyTTZoZzQxRkJIVENiUQ?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-16T11:03:18Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "6fb79cc515fc",
+   "title": "Weather: Deep Depression moves away from Sri Lanka",
+   "url": "https://www.newswire.lk/2026/11/16/weather-deep-depression-moves-away-from-sri-lanka/",
+   "outlet": "Newswire",
+   "author": "Editor K",
+   "published": "2026-11-16T11:02:55Z",
+   "time_estimated": false,
+   "category": "Fact-checks, Incidents & Opinion",
+   "summary": "By Newswire Editorial The Deep Depression over the Bay of Bengal, located northeast of Sri Lanka, is moving further away Continue Reading The post Weather: Deep Depression moves away from Sri Lanka appeared first on Newswire .",
+   "score": 0,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "479b17649712",
+   "title": "See the Leonid meteors this week — ‘the shower that started it all’",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFA0aUdGcnBMR2w5ZlZIT2oyNWFuU1RYdnN3NHdpZnJyNkdLenR4VS00TmlPSGhEVVBxaTl6eS1WMVdsZk84Tm9lQlkxWHVuczNRVjJ0VzB2Y3RhOEVKU28xdFBLeHAwTGFJVnNldWNiYlVidw?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-16T11:00:15Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
   {
    "id": "2b10137a6a28",
    "title": "Marriott's Road to Give raises Rs 84 lakh for community initiatives",
@@ -384,6 +681,22 @@
    "score": 0,
    "in_scope": false,
    "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "158a1b6ce2b2",
+   "title": "MSFT Stock Quote Price and Forecast",
+   "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBQX3dUSG5UYjhqVm1nRmNzS2pFY0VvMjFRVlQ0WWk0RzFlM2NQZ1lnR2M0b1JKOUlFRU1KZTllYnJfODBUd0RKQ0FzT2o2SmFJ?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-16T10:40:29Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
    "ai_summary": false,
    "also_in": []
   },
@@ -537,12 +850,44 @@
    "also_in": []
   },
   {
+   "id": "8eb257b9acd7",
+   "title": "Interpreting Budget 2027: Focus on priorities in an increasingly volatile world",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPLVdBWW04eWpiU05lRFRjM1g4Q2xNbHZPamN6dWhvbkJsbGxyMWplSlprNnBBWklxVGZNV0Q4WVp1RllXVG5fQlBKYWpfSEx2WEt4T0xZbVZOVll6czNaS3hza2VXWFZFTGNyUlgzM040cG5aR3RkMlpGQ2w3Rk8xX2V1bVp3a3lrWWNNY1YycEtMWnRQZzdrWDR0TDdESkU0MUdVclRSNnRpMmxCcWRUVVg5MTNna05ZVkRLQThFU3FfbTItZGpPZ3B3?oc=5",
+   "outlet": "Daily Mirror - Sri Lanka",
+   "author": "",
+   "published": "2026-11-16T10:11:18Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
    "id": "acb5cae62f1e",
    "title": "Balangoda Kassapa Thero Remanded After Failing to Appear",
    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxORUJpSm94bFlZZnZoZ01TUV9ySXlXQjM4Mm1jTFpudGJkTmNHVDg1cmlaYUx4WVd4UE92UXM5bTJTNGI1NE5QOVBRLXcwcUJEOUJfelhrZmFjSVRlcHhCM0U0SGNfR3lJVVVrMmtVa015eWxTT2d0RkI5WU9YcUxiVWttdXY2RWNTbWFmdG5ldVJRNmx4S21Z?oc=5",
    "outlet": "Newsfirst",
    "author": "",
    "published": "2026-11-16T10:08:00Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "3357fd61ed8c",
+   "title": "Voter polls",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPQmRSU3l0M1pBNkZUbnF5a1hfRFAzQ0NLMTJzdGJKbkw2V1hjb2dIRU50V2Rnak5fSE5leEpMN2JPcmN5ZWJFeHFtNS1qQTRwSEpzSVhQOEMyR0NqazhCVk1wOFhiUF96cnZySjlZQnY5blNGUmVKcHpxTFJSRzNIdmFoVGpVVWJlaVZaMXJIa0c?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-16T10:07:30Z",
    "time_estimated": false,
    "category": "Unrelated",
    "summary": "",
@@ -585,6 +930,22 @@
    "also_in": []
   },
   {
+   "id": "672086eda369",
+   "title": "Sri Lanka Latest Breaking News and Headlines - Print Edition Anti-Houthi forces retreat in Yemen as Iran strikes Bahrain",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQWU12UjhFdkp3VmN6QV9QamMxdWJUbUV6bzdrSGVYUHRueU5jVktTcmZXYlhzT0FoaFFFZE12cDg5akcxdF9tdzlZWkxlclM1RGQ0UnlDOHJkVlZhcTNnZk1WTk5mUlQ2Tk84TlFILXN2SjRYVFFYNWNIbEtVLUx0aHFnUnZQMmhIYmNJcmZrUnpVM3Zvck0xNTZrU3llMmlMMDFnQWVGdnpwX1lJUk55WmgzbmJMaVdl?oc=5",
+   "outlet": "Daily Mirror",
+   "author": "",
+   "published": "2026-11-16T10:01:24Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
    "id": "89f8e7897cc5",
    "title": "Mexican drug lord Miguel Angel Felix Gallardo dies age 80",
    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPSVYzVlBCbVYyWUlLb0FuMlc3VGtib0tZdGtMT1N3VFA5RVl0Z3U3Ti1GdDVKZmhZY0tleDdYTldBbnJXSjRXQ1V5Vko1WDVBTFBEZU5nSlhSU0JPYVhzYVBkUzFJOG9MNi1lY3NZZUphNWU3QlE2WHFxbTlPZDExcDVCU09rTW9mUUs5Z1R5bmMzcFVVbnY2ck00UFNpX1FFTTdyaTUyQ0cxUksxV2duZFVCdmlJUQ?oc=5",
@@ -623,6 +984,22 @@
    "outlet": "CNN Tech",
    "author": "",
    "published": "2026-11-16T10:00:16Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "ad8c94611a2e",
+   "title": "How Trump will try to block Democratic congressional investigations",
+   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQSk1lWFItZ2pmdHFZbGstUHlsQ1JEOFRtbmJMbEM5ZDhSUDcxSjk0ajh6VFB4S0ZZMmhGUHZFM2RiWHMtUjUxZ0lnWmJwY05lQzl0OWYzYlRZcWJJSzRDMjd4UW12OTdnbWV0Mkh0NktxQ21jOXk4WWktY2NUc0dnNFB3?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-16T10:00:15Z",
    "time_estimated": false,
    "category": "Unrelated",
    "summary": "",
@@ -694,6 +1071,22 @@
    "in_scope": false,
    "via": "google_news",
    "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "b109d42264ee",
+   "title": "Wall Street’s former top regulator says we’re in an AI bubble that could burst by 2028 election",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPOS11RGszeTZoX1E1M0xzeFJ0R2ZEQV9EdFpVdklHV3ZYSnFKYkNOSVNaZTRJc2daR0Fpd0d0akVzY3lCUWtDc3pyZkIyMkxFdkRTUXAyMjBsRnBFRXJ0bHBXTHBuM0t5OWNhYUZVVkFyeXpXMGJibkxXZTdTZDlkczNJS1NVdFEwRVNiZA?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-16T10:00:00Z",
+   "time_estimated": false,
+   "category": "Global Tech",
+   "summary": "A former top Wall Street regulator warns that the current artificial intelligence boom is a bubble that could potentially burst by the 2028 election.",
+   "score": 7,
+   "in_scope": true,
+   "via": "google_news",
+   "ai_summary": true,
    "also_in": []
   },
   {
@@ -785,6 +1178,22 @@
    "published": "2026-11-16T09:43:15Z",
    "time_estimated": false,
    "category": "Fact-checks, Incidents & Opinion",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "84a36e288bb0",
+   "title": "Tackling climate change while growing the economy",
+   "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE0wWW9vQlNXUWdZRUlheWhsMFdPZWlRY3U0WlZmMW84TVQwRnJYdnZFbGRIWlAxN045TTFRblp0T2FhMXU1WUpTTkhUNFN2Ym4wdGhNT1J3OG1BNXRQdlQtTG1SUXRPOVRWSnVibW5WVUt4VThhX1NaTFpVMA?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-16T09:40:14Z",
+   "time_estimated": false,
+   "category": "Unrelated",
    "summary": "",
    "score": 0,
    "in_scope": false,
@@ -895,6 +1304,22 @@
    "outlet": "Daily Mirror",
    "author": "",
    "published": "2026-11-16T09:34:00Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "145110e04af3",
+   "title": "Britain’s Prince William and Princess Kate Arrive in India for Three-Day Visit",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNVHBkalBCc0VfWU5fdjh4a2VSdHktSUVUYjgzeHdVSUM0aHZzaE9oeHhTcFhmZ0JSMHBXY3QtQ0dNdWNfUVIxZ0piQy1EVFQyZHM0VzVLbEhKNlh0RkhnMWJWdDctZy1CaDZIckxnbXdWWmY2V01VRUlYeVI0TXROUW53UlppMEp5anBpUDNRcURWT3d4THlCZUlfdkZKSzg3VllTcnRBMU00ZllxSVRycG5R?oc=5",
+   "outlet": "Ceylon Today",
+   "author": "",
+   "published": "2026-11-16T09:31:56Z",
    "time_estimated": false,
    "category": "Unrelated",
    "summary": "",
@@ -1057,6 +1482,22 @@
    "published": "2026-11-16T09:20:00Z",
    "time_estimated": false,
    "category": "Fact-checks, Incidents & Opinion",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "3111da31767d",
+   "title": "Do Not Sabotage Anuradhapura Sacred City Plan: Acting Atamasthanadhipathi Urges Support",
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQSWprNjJWTVRHSmJHWnV4UUFiOURnNGFIOUY0YWRzQVl0WkFqaEJaeWIzMmxXbmkxMy0xY2M4WVEtbV82ZnlCNTl1S01yN1JiWHBpMDNZNThCclVKbkxxQy1BV3NGWVlYVVNuVTdPX1c4SWhBMXZiVlBRT0g0UEtVQ1h0Tm1KWWttVWlYWDJZeHltcHpFRWhiVTdEcHlXWXpVdTJ5cVRPMURITFNPYXVGcXp1VERDWXJDOHNFV0Zn?oc=5",
+   "outlet": "Ceylon Today",
+   "author": "",
+   "published": "2026-11-16T09:19:22Z",
+   "time_estimated": false,
+   "category": "Unrelated",
    "summary": "",
    "score": 0,
    "in_scope": false,

@@ -1,0 +1,15 @@
+# Cloudflare Worker settings. Deploy with:  npx wrangler deploy   (run inside the relay folder)
+name = "sl-news-refresh"
+main = "worker.mjs"
+compatibility_date = "2025-01-01"
+
+[vars]
+GITHUB_REPO = "Hariniii44/sl-digital-news"
+ALLOWED_ORIGIN = "https://hariniii44.github.io"   # the website's address, no path, no trailing slash
+GITHUB_BRANCH = "main"
+MAX_MANUAL_PER_DAY = "3"
+COOLDOWN_MINUTES = "10"
+
+# Secrets are NOT stored in this file. Add them with:
+#   npx wrangler secret put GITHUB_TOKEN
+#   npx wrangler secret put TEAM_PASSCODE

@@ -79,6 +79,40 @@ posts are summarized and appear in the next morning's edition.
    - `SUBMISSIONS_CSV_URL` = the published CSV URL
    - The site has no "Submit a link" button. Share the form's link with the team directly.
 
+### 6. (Optional) "Update now" button for the team
+The site can show an **Update now** button. A team member enters a shared passcode and the
+news refreshes (10 to 20 minutes). A passcode is optional. A small free Cloudflare Worker sits between the page and
+GitHub, so the GitHub token is never visible in the web page. Without this step the button
+stays hidden, and the schedule and the Actions tab work as before.
+
+1. **GitHub token.** GitHub → Settings → Developer settings → Personal access tokens →
+   **Fine-grained tokens → Generate new token**. Repository access: **Only select repositories**
+   and pick this repo. Permissions: **Actions: Read and write**. Copy the token.
+2. **Cloudflare account** (free): https://dash.cloudflare.com/sign-up
+3. **Deploy the Worker.** In a terminal, from this project:
+   ```bash
+   cd relay
+   npx wrangler login
+   npx wrangler secret put GITHUB_TOKEN     # paste the token from step 1
+   npx wrangler secret put TEAM_PASSCODE    # OPTIONAL: skip this line for a button with no passcode
+   npx wrangler deploy
+   ```
+   Check `relay/wrangler.toml` first: `GITHUB_REPO` must be `owner/name` and `ALLOWED_ORIGIN`
+   must be the website address (`https://<owner>.github.io`, no path). `deploy` prints the
+   Worker's address, for example `https://sl-news-refresh.<you>.workers.dev`.
+4. **Point the site at it.** Put that address in `site/config.js` as `refreshUrl`, then commit
+   and push. The button appears.
+
+Safety limits (change them in `relay/wrangler.toml`):
+- If you set a passcode, a wrong one is refused. Without one, anyone who opens the site can press
+  the button, and the limits below are the only protection. Requests must come from your website's address.
+- Only one update runs at a time, and a new one can't start within `COOLDOWN_MINUTES` (10) of the last.
+- At most `MAX_MANUAL_PER_DAY` (3) manual updates a day (Sri Lanka time). Each one uses
+  Gemini's free quota.
+- To add or change the passcode: `npx wrangler secret put TEAM_PASSCODE`. To remove it:
+  `npx wrangler secret delete TEAM_PASSCODE`. To switch the button off, empty `refreshUrl` or delete the Worker.
+- Tests for the Worker: `node --test relay/worker.test.mjs`
+
 ---
 
 ## Maintaining it
@@ -120,6 +154,7 @@ In `config/settings.yaml`:
   only public news text.
 
 ### Run it manually
+- **The Update now button** on the site, if you set up step 6.
 - **Actions → Daily news update → Run workflow.** You can enter a number of hours, for example
   `48` after an outage, to look back further.
 - Locally:

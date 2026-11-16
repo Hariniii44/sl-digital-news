@@ -52,7 +52,25 @@
   h1 { font: 700 30px/1.15 var(--serif); margin: 0; letter-spacing: -.01em; }
   .edition { margin: 8px 0 0; color: #c9d7dc; font-size: 14px; }
   .edition strong { color: #fff; font-weight: 600; }
-  .mast-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .mast-actions { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; }
+  .refresh-btn {
+    font: 500 14px var(--sans); color: var(--brand); background: var(--accent); border: 0; border-radius: 8px;
+    padding: 0 14px; min-height: 38px; cursor: pointer; white-space: nowrap;
+  }
+  .refresh-btn:hover:not(:disabled) { background: #ecb552; }
+  .refresh-btn:disabled { opacity: .7; cursor: default; }
+  .refresh-msg { margin: 10px 0 0; font-size: 13px; color: #c9d7dc; }
+  .refresh-msg.err { color: #ffd2d2; }
+  dialog { border: 0; border-radius: 12px; padding: 22px; width: min(92vw, 380px); color: var(--ink); background: var(--paper); box-shadow: 0 10px 40px rgba(0,0,0,.3); }
+  dialog::backdrop { background: rgba(10,20,26,.55); }
+  dialog h2 { font: 600 20px var(--serif); margin: 0 0 6px; }
+  dialog p { margin: 0 0 14px; color: var(--ink-2); font-size: 14px; }
+  dialog input { width: 100%; font-size: 16px; }
+  dialog .row { display: flex; gap: 10px; justify-content: flex-end; margin-top: 14px; }
+  dialog .row button { font: 500 14px var(--sans); border-radius: 8px; padding: 0 14px; min-height: 38px; cursor: pointer; border: 1px solid var(--line); background: #fff; color: var(--ink); }
+  dialog .row button.go { background: var(--brand); border-color: var(--brand); color: #fff; }
+  dialog .row button:disabled { opacity: .6; cursor: default; }
+  dialog .err { color: #a8323a; font-size: 13px; margin: 10px 0 0; min-height: 1em; }
   .mast-actions label { font-size: 12px; color: #c9d7dc; display: block; margin-bottom: 4px; }
   select, input[type="search"] {
     font: inherit; color: var(--ink); background: #fff; border: 1px solid var(--line);
@@ -143,6 +161,7 @@
     .mast-actions { width: 100%; }
     .mast-actions > div { width: 100%; }
     .mast-actions select { width: 100%; }
+    .refresh-btn { width: 100%; min-height: 42px; }
 
     /* Filters: every chip stays visible (they wrap instead of scrolling sideways), and the bar
        scrolls away with the page so a few rows of chips never cover the stories. */
@@ -180,12 +199,14 @@
       <p class="kicker">Daily news briefing · Digital Industry Development</p>
       <h1 id="site-title">Sri Lanka Digital Industry News</h1>
       <p class="edition" id="edition">Loading today's update…</p>
+      <p class="refresh-msg" id="refresh-msg" aria-live="polite" hidden></p>
     </div>
     <div class="mast-actions">
       <div>
         <label for="edition-select">Edition</label>
         <select id="edition-select" aria-label="Choose edition date"></select>
       </div>
+      <button class="refresh-btn" id="refresh-btn" type="button" hidden>&#8635; Update now</button>
     </div>
   </div>
 </header>
@@ -228,6 +249,21 @@
   </div>
 </footer>
 
+<dialog id="pass-dialog" aria-labelledby="pass-title">
+  <form id="pass-form">
+    <h2 id="pass-title">Update the news now</h2>
+    <p>Enter the team passcode to fetch the latest stories. An update takes about 10&ndash;20 minutes.</p>
+    <label for="pass-input" hidden>Team passcode</label>
+    <input type="password" id="pass-input" placeholder="Team passcode" autocomplete="current-password" required>
+    <p class="err" id="pass-err" role="alert"></p>
+    <div class="row">
+      <button type="button" id="pass-cancel">Cancel</button>
+      <button type="submit" class="go" id="pass-go">Start update</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="config.js"></script>
 <script>
 (() => {
   "use strict";
@@ -477,7 +513,135 @@
     $("sort").value = state.sort;
   }
 
+  // ── Manual "Update now" button ──────────────────────────────────────────────
+  // Talks to a small relay (see relay/ in the repo) that holds the GitHub token. Hidden until
+  // refreshUrl is set in config.js.
+  const RELAY = String((window.NEWS_CONFIG || {}).refreshUrl || "").replace(/\/$/, "");
+  const refresh = { waiting: false, startedAt: 0, timer: null, needPass: true };
+  const store = {
+    get() { try { return sessionStorage.getItem("news_pass") || ""; } catch { return ""; } },
+    set(v) { try { v ? sessionStorage.setItem("news_pass", v) : sessionStorage.removeItem("news_pass"); } catch { /* private mode */ } },
+  };
+
+  function refreshMsg(text, isError) {
+    const m = $("refresh-msg");
+    clearTimeout(refreshMsg.t);
+    m.textContent = text || "";
+    m.hidden = !text;
+    m.classList.toggle("err", !!isError);
+    // error notes tidy themselves away; progress notes stay until the update finishes
+    if (text && isError) refreshMsg.t = setTimeout(() => { if (!refresh.waiting) refreshMsg(""); }, 30000);
+  }
+
+  // Plain-language explanation for a failed attempt to start an update.
+  function failureText(status, j) {
+    if (j && j.error) return j.error;                       // the relay's own wording
+    if (status === 403) return "This page is not allowed to start updates.";
+    if (status === 429) return "Updates are limited right now. Please try again later.";
+    if (status >= 500) return "The update service had a problem. Please try again in a minute.";
+    return "Could not start the update. Please try again.";
+  }
+
+  function minsSince(iso) {
+    const m = Math.max(0, Math.round((Date.now() - new Date(iso)) / 60000));
+    return m < 1 ? "less than a minute" : `${m} minute${m === 1 ? "" : "s"}`;
+  }
+
+  function applyStatus(st) {
+    const btn = $("refresh-btn");
+    if (typeof st.passcode_required === "boolean") refresh.needPass = st.passcode_required;
+    if (st.state === "running") {
+      refresh.waiting = true;
+      btn.disabled = true; btn.textContent = "Updating\u2026";
+      refreshMsg(`Update in progress (started ${st.started_at ? minsSince(st.started_at) + " ago" : "just now"}). It usually takes 10\u201320 minutes. This page will refresh when it finishes.`);
+      schedulePoll(20000);
+      return;
+    }
+    // idle. Right after pressing the button GitHub needs a moment to register the run.
+    if (refresh.waiting && Date.now() - refresh.startedAt < 60000) { schedulePoll(8000); return; }
+    btn.disabled = false; btn.innerHTML = "&#8635; Update now";
+    if (refresh.waiting) {
+      refresh.waiting = false;
+      if (st.last_conclusion === "success") {
+        refreshMsg("Update finished. Loading the new stories\u2026");
+        setTimeout(() => location.reload(), 10000);   // give GitHub Pages a moment to publish
+      } else {
+        refreshMsg("The update did not finish successfully. Please try again, or ask the maintainer to check GitHub Actions.", true);
+      }
+      return;
+    }
+    refreshMsg("");
+  }
+
+  function schedulePoll(ms) {
+    clearTimeout(refresh.timer);
+    refresh.timer = setTimeout(pollStatus, ms);
+  }
+
+  async function pollStatus() {
+    try {
+      const r = await fetch(`${RELAY}/status`, { cache: "no-store" });
+      if (!r.ok) throw new Error(r.status);
+      applyStatus(await r.json());
+    } catch {
+      if (refresh.waiting) schedulePoll(30000);   // keep trying quietly
+    }
+  }
+
+  function setupRefresh() {
+    if (!RELAY) return;
+    const btn = $("refresh-btn"), dlg = $("pass-dialog"), form = $("pass-form");
+    btn.hidden = false;
+    pollStatus();   // shows "update in progress" if someone else already started one
+
+    async function start(passcode) {
+      const go = $("pass-go");
+      go.disabled = true; $("pass-err").textContent = "";
+      try {
+        const r = await fetch(`${RELAY}/run`, {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ passcode }),
+        });
+        const j = await r.json().catch(() => ({}));
+        if (r.status === 202) {
+          if (refresh.needPass) store.set(passcode);
+          dlg.close();
+          refresh.waiting = true; refresh.startedAt = Date.now();
+          btn.disabled = true; btn.textContent = "Updating\u2026";
+          refreshMsg("Update started. It usually takes 10\u201320 minutes. This page will refresh when it finishes.");
+          schedulePoll(8000);
+        } else if (r.status === 409) {
+          // someone else already started one: show its progress instead of an error
+          if (refresh.needPass) store.set(passcode);
+          dlg.close(); refresh.waiting = true; refresh.startedAt = 0; pollStatus();
+        } else if (r.status === 401) {
+          store.set(""); $("pass-err").textContent = "Wrong passcode. Please try again.";
+          if (!dlg.open) dlg.showModal();     // a remembered passcode was rejected: ask again
+        } else {
+          dlg.close(); if (refresh.needPass) store.set(r.status === 429 ? passcode : "");
+          refreshMsg(failureText(r.status, j), true);
+        }
+      } catch {
+        const msg = "Could not reach the update service. Check your internet connection and try again.";
+        if (dlg.open) $("pass-err").textContent = msg; else refreshMsg(msg, true);
+      } finally {
+        go.disabled = false;
+      }
+    }
+
+    btn.addEventListener("click", () => {
+      if (!refresh.needPass) { start(""); return; }   // no passcode set on the relay
+      const saved = store.get();
+      if (saved) { start(saved); return; }     // remembered for this browser tab
+      $("pass-input").value = ""; $("pass-err").textContent = "";
+      dlg.showModal(); $("pass-input").focus();
+    });
+    form.addEventListener("submit", (e) => { e.preventDefault(); start($("pass-input").value.trim()); });
+    $("pass-cancel").addEventListener("click", () => dlg.close());
+  }
+
   async function init() {
+    setupRefresh();
     const wantedDate = readHash();
     const sel = $("edition-select");
     sel.append(el("option", { value: "latest" }, "Today (latest)"));

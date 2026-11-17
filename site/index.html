@@ -644,7 +644,7 @@
     setupRefresh();
     const wantedDate = readHash();
     const sel = $("edition-select");
-    sel.append(el("option", { value: "latest" }, "Today (latest)"));
+    sel.append(el("option", { value: "latest" }, "Last 24 hours"));
     try {
       const idx = await getJSON("data/archive/index.json");
       state.dates = idx.dates || [];

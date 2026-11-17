@@ -11,6 +11,10 @@ timezone: "Asia/Colombo"
 window_hours: 24
 max_window_hours: 36
 
+# The "Last 24 hours" view on the site shows every story published in this many hours, even
+# stories found by earlier runs. (Each day's own file in the Edition menu only keeps what was new that day.)
+latest_window_hours: 24
+
 # ── Gemini ──────────────────────────────────────────────────────────────────
 # The model can be overridden without editing this file by setting the
 # GEMINI_MODEL repository variable in GitHub.

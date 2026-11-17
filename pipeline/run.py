@@ -60,7 +60,31 @@ def item_to_json(it: Item, min_rel: int) -> dict:
     }
 
 
-def write_outputs(payload: dict, local_date: str, merge: bool = True) -> None:
+def _counts(items: list[dict]) -> tuple[int, int]:
+    """(relevant, out of scope). Items from older editions have no flag and count as relevant."""
+    relevant = sum(i.get("in_scope", True) for i in items)
+    return relevant, len(items) - relevant
+
+
+def rolling_items(payload: dict, archive_dir, local_date: str, hours: float) -> list[dict]:
+    """Everything published in the last `hours` hours: this run's day plus yesterday's edition."""
+    items = {i["id"]: i for i in payload["items"]}            # today's stories win on a clash
+    yesterday = datetime.strptime(local_date, "%Y-%m-%d").date() - timedelta(days=1)
+    prev = archive_dir / f"{yesterday.isoformat()}.json"
+    if prev.exists():
+        for it in json.loads(prev.read_text(encoding="utf-8")).get("items", []):
+            items.setdefault(it["id"], it)
+    cutoff = parse_date(payload["window_end"]) - timedelta(hours=hours)
+    kept = []
+    for it in items.values():
+        pub = parse_date(it.get("published"))
+        if pub is None or pub >= cutoff:
+            kept.append(it)
+    kept.sort(key=lambda i: i.get("published") or "", reverse=True)
+    return kept
+
+
+def write_outputs(payload: dict, local_date: str, merge: bool = True, rolling_hours: float = 24) -> None:
     archive_dir = DATA_DIR / "archive"
     archive_dir.mkdir(parents=True, exist_ok=True)
     day_file = archive_dir / f"{local_date}.json"
@@ -73,16 +97,24 @@ def write_outputs(payload: dict, local_date: str, merge: bool = True) -> None:
         payload["items"] += [i for i in old.get("items", []) if i["id"] not in new_ids]
         payload["items"].sort(key=lambda i: i.get("published") or "", reverse=True)
         payload["window_start"] = min(filter(None, [old.get("window_start"), payload["window_start"]]))
-        payload["stats"]["published"] = sum(i.get("in_scope", True) for i in payload["items"])
-        payload["stats"]["out_of_scope"] = sum(not i.get("in_scope", True) for i in payload["items"])
+        payload["stats"]["published"], payload["stats"]["out_of_scope"] = _counts(payload["items"])
 
-    text = json.dumps(payload, ensure_ascii=False, indent=1)
-    day_file.write_text(text, encoding="utf-8")
-    (DATA_DIR / "latest.json").write_text(text, encoding="utf-8")
+    # The day's file is a record of what was new that day.
+    day_file.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    # latest.json is a rolling view: every story from the last `rolling_hours` hours.
+    items = rolling_items(payload, archive_dir, local_date, rolling_hours)
+    latest = dict(payload)
+    latest["items"] = items
+    latest["window_start"] = iso(parse_date(payload["window_end"]) - timedelta(hours=rolling_hours))
+    latest["stats"] = dict(payload["stats"])
+    latest["stats"]["published"], latest["stats"]["out_of_scope"] = _counts(items)
+    (DATA_DIR / "latest.json").write_text(json.dumps(latest, ensure_ascii=False, indent=1), encoding="utf-8")
 
     dates = sorted((p.stem for p in archive_dir.glob("????-??-??.json")), reverse=True)
     (archive_dir / "index.json").write_text(json.dumps({"dates": dates}, indent=1), encoding="utf-8")
-    log.info("Wrote %d items to latest.json and archive/%s.json", len(payload["items"]), local_date)
+    log.info("Wrote %d items to latest.json (last %sh) and %d to archive/%s.json",
+             len(items), rolling_hours, len(payload["items"]), local_date)
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
@@ -217,7 +249,8 @@ def main(argv: list[str] | None = None) -> int:
         "sources": health,
         "items": [item_to_json(it, min_rel) for it in kept_sorted],
     }
-    write_outputs(payload, now.astimezone(tz).strftime("%Y-%m-%d"), merge=not args.fresh)
+    write_outputs(payload, now.astimezone(tz).strftime("%Y-%m-%d"), merge=not args.fresh,
+                  rolling_hours=settings.get("latest_window_hours", 24))
 
     # 7. Remember what we've processed
     today = now.astimezone(tz).strftime("%Y-%m-%d")

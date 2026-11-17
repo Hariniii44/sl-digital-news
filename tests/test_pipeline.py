@@ -206,6 +206,52 @@ def test_second_run_does_not_repeat(env):
     assert set(ids) == first
 
 
+def _old_item(id_, title, hours_ago, in_scope=True):
+    return {"id": id_, "title": title, "url": f"https://x.lk/{id_}", "outlet": "X", "author": "",
+            "published": (NOW - timedelta(hours=hours_ago)).isoformat(), "time_estimated": False,
+            "category": "Tech Industry & SMEs" if in_scope else "Unrelated", "summary": "s", "score": 8 if in_scope else 1,
+            "in_scope": in_scope, "via": "rss", "ai_summary": True, "also_in": []}
+
+
+def test_latest_shows_a_rolling_24_hours(env):
+    from zoneinfo import ZoneInfo
+    yesterday = (datetime.now(ZoneInfo("Asia/Colombo")) - timedelta(days=1)).strftime("%Y-%m-%d")
+    arch = env / "data" / "archive"
+    arch.mkdir(parents=True)
+    (arch / f"{yesterday}.json").write_text(json.dumps({"items": [
+        _old_item("y-recent", "Yesterday afternoon story", 10),
+        _old_item("y-oos", "Yesterday out-of-scope story", 12, in_scope=False),
+        _old_item("y-old", "Yesterday morning story", 30),          # older than 24h
+    ]}))
+
+    assert run.main([]) == 0
+    latest = load_latest(env)
+    titles = {i["title"] for i in latest["items"]}
+
+    assert "Yesterday afternoon story" in titles                    # still inside the 24h window
+    assert "Yesterday out-of-scope story" in titles                 # out-of-scope rolls too
+    assert "Yesterday morning story" not in titles                  # older than 24h: dropped
+    assert any("Kapruka" in t for t in titles)                      # and today's new stories
+    ids = [i["id"] for i in latest["items"]]
+    assert len(ids) == len(set(ids))
+    pubs = [i["published"] for i in latest["items"]]
+    assert pubs == sorted(pubs, reverse=True)
+
+    # counts describe what is shown
+    assert latest["stats"]["published"] == sum(i["in_scope"] for i in latest["items"])
+    assert latest["stats"]["out_of_scope"] == sum(not i["in_scope"] for i in latest["items"])
+    # the window the header reports is 24 hours
+    start = datetime.fromisoformat(latest["window_start"].replace("Z", "+00:00"))
+    end = datetime.fromisoformat(latest["window_end"].replace("Z", "+00:00"))
+    assert abs((end - start) - timedelta(hours=24)) < timedelta(seconds=1)
+
+    # today's own file only records what was new today; yesterday's file is untouched
+    today_file = next(f for f in arch.glob("2*.json") if f.stem != yesterday)
+    today_titles = {i["title"] for i in json.loads(today_file.read_text())["items"]}
+    assert "Yesterday afternoon story" not in today_titles
+    assert len(json.loads((arch / f"{yesterday}.json").read_text())["items"]) == 3
+
+
 def test_fresh_run_rebuilds_the_day(env):
     run.main([])
     latest = load_latest(env)

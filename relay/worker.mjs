@@ -1,4 +1,8 @@
-// Cloudflare Worker: lets the team start the "Daily news update" workflow from the website.
+// Cloudflare Worker for the news dashboard. It does two jobs:
+//   1. On a schedule (a Cloudflare cron trigger, see wrangler.toml) it starts the "Daily news
+//      update" workflow every morning. GitHub's own scheduler is unreliable (it ran 7 hours late),
+//      Cloudflare's runs on time.
+//   2. It lets the team start the same workflow from the website ("Update now" button).
 //
 // The GitHub token lives here (as a secret), never in the web page. The page sends a team
 // passcode (if one is set); the Worker checks it, applies safety limits, then asks GitHub to
@@ -17,6 +21,10 @@
 const WORKFLOW = "daily-news.yml";
 const ACTIVE = new Set(["queued", "in_progress", "waiting", "pending", "requested"]);
 const COLOMBO_OFFSET_MS = 5.5 * 3600 * 1000;
+const SCHEDULED_TITLE = "Scheduled update";   // the workflow names runs started by the scheduler this
+
+// Runs started by the scheduler must not use up the team's manual-update allowance.
+const isScheduled = (r) => String(r.display_title || r.name || "").startsWith(SCHEDULED_TITLE);
 
 function reply(data, status, cors) {
   return new Response(JSON.stringify(data), {
@@ -68,7 +76,7 @@ function summarise(runs, env, now) {
   const finished = runs.find((r) => r.status === "completed");
   const max = Number(env.MAX_MANUAL_PER_DAY || 3);
   const dayStart = startOfColomboDay(now);
-  const usedToday = runs.filter((r) => r.event === "workflow_dispatch" && Date.parse(r.created_at) >= dayStart).length;
+  const usedToday = runs.filter((r) => r.event === "workflow_dispatch" && !isScheduled(r) && Date.parse(r.created_at) >= dayStart).length;
   return {
     state: active ? "running" : "idle",
     started_at: active ? active.run_started_at || active.created_at : null,
@@ -81,7 +89,24 @@ function summarise(runs, env, now) {
   };
 }
 
+// Called by Cloudflare's cron trigger. Skips quietly if an update is already running.
+export async function startScheduledUpdate(env) {
+  const runs = await recentRuns(env);
+  if (runs.some((r) => ACTIVE.has(r.status))) return { started: false, reason: "already running" };
+  const d = await github(env, `/repos/${env.GITHUB_REPO}/actions/workflows/${WORKFLOW}/dispatches`, {
+    method: "POST",
+    body: JSON.stringify({ ref: env.GITHUB_BRANCH || "main", inputs: { source: "scheduler" } }),
+  });
+  if (d.status !== 204) throw new Error(`GitHub refused the scheduled update (${d.status})`);
+  return { started: true };
+}
+
 export default {
+  async scheduled(event, env, ctx) {
+    // errors are thrown so they show up in the Worker's logs and its cron history
+    ctx.waitUntil(startScheduledUpdate(env).then((r) => console.log("Scheduled update:", JSON.stringify(r))));
+  },
+
   async fetch(request, env, ctx, now = Date.now()) {
     const origin = request.headers.get("Origin") || "";
     const cors = {

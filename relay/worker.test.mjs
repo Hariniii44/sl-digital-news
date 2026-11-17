@@ -1,7 +1,7 @@
 // Run:  node --test relay/worker.test.mjs
 import test from "node:test";
 import assert from "node:assert/strict";
-import worker from "./worker.mjs";
+import worker, { startScheduledUpdate } from "./worker.mjs";
 
 const NOW = Date.parse("2026-11-16T05:00:00Z");   // 10:30 AM in Sri Lanka
 const ENV = {
@@ -138,4 +138,40 @@ test("run: GitHub unreachable -> clear error", async () => {
   const res = await call(post({ passcode: "letmein" }));
   assert.equal(res.status, 502);
   assert.equal((await res.json()).code, "github_unreachable");
+});
+
+test("scheduler: starts the daily update and marks it as scheduled", async () => {
+  const calls = setup([run()]);
+  const r = await startScheduledUpdate(ENV);
+  assert.equal(r.started, true);
+  const d = calls.find((c) => c.url.includes("/dispatches"));
+  assert.deepEqual(JSON.parse(d.init.body), { ref: "main", inputs: { source: "scheduler" } });
+});
+
+test("scheduler: skips if an update is already running", async () => {
+  const calls = setup([run({ status: "in_progress", conclusion: null })]);
+  const r = await startScheduledUpdate(ENV);
+  assert.equal(r.started, false);
+  assert.ok(!calls.some((c) => c.url.includes("/dispatches")));
+});
+
+test("scheduler: a GitHub refusal is reported as an error", async () => {
+  setup([run()], 403);
+  await assert.rejects(() => startScheduledUpdate(ENV), /403/);
+});
+
+test("scheduler: the cron handler runs the update", async () => {
+  const calls = setup([run()]);
+  const waits = [];
+  await worker.scheduled({}, ENV, { waitUntil: (p) => waits.push(p) });
+  await Promise.all(waits);
+  assert.ok(calls.some((c) => c.url.includes("/dispatches")));
+});
+
+test("scheduled runs do not use up the team's manual allowance", async () => {
+  // three runs started today by the scheduler, none by people: manual updates still allowed
+  setup([1, 2, 3].map((i) => run({ event: "workflow_dispatch", display_title: "Scheduled update", created_at: minsAgo(30 * i + 20) })));
+  const st = await (await call(new Request("https://w.dev/status"))).json();
+  assert.equal(st.manual_runs_left, 3);
+  assert.equal((await call(post({ passcode: "letmein" }))).status, 202);
 });

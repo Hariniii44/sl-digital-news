@@ -6,7 +6,9 @@ economy, digitalization and the economy. Gemini screens the stories for relevanc
 assigns each one a category and writes a short summary. The day's stories appear on a
 web page that anyone with the link can open, with no login.
 
-- **Updates:** daily at about 7:00–7:30 AM Sri Lanka time, ready by 8:00 AM
+- **Updates:** every morning at 8:15 AM Sri Lanka time, ready by about 8:20 AM. The schedule is run by a
+  Cloudflare Worker (setup step 6), because GitHub's own scheduler runs hours late. GitHub's schedule
+  stays on as a backup.
 - **Shows:** stories from the last 24 hours, with title, outlet, author, date and time,
   category and summary. Clicking a story opens the original article.
 - **Filters:** by category, plus search and "most relevant first". An **Out of scope** button
@@ -81,7 +83,7 @@ posts are summarized and appear in the next morning's edition.
 
 ### 6. (Optional) "Update now" button for the team
 The site can show an **Update now** button. A team member enters a shared passcode and the
-news refreshes (10 to 20 minutes). A passcode is optional. A small free Cloudflare Worker sits between the page and
+news refreshes (about 3 minutes). A passcode is optional. The same Worker starts the daily 8:15 AM update. A small free Cloudflare Worker sits between the page and
 GitHub, so the GitHub token is never visible in the web page. Without this step the button
 stays hidden, and the schedule and the Actions tab work as before.
 
@@ -102,6 +104,9 @@ stays hidden, and the schedule and the Actions tab work as before.
    Worker's address, for example `https://sl-news-refresh.<you>.workers.dev`.
 4. **Point the site at it.** Put that address in `site/config.js` as `refreshUrl`, then commit
    and push. The button appears.
+
+The daily time is the `crons` line in `relay/wrangler.toml` (in UTC, so 8:15 AM Sri Lanka is `45 2 * * *`).
+Redeploy with `npx wrangler deploy` after changing it.
 
 Safety limits (change them in `relay/wrangler.toml`):
 - If you set a passcode, a wrong one is refused. Without one, anyone who opens the site can press
@@ -182,7 +187,7 @@ In `config/settings.yaml`:
 ## How it works
 
 ```
-7:00 AM (GitHub Actions)
+8:15 AM (started by the Cloudflare Worker, run by GitHub Actions)
   1. Collect     outlet RSS feeds + Google News searches (Sri Lanka edition) + form submissions
   2. Filter      only stories published since the last run; skip anything already shown;
                  a keyword pre-filter for general-news outlets (drops sport, crime, etc.)

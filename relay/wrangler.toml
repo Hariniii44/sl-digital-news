@@ -10,6 +10,11 @@ GITHUB_BRANCH = "main"
 MAX_MANUAL_PER_DAY = "3"
 COOLDOWN_MINUTES = "10"
 
+# Starts the daily update. Cloudflare cron times are in UTC.
+# 02:45 UTC = 8:15 AM in Sri Lanka (UTC+5:30). A run takes about 3 minutes, so the news is ready by ~8:20.
+[triggers]
+crons = ["45 2 * * *"]
+
 # Secrets are NOT stored in this file. Add them with:
 #   npx wrangler secret put GITHUB_TOKEN
 #   npx wrangler secret put TEAM_PASSCODE

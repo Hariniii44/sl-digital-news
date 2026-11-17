@@ -1,14 +1,23 @@
 name: Daily news update
 
+# Runs started by the Cloudflare scheduler are labelled "Scheduled update" so they don't count
+# against the team's manual-update limit.
+run-name: ${{ github.event.inputs.source == 'scheduler' && 'Scheduled update' || 'Daily news update' }}
+
 on:
   schedule:
-    # 01:30 UTC = 7:00 AM Sri Lanka time. GitHub can start scheduled jobs a little late
-    # and the run takes ~10–20 minutes, so the site is ready by 8:00 AM.
+    # BACKUP ONLY. The main daily run is started at 8:15 AM Sri Lanka time by the Cloudflare
+    # Worker (relay/). GitHub's own scheduler is unreliable: in practice this one has started
+    # about 7 hours late, so it only acts as a safety net if the Worker is down.
     - cron: "30 1 * * *"
   workflow_dispatch:        # "Run workflow" button in the Actions tab
     inputs:
       hours:
         description: "Look back this many hours (leave empty for normal daily run)"
+        required: false
+        default: ""
+      source:
+        description: "Set automatically by the scheduler. Leave empty."
         required: false
         default: ""
       fresh:

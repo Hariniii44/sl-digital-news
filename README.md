@@ -56,7 +56,7 @@ tests/                  ← automated tests (python -m pytest)
 
 ### 4. Run it the first time
 1. Open the **Actions** tab. Choose **Daily news update** → **Run workflow** → **Run workflow**.
-2. Wait 10–20 minutes. When it finishes, the site is at
+2. Wait a few minutes (a run usually takes 2–5). When it finishes, the site is at
    **`https://<your-username>.github.io/sl-digital-news/`**. Share this link with the team.
 3. Scroll to the bottom of the site and open **Source status for this edition** to see which
    sources worked (see "Maintaining it" below).

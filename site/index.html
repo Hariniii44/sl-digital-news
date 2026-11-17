@@ -252,7 +252,7 @@
 <dialog id="pass-dialog" aria-labelledby="pass-title">
   <form id="pass-form">
     <h2 id="pass-title">Update the news now</h2>
-    <p>Enter the team passcode to fetch the latest stories. An update takes about 10&ndash;20 minutes.</p>
+    <p>Enter the team passcode to fetch the latest stories. An update takes about 3 minutes.</p>
     <label for="pass-input" hidden>Team passcode</label>
     <input type="password" id="pass-input" placeholder="Team passcode" autocomplete="current-password" required>
     <p class="err" id="pass-err" role="alert"></p>
@@ -553,7 +553,7 @@
     if (st.state === "running") {
       refresh.waiting = true;
       btn.disabled = true; btn.textContent = "Updating\u2026";
-      refreshMsg(`Update in progress (started ${st.started_at ? minsSince(st.started_at) + " ago" : "just now"}). It usually takes 10\u201320 minutes. This page will refresh when it finishes.`);
+      refreshMsg(`Update in progress (started ${st.started_at ? minsSince(st.started_at) + " ago" : "just now"}). It usually takes about 3 minutes. This page will refresh when it finishes.`);
       schedulePoll(20000);
       return;
     }
@@ -608,7 +608,7 @@
           dlg.close();
           refresh.waiting = true; refresh.startedAt = Date.now();
           btn.disabled = true; btn.textContent = "Updating\u2026";
-          refreshMsg("Update started. It usually takes 10\u201320 minutes. This page will refresh when it finishes.");
+          refreshMsg("Update started. It usually takes about 3 minutes. This page will refresh when it finishes.");
           schedulePoll(8000);
         } else if (r.status === 409) {
           // someone else already started one: show its progress instead of an error

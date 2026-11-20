@@ -1,8 +1,8 @@
 {
  "site_title": "Sri Lanka Digital Industry News",
- "generated_at": "2026-11-20T02:12:55.038666Z",
- "window_start": "2026-11-19T02:12:55.038666Z",
- "window_end": "2026-11-20T02:12:55.038666Z",
+ "generated_at": "2026-11-20T02:45:30.701907Z",
+ "window_start": "2026-11-19T02:45:30.701907Z",
+ "window_end": "2026-11-20T02:45:30.701907Z",
  "timezone": "Asia/Colombo",
  "categories": [
   "Startups & Ecosystem",
@@ -22,13 +22,13 @@
   "Unrelated"
  ],
  "stats": {
-  "collected": 658,
-  "in_window": 354,
-  "after_dedupe": 304,
-  "published": 69,
-  "out_of_scope": 232,
+  "collected": 639,
+  "in_window": 15,
+  "after_dedupe": 10,
+  "published": 67,
+  "out_of_scope": 229,
   "gemini_model": "gemini-3.5-flash-lite",
-  "gemini_calls": 14,
+  "gemini_calls": 2,
   "gemini_status": "ok"
  },
  "sources": [
@@ -37,28 +37,21 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.7
+   "seconds": 0.4
   },
   {
    "name": "EconomyNext",
    "type": "rss",
-   "ok": false,
-   "count": 0,
-   "error": "not a valid feed (SAXParseException)"
-  },
-  {
-   "name": "EconomyNext (Google News fallback)",
-   "type": "google_news",
    "ok": true,
-   "count": 19,
-   "seconds": 0.3
+   "count": 20,
+   "seconds": 1.2
   },
   {
    "name": "Lanka Business Online",
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 3.1
+   "seconds": 1.6
   },
   {
    "name": "Ada Derana Biz",
@@ -79,7 +72,7 @@
    "type": "rss",
    "ok": true,
    "count": 38,
-   "seconds": 0.3
+   "seconds": 1.6
   },
   {
    "name": "LMD",
@@ -100,7 +93,7 @@
    "type": "google_news",
    "ok": true,
    "count": 1,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "Daily Mirror",
@@ -113,14 +106,14 @@
    "name": "The Morning",
    "type": "google_news",
    "ok": true,
-   "count": 80,
+   "count": 81,
    "seconds": 0.4
   },
   {
    "name": "Newsfirst",
    "type": "google_news",
    "ok": true,
-   "count": 17,
+   "count": 18,
    "seconds": 0.3
   },
   {
@@ -128,7 +121,7 @@
    "type": "google_news",
    "ok": true,
    "count": 9,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "Ada Derana",
@@ -148,7 +141,7 @@
    "name": "Daily News (Google News fallback)",
    "type": "google_news",
    "ok": true,
-   "count": 71,
+   "count": 73,
    "seconds": 0.4
   },
   {
@@ -163,14 +156,14 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.5
+   "seconds": 0.3
   },
   {
    "name": "Newswire",
    "type": "rss",
    "ok": true,
    "count": 20,
-   "seconds": 1.5
+   "seconds": 0.3
   },
   {
    "name": "The Examiner",
@@ -184,28 +177,28 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.7
+   "seconds": 0.3
   },
   {
    "name": "BBC Technology",
    "type": "rss",
    "ok": true,
    "count": 21,
-   "seconds": 0.2
+   "seconds": 0.1
   },
   {
    "name": "CNN Tech",
    "type": "google_news",
    "ok": true,
    "count": 100,
-   "seconds": 0.5
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"Sri Lanka\" startup OR startups",
    "type": "google_news",
    "ok": true,
    "count": 5,
-   "seconds": 0.3
+   "seconds": 0.5
   },
   {
    "name": "Topic: \"Sri Lanka\" (accelerator OR incubator OR \"startup competition\" OR hackathon OR \"pitch competition\")",
@@ -226,13 +219,13 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.3
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"digital economy\" \"Sri Lanka\"",
    "type": "google_news",
    "ok": true,
-   "count": 5,
+   "count": 4,
    "seconds": 0.3
   },
   {
@@ -240,14 +233,14 @@
    "type": "google_news",
    "ok": true,
    "count": 11,
-   "seconds": 0.3
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"Sri Lanka\" (fintech OR \"digital payments\" OR \"e-commerce\")",
    "type": "google_news",
    "ok": true,
-   "count": 4,
-   "seconds": 0.6
+   "count": 3,
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"Sri Lanka\" (\"IT/BPM\" OR \"IT industry\" OR \"software exports\" OR \"tech company\" OR \"IT sector\")",
@@ -267,15 +260,15 @@
    "name": "Topic: \"Sri Lanka\" (SME OR SMEs OR \"small and medium\")",
    "type": "google_news",
    "ok": true,
-   "count": 10,
+   "count": 9,
    "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" (\"venture capital\" OR \"angel investor\" OR \"seed funding\" OR \"raises\")",
    "type": "google_news",
    "ok": true,
-   "count": 9,
-   "seconds": 0.3
+   "count": 13,
+   "seconds": 0.4
   },
   {
    "name": "Topic: ICTA OR \"Ministry of Digital Economy\" Sri Lanka",
@@ -289,24 +282,168 @@
    "type": "google_news",
    "ok": true,
    "count": 8,
-   "seconds": 0.3
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"Sri Lanka\" economy (IMF OR GDP OR exports OR investment OR budget)",
    "type": "google_news",
-   "ok": true,
-   "count": 26,
-   "seconds": 0.3
+   "ok": false,
+   "count": 0,
+   "error": "429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Sri+Lanka%22+economy+%28IMF+OR+GDP+OR+exports+OR+investment+OR+budget%29+when%3A1d&hl=en-LK&gl=LK&ceid=LK:en"
   },
   {
    "name": "Topic: \"Sri Lanka\" (BOI OR EDB OR \"Export Development Board\" OR \"Board of Investment\")",
    "type": "google_news",
    "ok": true,
-   "count": 6,
+   "count": 7,
    "seconds": 0.3
   }
  ],
  "items": [
+  {
+   "id": "bf71233a24db",
+   "title": "Anthropic becomes one of world's most valuable public companies in stock market debut",
+   "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE56TUJvcEZZUGEzaHdJcmVzcVN6RzRKRlF3TUFVWEdSc3lvLS12UDhvN0QzbnRQYXJBRTJnUTJ6aGctN0ZmSHRv?oc=5",
+   "outlet": "Ada Derana",
+   "author": "",
+   "published": "2026-11-20T02:37:43Z",
+   "time_estimated": false,
+   "category": "Global Tech",
+   "summary": "Anthropic becomes one of the world's most valuable public companies in its stock market debut.",
+   "score": 7,
+   "in_scope": true,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "cd89f7701001",
+   "title": "Texas execution took over an hour as staff struggled to find vein, Reinaldo Dennes moaned about pain",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE8tbm56MUV3OG83WXRZQzlHT3ZhODl6MXRMSVc5dEwxUHVKb0lvRTV5UEMxNDBEVW1nLTFIVmZyYlFrMXF2OFFWd2VRX1dIUmliNFpCOW16NDBycU8weERzQ3BuMkx4SDhNOVV2dEpybGRweXM?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-20T02:36:00Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "8d3fc2e396a3",
+   "title": "Central Bank hikes policy rate to 9% and raises reserve requirement amid lingering inflation pressures",
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNT1N0MEFTejc0ZGRHdTZqMVZBbS16RkZ6SmhzRzJBV3BMMzVLbHU1cTZaNzJGS2JscmNtNjBxM1VvUWNNaWtiSFFteXdTa1JuYkJLV1BtWm9OZ09YcENnbFM4Y1czSloyMTBtcHlSZUl3aUJyX0R4dk5MM2Vzc3diQkpHaGVOYklXUFR1c2pucmh1WnZUYVk2WXJYMWh0QzExczhMMG5sTDZxTVoxUzg0dU0xM1RzTG5JQ0Q5WWFjR010WmpDVmtiOW0zaUIyRlpjckE?oc=5",
+   "outlet": "Hiru News",
+   "author": "",
+   "published": "2026-11-20T02:34:44Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "80e4c5fe1e8b",
+   "title": "Former U.S. Ambassador: ‘shock and horror’ describe Ukraine’s reaction to Trump calling Putin ‘my friend’",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQOHZza3VWLWREVG9KUTVTUW5hY1lIdFduVTBpZ1picHEtaWIwZ3dNYlFXQUZGRVpSMzBqUGMxMFF3N3l0UWFYczlWWU1QVDd3SDFuSGh5bnZkQjJmYkNDR004OG5qS1JFRF8zMzlzYWYzWDhfZjZTTVhYMFRLTW5haUJ5QzZUTEpTMEYxRDJJRWdHM2VZdUEtbHhYRzROcEQ4dzVja3NLOHl5U1c4TmxmekVzSVRpWm5LU083SzE3ei1CQQ?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-20T02:27:51Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "16386fa08a47",
+   "title": "Sri Lanka Central Bank raises key policy rate, SRR citing high inflation, credit growth",
+   "url": "https://economynext.com/sri-lanka-central-bank-raises-key-policy-rate-srr-citing-high-inflation-credit-growth-290692/",
+   "outlet": "EconomyNext",
+   "author": "Shihar Aneez",
+   "published": "2026-11-20T02:24:20Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "In May, the OPR was raised by 100 bps",
+   "score": 2,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "0a832dd2fbc0",
+   "title": "Avoid DS Junction: Road Subsidence Causes Heavy Congestion",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQVkwRlJnUUFJeHBtVkgzdTY2QkZCM3Nzc3hWVHVkay1TTGlhQTlXM1oxNU85Tm9WMmdrRU9FaUltamlPZU11S2NtZWl0UWZDSG1uNVZuNHJET1dYejdaU1k0RTRJTzZSS0RYdHVtYmZFN2RlRmtDQUxwd1VTaC1tWXF0aXZwNEN4TnRMTzZRQm1KaG5YYlVsMQ?oc=5",
+   "outlet": "Newsfirst",
+   "author": "",
+   "published": "2026-11-20T02:22:00Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "347e7d8ab668",
+   "title": "Central Bank Raises Key Interest Rate as Inflation Climbs",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNGMwTExBVVR4amtJUTdRZVhpNEpKcFhQbGxsdjE2aFJvYjZ2MWtKWnhMSzhpTGxUSW9MZWt5OS1rR2g2OHJvZXVySUVzUzBoR3laWE9NYmVlc29fSVAwdzN0ZnZ4b2hqLW5ucTVOZDhEa2RHSnh3eGxkQXlQQkRSemNHOTRPaDZvaFRjcEJrTldxcm12YldlaA?oc=5",
+   "outlet": "Newsfirst",
+   "author": "",
+   "published": "2026-11-20T02:15:00Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "b533bba3b100",
+   "title": "GTA 6 breaks records as sales top $2bn - industry estimate",
+   "url": "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss",
+   "outlet": "BBC Technology",
+   "author": "",
+   "published": "2026-11-20T02:13:05Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "Rockstar Games ended a 13-year wait with what is expected to be the biggest entertainment launch ever.",
+   "score": 1,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "f7764ca75cc0",
+   "title": "Sri Lanka Raises Policy Rate to Ensure Inflation Reaches Target",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOckItWnlaZVZ0dFIzLUhzckdDd2dHSDBFOFVHeHRSN2M5Q0cxbHBWRktWOV9fZ29NVXp5NGxJQ2NIczdMNjQyS1ZUTWpNenZRb195RkI5SThlQzV1UFNuZG9iNlpwZ0FwNDBaNnVFVXI3ZktRaTRjaHh3bWF3Vi1TbkFMT29kMzN1SkxINzFTV0VTVU93MEFkek1najJwQUF4blRiZnR3cWtJQzVrekJXTENWTk4?oc=5",
+   "outlet": "Bloomberg.com",
+   "author": "",
+   "published": "2026-11-20T02:04:00Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
   {
    "id": "086da6c9c36c",
    "title": "‘Little Hearts’ building at LRH set for completion in first quarter of 2027",
@@ -876,6 +1013,22 @@
    "published": "2026-11-20T00:45:49Z",
    "time_estimated": false,
    "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "86ee0218ed3b",
+   "title": "NSB Group delivers Rs 45.8bn operating profit in 9M 2026",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE91dS0xTFE3QWJrbThadmI0c0dtV2tLYWg0SFQ4bENsVkRnX2w4MVlQdVhhdmVmRHRSeWswblBTekZ2eWp5WDVpTU44VXNmcDdaUkRoY2poLThTZ204MGVhbVpSOUpTUQ?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-20T00:40:48Z",
+   "time_estimated": false,
+   "category": "Corporate News",
    "summary": "",
    "score": 2,
    "in_scope": false,
@@ -4906,246 +5059,6 @@
    "in_scope": true,
    "via": "google_news",
    "ai_summary": true,
-   "also_in": []
-  },
-  {
-   "id": "f1a6866133c7",
-   "title": "CIM Sri Lanka to explore how personal brands drive business success",
-   "url": "https://www.ft.lk/marketing/CIM-Sri-Lanka-to-explore-how-personal-brands-drive-business-success/54-800315",
-   "outlet": "Daily FT",
-   "author": "",
-   "published": "2026-11-19T02:36:00Z",
-   "time_estimated": false,
-   "category": "Corporate News",
-   "summary": "As professionals increasingly become the public face of the organisations they represent, personal branding is emerging as a powerful business asset. Recognising this shift, the Chartered Institute of Marketing (CIM) Sri Lanka’s Professional Members Support Committee will host a webinar titled “Marketing Beyond…",
-   "score": 1,
-   "in_scope": false,
-   "via": "rss",
-   "ai_summary": false,
-   "also_in": []
-  },
-  {
-   "id": "12e9b1eca7c4",
-   "title": "Air quality drops across major Sri Lankan cities; Jaffna records unhealthy levels",
-   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOcjdGUmtsR1loM2hrSWN3SlVXNlk2Umh0aFFnOEhnQXdFYjVCcWNzWlhteXY5OVhSSTVvRXFFVW4yLWVhOUFoanVXZTRTOFJQM2gzWV81QnRaLW5FeG1sWUpVS2dzSlozTlo4WWhHcWIxSVprQk5Ld211MjFNb05mWEo3RG95WVdsX2FtRnRxWkF0YS1rOWhNSjRUcVdZQzdSUmZUd2p2aEN2VlBBVlVnTmczaC1ndkU?oc=5",
-   "outlet": "Newsfirst",
-   "author": "",
-   "published": "2026-11-19T02:36:00Z",
-   "time_estimated": false,
-   "category": "Fact-checks, Incidents & Opinion",
-   "summary": "",
-   "score": 0,
-   "in_scope": false,
-   "via": "google_news",
-   "ai_summary": false,
-   "also_in": []
-  },
-  {
-   "id": "0634360fe0cc",
-   "title": "As Trump arrives in China, low expectations for breakthroughs in rivalry",
-   "url": "http://island.lk/as-trump-arrives-in-china-low-expectations-for-breakthroughs-in-rivalry/",
-   "outlet": "The Island",
-   "author": "Priyan",
-   "published": "2026-11-19T02:34:33Z",
-   "time_estimated": false,
-   "category": "Global Tech",
-   "summary": "US President Donald Trump and Chinese President Xi Jinping meet in Shenzhen amid an ongoing technological and economic rivalry, with analysts expecting few concrete agreements.",
-   "score": 5,
-   "in_scope": true,
-   "via": "rss",
-   "ai_summary": true,
-   "also_in": []
-  },
-  {
-   "id": "745ebede103e",
-   "title": "Sri Lanka: Ruling JVP prepares unions to police its IMF austerity program",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5acENFMkVZckhmSWpxRjFFWlZpek1ycm9UUzhSbG1ZQ2w4MUk0Rm1qT1BaQVNDSkJSMzVpVG5YMXQyM0xuMW43NElaUXRYMXFjWkxCMWk4cTBxUkUtbW1sbkF2aTNnRXBG?oc=5",
-   "outlet": "World Socialist Web Site",
-   "author": "",
-   "published": "2026-11-19T02:33:26Z",
-   "time_estimated": false,
-   "category": "Macro & Economy",
-   "summary": "",
-   "score": 2,
-   "in_scope": false,
-   "via": "google_news",
-   "ai_summary": false,
-   "also_in": []
-  },
-  {
-   "id": "61c126208797",
-   "title": "Four members of same family killed in Kaduwela electrical appliance shop fire",
-   "url": "https://www.newswire.lk/2026/11/19/four-members-of-same-family-killed-in-kaduwela-electrical-appliance-shop-fire/",
-   "outlet": "Newswire",
-   "author": "Newswire Editorial AA",
-   "published": "2026-11-19T02:32:56Z",
-   "time_estimated": false,
-   "category": "Fact-checks, Incidents & Opinion",
-   "summary": "Four members of the same family have reportedly died following a fire at an electrical appliance shop in Kaduwela. The Continue Reading The post Four members of same family killed in Kaduwela electrical appliance shop fire appeared first on Newswire .",
-   "score": 0,
-   "in_scope": false,
-   "via": "rss",
-   "ai_summary": false,
-   "also_in": []
-  },
-  {
-   "id": "ee3c01693636",
-   "title": "CDB celebrates 7 wins at SLIM National Sales Awards 2026",
-   "url": "https://www.ft.lk/marketing/CDB-celebrates-7-wins-at-SLIM-National-Sales-Awards-2026/54-800314",
-   "outlet": "Daily FT",
-   "author": "",
-   "published": "2026-11-19T02:31:00Z",
-   "time_estimated": false,
-   "category": "Corporate News",
-   "summary": "Demonstrating its strength in sales excellence, Citizens Development Business Finance PLC (CDB) secured seven accolades at the SLIM National Sales Awards 2026, organised by the Sri Lanka Institute of Marketing (SLIM). The achievements included two Gold, two Silver, two Bronze and one Merit Award, recognising the…",
-   "score": 1,
-   "in_scope": false,
-   "via": "rss",
-   "ai_summary": false,
-   "also_in": []
-  },
-  {
-   "id": "db5a60ecccb1",
-   "title": "Strokes and cardiovascular diseases and Physiotherapeutic interventions",
-   "url": "https://www.ft.lk/healthcare/Strokes-and-cardiovascular-diseases-and-Physiotherapeutic-interventions/45-800313",
-   "outlet": "Daily FT",
-   "author": "",
-   "published": "2026-11-19T02:30:00Z",
-   "time_estimated": false,
-   "category": "Other Sectors",
-   "summary": "",
-   "score": 0,
-   "in_scope": false,
-   "via": "rss",
-   "ai_summary": false,
-   "also_in": []
-  },
-  {
-   "id": "248eb6b86b7a",
-   "title": "US eyes role for ‘trusted American technology’ in Sri Lanka’s digital economy",
-   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNb0s0M3IwdTU1Mjc3YWIzbThxeTFQSWNoUjU0cUlWX0ZhTG1MMkhXdmhiN1RGbUFaQ05fVlhKVzh1cVpxcDNFcV85WUxuYzFyYkxjcFdza1dYNV9rcl83Slc2UmRPUDJWWTlIemJPcllzekZFVXlBekNTS1JFLURJcnVDTnljSWl5cnBVbUZxSXd1c2tLeGk0ZEktZHVFU1gyQlp3cnZPZnB1c0hobXFVQ1B6Tk9lUDNH?oc=5",
-   "outlet": "Daily FT",
-   "author": "",
-   "published": "2026-11-19T02:29:01Z",
-   "time_estimated": false,
-   "category": "Digital Economy & Policy",
-   "summary": "US eyes role for trusted American technology in Sri Lanka's digital economy.",
-   "score": 8,
-   "in_scope": true,
-   "via": "google_news",
-   "ai_summary": true,
-   "also_in": []
-  },
-  {
-   "id": "8b0300a98fea",
-   "title": "Healthguard expands retail footprint with new Mount Lavinia outlet",
-   "url": "https://www.ft.lk/healthcare/Healthguard-expands-retail-footprint-with-new-Mount-Lavinia-outlet/45-800312",
-   "outlet": "Daily FT",
-   "author": "",
-   "published": "2026-11-19T02:28:00Z",
-   "time_estimated": false,
-   "category": "Other Sectors",
-   "summary": "Healthguard, has further strengthened its presence with the opening of its 17th outlet in Mount Lavinia. The expansion reflects Healthguard’s continued commitment to bringing accessible, reliable and customer-focused pharmacy services closer to communities.",
-   "score": 1,
-   "in_scope": false,
-   "via": "rss",
-   "ai_summary": false,
-   "also_in": []
-  },
-  {
-   "id": "17d3f7b131b1",
-   "title": "Nawaloka Hospital Negombo opens Sreeni Dharmadasa Heart Care Centre",
-   "url": "https://www.ft.lk/healthcare/Nawaloka-Hospital-Negombo-opens-Sreeni-Dharmadasa-Heart-Care-Centre/45-800311",
-   "outlet": "Daily FT",
-   "author": "",
-   "published": "2026-11-19T02:23:00Z",
-   "time_estimated": false,
-   "category": "Other Sectors",
-   "summary": "Nawaloka Hospital Negombo has marked a significant milestone in Sri Lanka’s private healthcare sector with the grand opening of the Sreeni Dharmadasa Heart Care Centre, a purpose-designed facility dedicated to delivering advanced cardiac care.",
-   "score": 1,
-   "in_scope": false,
-   "via": "rss",
-   "ai_summary": false,
-   "also_in": []
-  },
-  {
-   "id": "d7fd36a58c44",
-   "title": "Early detection and advanced urological services at Nawaloka Hospitals PLC, Colombo",
-   "url": "https://www.ft.lk/healthcare/Early-detection-and-advanced-urological-services-at-Nawaloka-Hospitals-PLC--Colombo/45-800310",
-   "outlet": "Daily FT",
-   "author": "",
-   "published": "2026-11-19T02:22:00Z",
-   "time_estimated": false,
-   "category": "Other Sectors",
-   "summary": "Urinary tract infections (UTIs) and other urinary disorders can significantly affect daily life and, in the long term, may impair kidney function and lead to kidney failure. Yet symptoms are often overlooked or dismissed until they become more serious. With timely diagnosis, appropriate treatment and greater public…",
-   "score": 1,
-   "in_scope": false,
-   "via": "rss",
-   "ai_summary": false,
-   "also_in": []
-  },
-  {
-   "id": "dda6ed9a4270",
-   "title": "Claude-maker Anthropic poised for stock market debut worth up to $1.5tn",
-   "url": "https://www.bbc.co.uk/news/articles/c6742m39xgzxo?at_medium=RSS&at_campaign=rss",
-   "outlet": "BBC Technology",
-   "author": "Kali Hays, Samira Hussain, Osmond Chia",
-   "published": "2026-11-19T02:20:15Z",
-   "time_estimated": false,
-   "category": "Global Tech",
-   "summary": "AI startup Anthropic is preparing for a massive stock market debut on Nasdaq, valued at up to $1.5 trillion with shares priced at $83 each. This initial public offering marks a major milestone and a critical test for the profitability and investor demand of the fast-growing artificial intelligence industry.",
-   "score": 8,
-   "in_scope": true,
-   "via": "rss",
-   "ai_summary": true,
-   "also_in": []
-  },
-  {
-   "id": "cef4c5cfbf9f",
-   "title": "Budget 2027 puts grid stability at centre of renewables push after two blackouts",
-   "url": "https://www.ft.lk/energy/Budget-2027-puts-grid-stability-at-centre-of-renewables-push-after-two-blackouts/10509-800309",
-   "outlet": "Daily FT",
-   "author": "",
-   "published": "2026-11-19T02:19:00Z",
-   "time_estimated": false,
-   "category": "Other Sectors",
-   "summary": "Budget 2027 makes grid stability the priority of its energy plan. It earmarks Rs. 26.5 billion to strengthen the national grid after two nationwide power failures, and plans to more than triple battery storage as Sri Lanka raises the renewables share of installed capacity to 69% by 2029. On the petroleum side, it…",
-   "score": 1,
-   "in_scope": false,
-   "via": "rss",
-   "ai_summary": false,
-   "also_in": []
-  },
-  {
-   "id": "7bd6947dad51",
-   "title": "Hayleys advances Sri Lanka’s renewable energy ambitions with 5MW ground-mounted solar development in Kosgama",
-   "url": "https://www.ft.lk/energy/Hayleys-advances-Sri-Lanka-s-renewable-energy-ambitions-with-5MW-ground-mounted-solar-development-in-Kosgama/10509-800308",
-   "outlet": "Daily FT",
-   "author": "",
-   "published": "2026-11-19T02:15:00Z",
-   "time_estimated": false,
-   "category": "Other Sectors",
-   "summary": "Hayleys Solar, the solar energy arm of Hayleys Fentons Ltd., has inaugurated two ground-mounted solar power projects in Kosgama. Comprising Kosgama I (2MW) and Kosgama II (3MW), the projects represent the second phase of Hayleys Solar’s planned 300MW ground-mounted solar portfolio.",
-   "score": 1,
-   "in_scope": false,
-   "via": "rss",
-   "ai_summary": false,
-   "also_in": []
-  },
-  {
-   "id": "87b2740732d9",
-   "title": "Seylan Bank reaffirms commitment to power sector by Rs. 6.6 b financing for Electricity Generation Lanka Ltd",
-   "url": "https://www.ft.lk/energy/Seylan-Bank-reaffirms-commitment-to-power-sector-by-Rs--6-6-b-financing-for-Electricity-Generation-Lanka-Ltd/10509-800307",
-   "outlet": "Daily FT",
-   "author": "",
-   "published": "2026-11-19T02:14:00Z",
-   "time_estimated": false,
-   "category": "Other Sectors",
-   "summary": "Seylan Bank PLC recently extended financing facilities to Electricity Generation Lanka Ltd., (EGL), a key successor entity established following the restructuring of CEB, up to Rs. 6.6 billion, further strengthening its commitment to Sri Lanka’s power and energy sector.",
-   "score": 1,
-   "in_scope": false,
-   "via": "rss",
-   "ai_summary": false,
    "also_in": []
   }
  ]

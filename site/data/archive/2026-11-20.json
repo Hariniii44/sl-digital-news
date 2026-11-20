@@ -1,8 +1,8 @@
 {
  "site_title": "Sri Lanka Digital Industry News",
- "generated_at": "2026-11-20T02:12:55.038666Z",
+ "generated_at": "2026-11-20T02:45:30.701907Z",
  "window_start": "2026-11-19T09:19:29.694764Z",
- "window_end": "2026-11-20T02:12:55.038666Z",
+ "window_end": "2026-11-20T02:45:30.701907Z",
  "timezone": "Asia/Colombo",
  "categories": [
   "Startups & Ecosystem",
@@ -22,13 +22,13 @@
   "Unrelated"
  ],
  "stats": {
-  "collected": 658,
-  "in_window": 354,
-  "after_dedupe": 304,
-  "published": 37,
-  "out_of_scope": 112,
+  "collected": 639,
+  "in_window": 15,
+  "after_dedupe": 10,
+  "published": 38,
+  "out_of_scope": 121,
   "gemini_model": "gemini-3.5-flash-lite",
-  "gemini_calls": 14,
+  "gemini_calls": 2,
   "gemini_status": "ok"
  },
  "sources": [
@@ -37,28 +37,21 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.7
+   "seconds": 0.4
   },
   {
    "name": "EconomyNext",
    "type": "rss",
-   "ok": false,
-   "count": 0,
-   "error": "not a valid feed (SAXParseException)"
-  },
-  {
-   "name": "EconomyNext (Google News fallback)",
-   "type": "google_news",
    "ok": true,
-   "count": 19,
-   "seconds": 0.3
+   "count": 20,
+   "seconds": 1.2
   },
   {
    "name": "Lanka Business Online",
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 3.1
+   "seconds": 1.6
   },
   {
    "name": "Ada Derana Biz",
@@ -79,7 +72,7 @@
    "type": "rss",
    "ok": true,
    "count": 38,
-   "seconds": 0.3
+   "seconds": 1.6
   },
   {
    "name": "LMD",
@@ -100,7 +93,7 @@
    "type": "google_news",
    "ok": true,
    "count": 1,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "Daily Mirror",
@@ -113,14 +106,14 @@
    "name": "The Morning",
    "type": "google_news",
    "ok": true,
-   "count": 80,
+   "count": 81,
    "seconds": 0.4
   },
   {
    "name": "Newsfirst",
    "type": "google_news",
    "ok": true,
-   "count": 17,
+   "count": 18,
    "seconds": 0.3
   },
   {
@@ -128,7 +121,7 @@
    "type": "google_news",
    "ok": true,
    "count": 9,
-   "seconds": 0.4
+   "seconds": 0.3
   },
   {
    "name": "Ada Derana",
@@ -148,7 +141,7 @@
    "name": "Daily News (Google News fallback)",
    "type": "google_news",
    "ok": true,
-   "count": 71,
+   "count": 73,
    "seconds": 0.4
   },
   {
@@ -163,14 +156,14 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.5
+   "seconds": 0.3
   },
   {
    "name": "Newswire",
    "type": "rss",
    "ok": true,
    "count": 20,
-   "seconds": 1.5
+   "seconds": 0.3
   },
   {
    "name": "The Examiner",
@@ -184,28 +177,28 @@
    "type": "rss",
    "ok": true,
    "count": 10,
-   "seconds": 0.7
+   "seconds": 0.3
   },
   {
    "name": "BBC Technology",
    "type": "rss",
    "ok": true,
    "count": 21,
-   "seconds": 0.2
+   "seconds": 0.1
   },
   {
    "name": "CNN Tech",
    "type": "google_news",
    "ok": true,
    "count": 100,
-   "seconds": 0.5
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"Sri Lanka\" startup OR startups",
    "type": "google_news",
    "ok": true,
    "count": 5,
-   "seconds": 0.3
+   "seconds": 0.5
   },
   {
    "name": "Topic: \"Sri Lanka\" (accelerator OR incubator OR \"startup competition\" OR hackathon OR \"pitch competition\")",
@@ -226,13 +219,13 @@
    "type": "google_news",
    "ok": true,
    "count": 0,
-   "seconds": 0.3
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"digital economy\" \"Sri Lanka\"",
    "type": "google_news",
    "ok": true,
-   "count": 5,
+   "count": 4,
    "seconds": 0.3
   },
   {
@@ -240,14 +233,14 @@
    "type": "google_news",
    "ok": true,
    "count": 11,
-   "seconds": 0.3
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"Sri Lanka\" (fintech OR \"digital payments\" OR \"e-commerce\")",
    "type": "google_news",
    "ok": true,
-   "count": 4,
-   "seconds": 0.6
+   "count": 3,
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"Sri Lanka\" (\"IT/BPM\" OR \"IT industry\" OR \"software exports\" OR \"tech company\" OR \"IT sector\")",
@@ -267,15 +260,15 @@
    "name": "Topic: \"Sri Lanka\" (SME OR SMEs OR \"small and medium\")",
    "type": "google_news",
    "ok": true,
-   "count": 10,
+   "count": 9,
    "seconds": 0.3
   },
   {
    "name": "Topic: \"Sri Lanka\" (\"venture capital\" OR \"angel investor\" OR \"seed funding\" OR \"raises\")",
    "type": "google_news",
    "ok": true,
-   "count": 9,
-   "seconds": 0.3
+   "count": 13,
+   "seconds": 0.4
   },
   {
    "name": "Topic: ICTA OR \"Ministry of Digital Economy\" Sri Lanka",
@@ -289,24 +282,168 @@
    "type": "google_news",
    "ok": true,
    "count": 8,
-   "seconds": 0.3
+   "seconds": 0.4
   },
   {
    "name": "Topic: \"Sri Lanka\" economy (IMF OR GDP OR exports OR investment OR budget)",
    "type": "google_news",
-   "ok": true,
-   "count": 26,
-   "seconds": 0.3
+   "ok": false,
+   "count": 0,
+   "error": "429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Sri+Lanka%22+economy+%28IMF+OR+GDP+OR+exports+OR+investment+OR+budget%29+when%3A1d&hl=en-LK&gl=LK&ceid=LK:en"
   },
   {
    "name": "Topic: \"Sri Lanka\" (BOI OR EDB OR \"Export Development Board\" OR \"Board of Investment\")",
    "type": "google_news",
    "ok": true,
-   "count": 6,
+   "count": 7,
    "seconds": 0.3
   }
  ],
  "items": [
+  {
+   "id": "bf71233a24db",
+   "title": "Anthropic becomes one of world's most valuable public companies in stock market debut",
+   "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE56TUJvcEZZUGEzaHdJcmVzcVN6RzRKRlF3TUFVWEdSc3lvLS12UDhvN0QzbnRQYXJBRTJnUTJ6aGctN0ZmSHRv?oc=5",
+   "outlet": "Ada Derana",
+   "author": "",
+   "published": "2026-11-20T02:37:43Z",
+   "time_estimated": false,
+   "category": "Global Tech",
+   "summary": "Anthropic becomes one of the world's most valuable public companies in its stock market debut.",
+   "score": 7,
+   "in_scope": true,
+   "via": "google_news",
+   "ai_summary": true,
+   "also_in": []
+  },
+  {
+   "id": "cd89f7701001",
+   "title": "Texas execution took over an hour as staff struggled to find vein, Reinaldo Dennes moaned about pain",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE8tbm56MUV3OG83WXRZQzlHT3ZhODl6MXRMSVc5dEwxUHVKb0lvRTV5UEMxNDBEVW1nLTFIVmZyYlFrMXF2OFFWd2VRX1dIUmliNFpCOW16NDBycU8weERzQ3BuMkx4SDhNOVV2dEpybGRweXM?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-20T02:36:00Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "8d3fc2e396a3",
+   "title": "Central Bank hikes policy rate to 9% and raises reserve requirement amid lingering inflation pressures",
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNT1N0MEFTejc0ZGRHdTZqMVZBbS16RkZ6SmhzRzJBV3BMMzVLbHU1cTZaNzJGS2JscmNtNjBxM1VvUWNNaWtiSFFteXdTa1JuYkJLV1BtWm9OZ09YcENnbFM4Y1czSloyMTBtcHlSZUl3aUJyX0R4dk5MM2Vzc3diQkpHaGVOYklXUFR1c2pucmh1WnZUYVk2WXJYMWh0QzExczhMMG5sTDZxTVoxUzg0dU0xM1RzTG5JQ0Q5WWFjR010WmpDVmtiOW0zaUIyRlpjckE?oc=5",
+   "outlet": "Hiru News",
+   "author": "",
+   "published": "2026-11-20T02:34:44Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "80e4c5fe1e8b",
+   "title": "Former U.S. Ambassador: ‘shock and horror’ describe Ukraine’s reaction to Trump calling Putin ‘my friend’",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQOHZza3VWLWREVG9KUTVTUW5hY1lIdFduVTBpZ1picHEtaWIwZ3dNYlFXQUZGRVpSMzBqUGMxMFF3N3l0UWFYczlWWU1QVDd3SDFuSGh5bnZkQjJmYkNDR004OG5qS1JFRF8zMzlzYWYzWDhfZjZTTVhYMFRLTW5haUJ5QzZUTEpTMEYxRDJJRWdHM2VZdUEtbHhYRzROcEQ4dzVja3NLOHl5U1c4TmxmekVzSVRpWm5LU083SzE3ei1CQQ?oc=5",
+   "outlet": "CNN Tech",
+   "author": "",
+   "published": "2026-11-20T02:27:51Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "16386fa08a47",
+   "title": "Sri Lanka Central Bank raises key policy rate, SRR citing high inflation, credit growth",
+   "url": "https://economynext.com/sri-lanka-central-bank-raises-key-policy-rate-srr-citing-high-inflation-credit-growth-290692/",
+   "outlet": "EconomyNext",
+   "author": "Shihar Aneez",
+   "published": "2026-11-20T02:24:20Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "In May, the OPR was raised by 100 bps",
+   "score": 2,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "0a832dd2fbc0",
+   "title": "Avoid DS Junction: Road Subsidence Causes Heavy Congestion",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQVkwRlJnUUFJeHBtVkgzdTY2QkZCM3Nzc3hWVHVkay1TTGlhQTlXM1oxNU85Tm9WMmdrRU9FaUltamlPZU11S2NtZWl0UWZDSG1uNVZuNHJET1dYejdaU1k0RTRJTzZSS0RYdHVtYmZFN2RlRmtDQUxwd1VTaC1tWXF0aXZwNEN4TnRMTzZRQm1KaG5YYlVsMQ?oc=5",
+   "outlet": "Newsfirst",
+   "author": "",
+   "published": "2026-11-20T02:22:00Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "",
+   "score": 0,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "347e7d8ab668",
+   "title": "Central Bank Raises Key Interest Rate as Inflation Climbs",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNGMwTExBVVR4amtJUTdRZVhpNEpKcFhQbGxsdjE2aFJvYjZ2MWtKWnhMSzhpTGxUSW9MZWt5OS1rR2g2OHJvZXVySUVzUzBoR3laWE9NYmVlc29fSVAwdzN0ZnZ4b2hqLW5ucTVOZDhEa2RHSnh3eGxkQXlQQkRSemNHOTRPaDZvaFRjcEJrTldxcm12YldlaA?oc=5",
+   "outlet": "Newsfirst",
+   "author": "",
+   "published": "2026-11-20T02:15:00Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "b533bba3b100",
+   "title": "GTA 6 breaks records as sales top $2bn - industry estimate",
+   "url": "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss",
+   "outlet": "BBC Technology",
+   "author": "",
+   "published": "2026-11-20T02:13:05Z",
+   "time_estimated": false,
+   "category": "Unrelated",
+   "summary": "Rockstar Games ended a 13-year wait with what is expected to be the biggest entertainment launch ever.",
+   "score": 1,
+   "in_scope": false,
+   "via": "rss",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "f7764ca75cc0",
+   "title": "Sri Lanka Raises Policy Rate to Ensure Inflation Reaches Target",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOckItWnlaZVZ0dFIzLUhzckdDd2dHSDBFOFVHeHRSN2M5Q0cxbHBWRktWOV9fZ29NVXp5NGxJQ2NIczdMNjQyS1ZUTWpNenZRb195RkI5SThlQzV1UFNuZG9iNlpwZ0FwNDBaNnVFVXI3ZktRaTRjaHh3bWF3Vi1TbkFMT29kMzN1SkxINzFTV0VTVU93MEFkek1najJwQUF4blRiZnR3cWtJQzVrekJXTENWTk4?oc=5",
+   "outlet": "Bloomberg.com",
+   "author": "",
+   "published": "2026-11-20T02:04:00Z",
+   "time_estimated": false,
+   "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
   {
    "id": "086da6c9c36c",
    "title": "‘Little Hearts’ building at LRH set for completion in first quarter of 2027",
@@ -876,6 +1013,22 @@
    "published": "2026-11-20T00:45:49Z",
    "time_estimated": false,
    "category": "Macro & Economy",
+   "summary": "",
+   "score": 2,
+   "in_scope": false,
+   "via": "google_news",
+   "ai_summary": false,
+   "also_in": []
+  },
+  {
+   "id": "86ee0218ed3b",
+   "title": "NSB Group delivers Rs 45.8bn operating profit in 9M 2026",
+   "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE91dS0xTFE3QWJrbThadmI0c0dtV2tLYWg0SFQ4bENsVkRnX2w4MVlQdVhhdmVmRHRSeWswblBTekZ2eWp5WDVpTU44VXNmcDdaUkRoY2poLThTZ204MGVhbVpSOUpTUQ?oc=5",
+   "outlet": "The Morning",
+   "author": "",
+   "published": "2026-11-20T00:40:48Z",
+   "time_estimated": false,
+   "category": "Corporate News",
    "summary": "",
    "score": 2,
    "in_scope": false,
